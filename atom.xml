@@ -81,6 +81,191 @@
   </entry>
   
   <entry>
+    <title>Python序列化和反序列化</title>
+    <link href="http://www.ashjian.xyz/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://www.ashjian.xyz/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</id>
+    <published>2021-05-29T07:45:53.602Z</published>
+    <updated>2021-05-13T13:04:30.296Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python文件操作练习</title>
+    <link href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
+    <id>http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/</id>
+    <published>2021-05-29T07:45:53.583Z</published>
+    <updated>2021-05-29T07:44:58.670Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python练习" scheme="http://www.ashjian.xyz/tags/python%E7%BB%83%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python文件操作</title>
+    <link href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-05-29T07:45:53.582Z</published>
+    <updated>2021-05-07T17:49:41.445Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python文件操作序" scheme="http://www.ashjian.xyz/tags/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python路径操作</title>
+    <link href="http://www.ashjian.xyz/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.ashjian.xyz/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-05-29T07:45:53.567Z</published>
+    <updated>2021-05-10T13:16:10.479Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="pythonS路径操作" scheme="http://www.ashjian.xyz/tags/pythonS%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的shuttil模块</title>
+    <link href="http://www.ashjian.xyz/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.ashjian.xyz/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/</id>
+    <published>2021-05-29T07:45:53.527Z</published>
+    <updated>2021-05-10T15:00:32.048Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="pythonS的shuttil模块" scheme="http://www.ashjian.xyz/tags/pythonS%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的csv和ini配置文件</title>
+    <link href="http://www.ashjian.xyz/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://www.ashjian.xyz/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
+    <published>2021-05-29T07:45:53.497Z</published>
+    <updated>2021-05-12T08:40:56.450Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="pythonS的csv和ini配置文件" scheme="http://www.ashjian.xyz/tags/pythonS%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python之StringIO和BytesIO</title>
+    <link href="http://www.ashjian.xyz/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/"/>
+    <id>http://www.ashjian.xyz/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/</id>
+    <published>2021-05-29T07:45:53.434Z</published>
+    <updated>2021-04-25T09:12:44.165Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="pythonS之tringIO和BytesIO" scheme="http://www.ashjian.xyz/tags/pythonS%E4%B9%8BtringIO%E5%92%8CBytesIO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python解析式、生成器</title>
     <link href="http://www.ashjian.xyz/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
     <id>http://www.ashjian.xyz/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/</id>
@@ -370,195 +555,6 @@
     
     
       <category term="python匿名函数" scheme="http://www.ashjian.xyz/tags/python%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python函数返回值、作用域</title>
-    <link href="http://www.ashjian.xyz/Python%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>http://www.ashjian.xyz/Python%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F/</id>
-    <published>2021-05-24T03:56:08.468Z</published>
-    <updated>2021-05-24T03:56:08.518Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python函数的返回值和作用域" scheme="http://www.ashjian.xyz/tags/python%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python函数、参数及参数解构</title>
-    <link href="http://www.ashjian.xyz/Python%E5%87%BD%E6%95%B0%E3%80%81%E5%8F%82%E6%95%B0%E5%8F%8A%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%84/"/>
-    <id>http://www.ashjian.xyz/Python%E5%87%BD%E6%95%B0%E3%80%81%E5%8F%82%E6%95%B0%E5%8F%8A%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%84/</id>
-    <published>2021-05-24T03:56:08.428Z</published>
-    <updated>2021-05-24T03:56:08.476Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python函数参数" scheme="http://www.ashjian.xyz/tags/python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python高阶函数和柯里化</title>
-    <link href="http://www.ashjian.xyz/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E5%92%8C%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
-    <id>http://www.ashjian.xyz/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E5%92%8C%E6%9F%AF%E9%87%8C%E5%8C%96/</id>
-    <published>2021-05-24T03:56:08.400Z</published>
-    <updated>2021-05-24T03:56:08.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python高阶函数和柯里化" scheme="http://www.ashjian.xyz/tags/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E5%92%8C%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python装饰器</title>
-    <link href="http://www.ashjian.xyz/python%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
-    <id>http://www.ashjian.xyz/python%E8%A3%85%E9%A5%B0%E5%99%A8/</id>
-    <published>2021-05-24T03:56:08.367Z</published>
-    <updated>2021-05-24T03:56:08.414Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python装饰器" scheme="http://www.ashjian.xyz/tags/python%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python类型注解</title>
-    <link href="http://www.ashjian.xyz/Python%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3/"/>
-    <id>http://www.ashjian.xyz/Python%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3/</id>
-    <published>2021-05-24T03:56:08.304Z</published>
-    <updated>2021-05-24T03:56:08.381Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python之StringIO和BytesIO" scheme="http://www.ashjian.xyz/tags/python%E4%B9%8BStringIO%E5%92%8CBytesIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python树的遍历和堆排序</title>
-    <link href="http://www.ashjian.xyz/Python%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
-    <id>http://www.ashjian.xyz/Python%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F/</id>
-    <published>2021-05-24T03:56:08.293Z</published>
-    <updated>2021-05-24T03:56:08.333Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python树的遍历和堆排序" scheme="http://www.ashjian.xyz/tags/python%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python之functools</title>
-    <link href="http://www.ashjian.xyz/Python%E4%B9%8Bfunctools/"/>
-    <id>http://www.ashjian.xyz/Python%E4%B9%8Bfunctools/</id>
-    <published>2021-05-24T03:56:08.225Z</published>
-    <updated>2021-05-24T03:56:08.290Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="python之functools" scheme="http://www.ashjian.xyz/tags/python%E4%B9%8Bfunctools/"/>
     
   </entry>
   

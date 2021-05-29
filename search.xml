@@ -31726,4 +31726,902 @@ your browser does not support the video tag
         <tag>只狼</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Python之StringIO和BytesIO</title>
+    <url>/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="StringIO"><a href="#StringIO" class="headerlink" title="StringIO"></a>StringIO</h2><ul>
+<li>io模块中的类<ul>
+<li>from io import StringIO</li>
+</ul>
+</li>
+<li>内存中，开辟的一个文本模式的buffer，可以像文件对象一样操作它</li>
+<li>当close方法被调用的时候，这个buffer会被释放</li>
+</ul>
+<h3 id="StringIO操作"><a href="#StringIO操作" class="headerlink" title="StringIO操作"></a>StringIO操作</h3><ul>
+<li><p>getvalue() 获取全部内容。跟文件指针没有关系</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from io import StringIO<br># 内存中构建<br>sio &#x3D; StringIO() #像文件对象一样操作<br>print(sio.readable(),sio.writable(),sio.seekable())<br>sio.write(&quot;magedu\nPython&quot;)<br>sio.seek(0)<br>print(sio.readline())<br>print(sio.getvalue()) #无视指针，输出全部内容<br>sio.close()<br></code></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>好处<ul>
+<li>一般来说，磁盘的操作比内存的操作要慢得多，内存足够的情况下，一般的优化思路是少落地，减少磁盘IO的过程，可以大大提高程序的运行效率</li>
+</ul>
+</li>
+</ul>
+<h2 id="BytesIO"><a href="#BytesIO" class="headerlink" title="BytesIO"></a>BytesIO</h2><ul>
+<li>io模块中的类<ul>
+<li>from io import BytesIO</li>
+</ul>
+</li>
+<li>内存中，开辟的一个二进制模式的buffer，可以像文件对象一样操作它</li>
+<li>当close方法被调用的时候，这个buffer会被释放</li>
+</ul>
+<h3 id="BytesIO操作"><a href="#BytesIO操作" class="headerlink" title="BytesIO操作"></a>BytesIO操作</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from io import BytesIO # 内存中构建<br>bio &#x3D; BytesIO()<br>print(bio.readable(), bio.writable(), bio.seekable())<br>bio.write(b&quot;magedu\nPython&quot;)<br>bio.seek(0)<br>print(bio.readline())<br>print(bio.getvalue()) # 无视指针，输出全部内容<br>bio.close()<br></code></pre></td></tr></table></figure>
+
+<h3 id="file-like对象"><a href="#file-like对象" class="headerlink" title="file-like对象"></a>file-like对象</h3><ul>
+<li><p>类文件对象，可以像文件对象一样操作</p>
+</li>
+<li><p>socket对象、输入输出对象（stdin、stdout）都是类文件对象</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from sys import stdout<br>f &#x3D; stdout<br>print(type(f))<br>f.write(&#39;magedu.com&#39;)<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pythonS之tringIO和BytesIO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python序列化和反序列化</title>
+    <url>/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h2><h3 id="为什么要序列化"><a href="#为什么要序列化" class="headerlink" title="为什么要序列化"></a>为什么要序列化</h3><ul>
+<li><p>内存中的字典、列表、集合以及各种对象，如何保存到一个文件中？如果是自己定义的类的示例，如何保存到文件中？如何从文件中读取数据，并让它们在内存中再次恢复成自己对应的类的实例？</p>
+</li>
+<li><p>要设计一套协议，按照某种规则，把内存中数据保存到文件中，文件是一个字节序列，所以必须吧数据转换成字节序列，输出到文件夹，这就是序列化。反之，从文件的字节序列恢复到内存并且还是原来的类型，就是反序列化。</p>
+</li>
+</ul>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p> serialization 序列化 将内存中对象储存下来，把他变成一个个字节。 -&gt;二进制</p>
+<p> deserialization 反序列化 将一个个文件恢复成内存中对象。 &lt;- 二进制</p>
+<p> 序列化保存到文件就是持久化。可以将数据序列化后持久化，或者网络传输；也可以将文件中或者网络接收到的字节序列反序列化</p>
+<p>Python 提供了pickle库</p>
+<h3 id="pickle-库"><a href="#pickle-库" class="headerlink" title="pickle 库"></a>pickle 库</h3><p>Python中的序列化、反序列化模块。</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dumps</td>
+<td>对象序列化为bytes对象</td>
+</tr>
+<tr>
+<td>dump</td>
+<td>对象序列化到文件对象，就是存入文件</td>
+</tr>
+<tr>
+<td>loads</td>
+<td>从bytes对象反序列化</td>
+</tr>
+<tr>
+<td>load</td>
+<td>对象反序列化，从文件读取数据</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br>filename &#x3D; &#39;o:&#x2F;ser&#39;<br>#序列化后看到什么<br>i&#x3D;99<br>c &#x3D; &#39;C&#39;<br>l &#x3D; list(&#39;123&#39;)<br>d &#x3D; &#123;&#39;a&#39;:1, &#39;b&#39;:&#39;abc&#39;, &#39;C&#39;:[1,2,3]&#125;<br><br>#序列化<br>with open(filename,&#39;wb&#39;) as f:<br>    pickle.dump(i, f)<br>    pickle.dump(c, f)<br>    pickle.dump(l, f)<br>    pickle.dump(d, f)<br>	<br>#反序列化<br>with open(filename, &#39;rb&#39;) as f:<br>	print(f.read(), f.seek(0))<br>    for i in range(4):<br>        x &#x3D; pickle.load(f)<br>        print(x, type(x))<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br><br>#对象序列化<br>class AAA:<br>    tttt &#x3D; &#39;ABC&#39;<br>    def show(self):<br>        print(&#39;abc&#39;)<br>        <br>a1 &#x3D; AAA() #创建AAA类的对象<br><br>#序列化<br>ser &#x3D; pickle.dumps(a1)<br>print(&#39;ser&#x3D;&#123;&#125;&#39;.format(ser)) # AAA<br><br>#反序列化<br>a2 &#x3D; pickle.loads(ser)<br>print(a2.tttt)<br>a2.show()<br></code></pre></td></tr></table></figure>
+
+
+<p>上面的例子中，故意使用了连续的AAA、ABC、abc等字符串，就是为了在二进制文件中能容易的发现它们。</p>
+<p>上例中，其实就保存了一个类名，因为所有的其他东西都是类定义的东西，是不变的所以只序列化一个AAA类名。反序列化的时候就可以恢复一个对象。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br><br>#对象序列化<br>class AA:<br>	def_init (self):<br>		self.aaaa &#x3D; &#39;abc&#39;<br>a1 &#x3D; AAA() #创建AA类的对象<br><br>#序列化<br>ser &#x3D; pickle.dumps(a1)<br>print(&#39;ser&#x3D;&#123;&#125;&#39;.format(ser)) # AAA aaaa abc<br><br>#反序列化<br>a2 &#x3D; pickle.loads(ser)<br>print(a2, type(a2))<br>print (a2.aaaa)<br>print(id(a1), id(a2))<br></code></pre></td></tr></table></figure>
+
+
+<p>可以看出这回除了必须保存的AAA，还序列化了aaaa和abc，因为这是每一个对象自己的属性，每一个对象不一样的，所以这些数据需要序列化。</p>
+<h3 id="序列化、反序列化实验"><a href="#序列化、反序列化实验" class="headerlink" title="序列化、反序列化实验"></a>序列化、反序列化实验</h3><p>定义AAA，并序列化到文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br><br>#实验<br>#对象序列化<br>class AA:<br>	def _init_ (self):<br>		self.aaaa &#x3D;&#39;abc&#39;<br>        <br>a1 &#x3D; AAA() #创建AAA类的对象<br><br>#序列化<br>ser &#x3D; pickle.dumps(a1)<br>print(&#39;ser&#x3D;&#123;&#125;&#39;.format(ser)) # AAA aaaa abc<br>print(len(ser))<br><br>filename &#x3D; &#39;o:&#x2F;ser&#39;<br><br>with open(filename, &#39;wb&#39;) as f:<br>	pickle.dump(a1, f)<br></code></pre></td></tr></table></figure>
+
+
+<p>将生产的序列化文件ser发送到其他节点上。增加一个x,py文件，内容如下，最后执行这个脚本 &amp; python x.py</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br><br>with open(&#39;ser&#39;,&#39;rb&#39;) as f:<br>	a &#x3D; pickle.load(f) #异常<br></code></pre></td></tr></table></figure>
+
+
+<p>会抛出异常 AttributeError; Can’t get attribute ‘AAA’ on &lt;mondule ‘’<strong>main</strong>’’ from ‘t,py’</p>
+<p>这个异常实际上是找不到类AAA的定义，增加类定义即可解决。</p>
+<p>反序列化的时候要找到AAA的定义，才能成功，否则就会抛出异常。</p>
+<p>可以这样理解：反序列化的时候，类是模子，二进制序列就是铁水。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br>class AAA:<br>	def show(self):<br>		print(&#39;xyz&#39;)<br>with open(&#39;ser&#39;, &#39;rb&#39;) as f:<br>    a &#x3D; pickle.load(f)<br>    print(a)<br>    a.show()<br>    print(a.aaa)<br></code></pre></td></tr></table></figure>
+
+
+<p>这里定义了类AAA，并且上面的代码也能成功的执行。</p>
+<p>注意：这里的AAA定义和原来完全不同了。因此，序列化、反序列化必须保证使用同一套类的定义，否则会带来不可预料的结果。</p>
+<h3 id="序列化应用"><a href="#序列化应用" class="headerlink" title="序列化应用"></a>序列化应用</h3><p>一般来说，本地序列化的情况，应用较少。大多数场景都应用在网络传输中。</p>
+<p> 将数据序列化后通过网络传输到远程节点，远程服务器上的服务将接收到的数据反序列化就可以使用了。担是，要注意一点，远程接受端，反序列化时必须有对应的数据类型，否则就会报错。尤其是自定义类型，必须远程得有一致的定义。</p>
+<p> 现在，大多数项目，都不是单机，也不是需要多个程序之间配合，需要通过网络传输传送到其他的节点上去，这就需要大量的序列化、反序列化过程。</p>
+<p> 但是问题是，python程序之间都可以使用pickle，解决序列化、反序列化，如果是跨平台、跨语言、跨协议pickle就不太合适了，就需要公共的协议，例如XML、json、protocol Buffer等。</p>
+<p>不同的协议，不同的效率，学习曲线不同，适用的场景不同，要根据不同的情况分析选型。</p>
+<h3 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h3><p> JSON(avaScript Object Notation, JS对象标记)是一种轻量级的数据交换格式。它基于ECMAScript (w3c组织制定的JS规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。<br><a href="http://json.org/" target="_blank" rel="noopener">http://json.org/</a></p>
+<p>json的数据类型</p>
+<p>值</p>
+<p>双引号引起来的字符串、数值、true和false、null、对象、数组，这些都是值!</p>
+<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150508781.png" alt="img"></p>
+<p>字符串<br>由双引号包围起来的任意字符的组合，可以有转义字符。<br>数值<br>有正负，有整数、浮点数。<br>对象<br>无序的键值对的集合<br>格式: {key1:value1, … ,keyn:valulen}<br>key必须是一个字符串，需要双引号包围这个字符串。<br>value可以是任意合法的值。</p>
+<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150528827.png" alt="在这里插入图片描述"></p>
+<p>数组<br>有序的值的集合 格式：[val…valn]</p>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;person&quot;: [<br>  	&#123;<br>  	  &quot;name&quot;: &quot;tom&quot;,<br>  	  &quot;age&quot;: 18<br>  	 &#125;，<br>  	 &#123;<br>  	   &quot;name&quot;: &quot;jerry&quot;,<br>  	   &quot;age&quot;: 16 <br>  	  &#125;<br>  	 ],<br>  	 &quot;total&quot;: 2<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="json模块"><a href="#json模块" class="headerlink" title="json模块"></a>json模块</h3><h4 id="Python与Json"><a href="#Python与Json" class="headerlink" title="Python与Json"></a>Python与Json</h4><p>Python支持少量内建数据类型到son类型的转换。</p>
+<table>
+<thead>
+<tr>
+<th>Python类型</th>
+<th>json</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ture</td>
+<td>ture</td>
+</tr>
+<tr>
+<td>False</td>
+<td>false</td>
+</tr>
+<tr>
+<td>None</td>
+<td>null</td>
+</tr>
+<tr>
+<td>str</td>
+<td>string</td>
+</tr>
+<tr>
+<td>int</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>faloat</td>
+<td>float</td>
+</tr>
+<tr>
+<td>list</td>
+<td>array</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>object</td>
+</tr>
+</tbody></table>
+<p>常用方法</p>
+<table>
+<thead>
+<tr>
+<th>Python类型</th>
+<th>Json类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dumps</td>
+<td>json编码</td>
+</tr>
+<tr>
+<td>dump</td>
+<td>json编码并存入文件</td>
+</tr>
+<tr>
+<td>loads</td>
+<td>json解码</td>
+</tr>
+<tr>
+<td>load</td>
+<td>json解码，从文件读取数据</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import json<br>d&#x3D; &#123;&#39;name&#39;:&#39;Tom&#39;, &#39;age&#39;:20, &#39; interest&#39;:(&#39;music&#39;, &#39;movie&#39;), &#39;class&#39;：[&#39;python&#39;]&#125;<br>j &#x3D; json.dumps(d)<br>print(j, type(j)) #请注意引号、括号的变化，注意数据类型的变化<br><br>d1 &#x3D; json. oads(j)<br>print(d1)<br>print(id(d)，id(d1)<br></code></pre></td></tr></table></figure>
+
+<p> 一般json编码的数据很少落地， 数据都是通过网络传输。传输的时候，要考虑压缩它。本质上来说它就是个文本，就是个字符串。<br> json很简单，几乎编程语言都支持Json,所以应用范围十分广泛。</p>
+<h2 id="MessagePack"><a href="#MessagePack" class="headerlink" title="MessagePack"></a>MessagePack</h2><p>MessagePack是一个基于 二进制 高效的对象序列化类库，可用于跨语言通信。</p>
+<p> 它可以像JSON那样，在许多种语言之间交换结构对象。但是它比JSON更快速也更轻巧。支持Python、Ruby、 Java、 C/C++等众多语言。宣称比Google Protocol Buffers还要快4倍。<br> 兼容json和pickle。</p>
+<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150809992.png" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># 72 bytes<br><br>&#123;&quot;person&quot;:[&#123;&quot;name&quot;:&quot;tom&quot;,”age&quot;:18&#125;,&#123;&quot;name&quot;:&quot;jerry&quot;,”age&quot;:16&#125;],&quot;total&quot;:2&#125;<br><br># 48 bytes<br><br># 82 a6 70 65 72 73 6f 6e 92 82 a4 6e 61 6d 65 a3 74 6f 6d a3 61 67 65 12 82 a4 6e 61 6d 65 a5 6a 65 72 72 79 a3 61 67 65 10 a5 74 6f 74 61 6c 02<br></code></pre></td></tr></table></figure>
+
+<p>可以看出大大节约了空间</p>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">$ pip install msgpack<br></code></pre></td></tr></table></figure>
+
+
+
+<p>常用方法<br>packb 序列化对象。提供了dumps来兼容pickle和json。<br>unpackb 反序列化对象。提供了loads来兼容。<br>pack 序列化对象保存到文件对象。提供了dump来兼容。<br>unpack 反序列化对象保存到文件对象。提供了load来兼容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import pickle<br>import json<br>import msgpack<br><br>#导入的模块，就是标识符<br>methods &#x3D; (pickle, json, msgpack)<br>d &#x3D; &#123;&#39;person&#39;:[&#123;&#39;name&#39;:&#39;tom&#39;,&#39;age&#39;:18&#125;,&#123;&#39;name&#39;:&#39;jerry&#39;,&#39;age&#39;: 16&#125;],&#39;total&#39;:2&#125;<br><br>for m in methods:<br>	s &#x3D; m.dumps(d)<br>	if m &#x3D;&#x3D; json:<br>		s &#x3D; s.replace(&#39; &#39;，&#39;&#39;) # json 72 bytes 注意这样替换的压缩是不对的<br>	print(m._name_, type(s), len(s), s)<br>	<br><br># pickle 101<br><br>#json 72<br><br># msgpack 48<br><br>print(&#39;-&#39; * 30)<br><br>u &#x3D; msgpack.loads(s)<br>print(type(u), u)<br><br>u1 &#x3D; msgpack.loads(s, encoding&#x3D; &#39;utf-8&#39;)<br>print(type(u1)，u1)<br>u2 &#x3D; msgpack.loads(s, raw&#x3D;False) #新版<br>print(type(u2)，u2)<br><br># pickle 101<br><br>#json 72<br><br># msgpack 48<br><br>print(&#39;-&#39; * 30)<br><br>u &#x3D; msgpack.loads(s)<br>print(type(u), u)<br><br>u1 &#x3D; msgpack.loads(s, encoding&#x3D; &#39;utf-8&#39;)<br>print(type(u1)，u1)<br>u2 &#x3D; msgpack.loads(s, raw&#x3D;False) #新版<br>print(type(u2)，u2)<br></code></pre></td></tr></table></figure>
+
+
+<p> MessagePack简单易用，高效压缩，支持语言丰富。所以，用它序列化也是一种很好的选择。 Python很多 大名鼎鼎的库都是用了msgpack.<br> 上例中，之所以pickle比json序列化的结果还要大，原因主要是pickle要解决所有Python类型数据的序列化，要记录各种数据类型包括自定义的类。而json只需要支持少数几种类型,所以就可以很简单，都不需要类型的描述字符。但大多数情况下，我们序列化的数据都是这些简单的类型。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Python文件操作练习</title>
+    <url>/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="对samle文件进行不区分大小写的单词统计"><a href="#对samle文件进行不区分大小写的单词统计" class="headerlink" title="对samle文件进行不区分大小写的单词统计"></a>对samle文件进行不区分大小写的单词统计</h2><p>要求用户可以排除一些单词的统计，例如a、the、of等不应该出现在具有实际意义的统计中，应当忽<br>略<br> 要求，全部代码使用函数封装、调用完成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="有一个配置文件test-ini内容如下，将其转换成json格式文件"><a href="#有一个配置文件test-ini内容如下，将其转换成json格式文件" class="headerlink" title="有一个配置文件test.ini内容如下，将其转换成json格式文件"></a>有一个配置文件test.ini内容如下，将其转换成json格式文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">[DEFAULT]<br>a &#x3D; test<br><br>[mysql]<br>default-character-set&#x3D;utf8<br>a &#x3D; 1000<br><br>[mysqld]<br>datadir &#x3D;&#x2F;dbserver&#x2F;data<br>ort &#x3D; 33060<br>character-set-server&#x3D;utf8<br>sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from configparser import ConfigParser<br>import json<br><br>filename &#x3D; &#39;config.ini&#39;<br>jsonname &#x3D; &#39;config.json&#39;<br><br>cfg &#x3D; ConfigParser()<br>cfg.read(filename)<br><br>dest &#x3D; &#123;&#125;<br><br>for sect in cfg.sections():<br>    print(sect, cfg.items(sect))<br>    dest[sect] &#x3D; dict(cfg.items(sect))<br><br>json.dump(dest, open(jsonname, &#39;w&#39;))<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="实现ls命令功能，实现-l、-a和–all、-h选项"><a href="#实现ls命令功能，实现-l、-a和–all、-h选项" class="headerlink" title="实现ls命令功能，实现-l、-a和–all、-h选项"></a>实现ls命令功能，实现-l、-a和–all、-h选项</h2><p> 实现显示路径下的文件列表<br> -a和-all 显示包含.开头的文件<br> -l 详细列表显示<br> -h 和-l配合，人性化显示文件大小，例如1K、1G、1T等，可以认为1G=1000M<br> c 字符；d 目录；- 普通文件；l 软链接；b 块设备；s socket文件； ie文件，即FIFO<br> -rw-rw-r– 1 ython ython 5 Oct 25 00:07 test4<br> mode 硬链接属主属组字节时间文件名<br> 按照文件名排序输出，可以和ls的顺序不一样，但要求文件名排序<br> 要求详细列表显示时，时间可以按照“年-月-日时:分:秒” 格式显示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br>from datetime import datetime<br>import argparse<br><br>def listdir(pathstr, all &#x3D; False, detail &#x3D; False ,human &#x3D; False):<br>    #转换mode的oct数字格式到rwx格式<br>    def _mode_format(mode:int):<br>        lst &#x3D; [&#39;r&#39;, &#39;w&#39;, &#39;x&#39;] * 3<br>        modestr &#x3D; bin(mode)[-9:]<br>        ret &#x3D; &quot;&quot;<br>        for i, c in enumerate(modestr):<br>            if c &#x3D;&#x3D; &#39;1&#39;:<br>                ret +&#x3D; lst[i]<br>            else:<br>                ret +&#x3D; &#39;-&#39;<br>        return ret<br><br>    #人性化显示文件容量大小<br>    def _get_human(size:int):<br>        lst &#x3D; [&#39;&#39; ,&#39;K&#39;, &#39;G&#39;, &#39;T&#39;, &#39;P&#39;]<br>        depth &#x3D; 0<br>        while size &gt;&#x3D; 1000:<br>            depth +&#x3D; 1<br>            size &#x2F;&#x3D; 1000<br>        return &quot;&#123;&#125;&#123;&#125;&quot;.format(size,lst[depth])<br><br>    #获取文件类型<br>    def _getFileType(file:Path):<br>        if file.is_dir():<br>            return &#39;d&#39;<br>        elif file.is_file():<br>            return &#39;f&#39;<br>        elif file.is_socket():<br>            return &#39;s&#39;<br>        elif file.is_char_device():<br>            return &#39;c&#39;<br>        elif file.is_block_device():<br>            return &#39;b&#39;<br>        elif file.is_symlink():<br>            return &#39;l&#39;<br>        else:<br>            return &#39;-&#39;<br><br>    #主要功能：列出目录下的文件，附加-a和-l的选项功能<br>    def _listdir(pathstr, all &#x3D; False, detail &#x3D; False ,human &#x3D; False):<br>        path &#x3D; Path(pathstr)<br>        for file in path.iterdir():<br>            if all &#x3D;&#x3D; False and file.name.startswith(&#39;.&#39;):<br>                continue<br>            if detail &#x3D;&#x3D; False:<br>                yield file.name<br>            else:<br>                stat &#x3D; file.stat()<br>                type &#x3D; _getFileType(file)<br>                mode &#x3D; _mode_format(stat.st_mode)<br>                atime &#x3D; datetime.fromtimestamp(stat.st_atime).strftime(&#39;%Y年%m月%d日 %H:%M:%S&#39;)<br>                size &#x3D; stat.st_size if human &#x3D;&#x3D; False else _get_human(stat.st_size)<br>                yield (type, mode, stat.st_uid, stat.st_gid, size, atime, file.name)<br><br>    yield from sorted(_listdir(pathstr, all, detail, human), key &#x3D; lambda x:x[-1])<br><br>parser &#x3D; argparse.ArgumentParser(prog&#x3D;&#39;ls&#39;, conflict_handler&#x3D;&#39;resolve&#39;, description&#x3D;&#39;list directory contents&#39;)<br>parser.add_argument(&#39;path&#39;,nargs&#x3D;&#39;?&#39;, default&#x3D;&#39;.&#39;, help&#x3D;&#39;specify a path&#39;)<br>parser.add_argument(&#39;-a&#39;,&#39;--all&#39;, action&#x3D;&#39;store_true&#39;, help&#x3D;&quot;show all file that inculde hiden file&quot;)<br>parser.add_argument(&#39;-l&#39;,&#39;--list&#39;, action&#x3D;&#39;store_true&#39;, help&#x3D;&#39;using a long listing format&#39;)<br>parser.add_argument(&#39;-h&#39;,&#39;--human&#39;, action&#x3D;&#39;store_true&#39;, help&#x3D;&#39;humanable&#39;)<br><br>if __name__ &#x3D;&#x3D; &#39;__main__&#39;:<br>    args &#x3D; parser.parse_args()<br>    for i in listdir(args.path, args.all, args.list, args.human):<br>        if type(i) is str:<br>            print(*i)<br>        else:<br>            t, mode, st_uid, st_gid, size, atime, filename &#x3D; i<br>            print(&quot;&#123;&#125;  &#123;&#125;  &#123;:&lt;5&#125; &#123;:&lt;5&#125; &#123;:&gt;8&#125;   &#123;:&gt;10&#125;      &#123;:&gt;&#125;&quot;.format(t, mode, st_uid, st_gid, size, atime, filename))<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python练习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python的csv和ini配置文件</title>
+    <url>/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="csv文件"><a href="#csv文件" class="headerlink" title="csv文件"></a>csv文件</h2><h3 id="CSVX文件简介"><a href="#CSVX文件简介" class="headerlink" title="CSVX文件简介"></a>CSVX文件简介</h3><p>参看RFC 4180<br><a href="http://www.ietf.org/rfc/rfc4180.txt" target="_blank" rel="noopener">http://www.ietf.org/rfc/rfc4180.txt</a><br>逗号分隔值Comma-Separated Values。<br>CSV是一个被行分隔符、 列分隔符划分成行和列的文本文件。</p>
+<p>CSV不指定字符编码。</p>
+<p>行分隔符为\r\n,最后-行可以没有换行符<br>列分隔符常为逗号或者制表符。<br>每一行称为一条记录record</p>
+<p>字段可以使用双引号括起来，也可以不使用。如果字段中出现了双引号、逗号、换行符必须使用双引号括起来。如果字段的值是双引号，使用两个双引号表示一个转义。</p>
+<p>表头可选，和字段列对齐就行了。</p>
+<h3 id="手动生成csv文件"><a href="#手动生成csv文件" class="headerlink" title="手动生成csv文件"></a>手动生成csv文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br>p &#x3D; Path(&#39;o:&#x2F;tmp&#x2F;mycsv&#x2F;test.CSV&#39;)<br>parent &#x3D; p.parent<br>if not parent.exists():<br>	parent.mkdir(parents&#x3D;True)<br><br>csV_body &#x3D; &#39;&#39;&#39;\<br>id, name，age , comment<br>1,zs,18,&quot;I&#39;m 18&quot;<br>2,1s,20,&quot;this is a &quot;&quot;test&quot;&quot; string.&quot;<br>3,Ww, 23,&quot;你好<br><br>计算机<br>&quot;<br>&#39;&#39;&#39;<br>p.write_text(csV_body)<br></code></pre></td></tr></table></figure>
+
+<h3 id="csv模块"><a href="#csv模块" class="headerlink" title="csv模块"></a>csv模块</h3><ul>
+<li><p>reader(csvfile, dialect= ‘excel’, fmtparams)</p>
+<ul>
+<li>返回reader对象，是一个行迭代器。</li>
+</ul>
+</li>
+<li><p>默认使用excel方言,如下:</p>
+<ul>
+<li>delimiter 列分隔符,逗号</li>
+<li>lineterminator行分隔符\rn</li>
+<li>quotechar字段的引用符号，缺省为”双引号</li>
+</ul>
+</li>
+<li><p>双引号的处理.</p>
+<ul>
+<li>doublequote双引号的处理，默认为True。 如果碰到数据中有双引号，而quotechar也是双引号, True则使用2个双引号表示，False表示使用转义字符将作为双引号的前缀</li>
+<li>escapechar一个转义字符，默认为None<br>writer = csv.writer(f, doublequote=False, escapechar=’@’)遇到双引号,则必须提供转义字符</li>
+<li>quoting指定双弓|号的规则<ul>
+<li>QUOTE_ ALL所有字段（字符串相对较大，所以全部字段当成字符串处理不太适合）</li>
+<li>QUOTE_ MINIMAL特殊字符字段，Excel方言使用该规则（推荐）</li>
+<li>QUOTE_ NONNUMERIC非数字字段</li>
+<li>QUOTE_ NONE都不使用引号。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>writer(csvfile, dialect=’ excel’, fmtparams)</p>
+<ul>
+<li>返回DictWriter的实例。</li>
+<li>主要方法有writerow、writerows**。</li>
+<li>writerow(iterable)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import CsV<br>from pathlib import Path<br>p &#x3D; Path(&#39;o:&#x2F;tmp&#x2F;mycsv&#x2F;test. csv&#39;)<br>with open(str(p)) as f:<br>	reader &#x3D; csV.reader(f)<br>	print(next(reader))<br>	print(next(reader))<br>	for line in reader:<br>		print(line)<br>rows &#x3D;[<br>    [4,&#39;tom&#39;,22,&#39; tom&#39;],<br>	(5,&#39;jerry&#39;,24,&#39;jerry&#39;),<br>	(6, &#39;justin&#39;,22, &#39;just\t&quot;in&#39;),<br>	&quot;abcdefghi&quot;,<br>	((1,),(2,))<br>]<br>row &#x3D; rows[0]<br><br>with open(str(p), &#39;a&#39;) as f:<br>writer &#x3D; CsV.writer(f)<br>writer.writerow(row)<br>writer.writerows(rows)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>说明row行，需要一个可迭代对象就可以，可迭代的每一个元素，将作为csv行的每一一个元素。<br>windows下在会在每行末尾多出一个\r,解决办法open(‘test.csv’, ‘w’ ，newline=’’)</li>
+</ul>
+<h2 id="ini文件处理"><a href="#ini文件处理" class="headerlink" title="ini文件处理"></a>ini文件处理</h2><p>作为配置文件，ini文件格式的很流行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">[DEFAULT]<br>a &#x3D; test<br><br>[mysql]<br>default-character-set&#x3D;utf8<br><br>[mysqld]<br>datadir &#x3D;&#x2F;dbserver&#x2F;data<br>port &#x3D; 33060<br>character-set-server&#x3D;utf8<br>sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>中括号里面的部分称为section，译作节、区、段。每一个section内，都是key=value形成的键值对，key称为option选项。</li>
+<li>注意这里的DEFAULT是缺省section的名字，必须大写。</li>
+</ul>
+<p><strong>configparser</strong></p>
+<p>configparser 模块的ConfigParser类就是用来操作。</p>
+<p>可以将section 当做key，section储存着键值对组成的字典，可以吧配置文件当做一个嵌套的字典。默认使用的是有序字典。</p>
+<p>*<em>read(filenames, encoding=None) *</em>读取in文件，可以是单个文件，也可以是文件列表。可以指定文件编码。<br>sections() 返回section列表。 缺省section不包括在内。<br>add section(section name) 增加个section。<br>has_section(section name) 判断section是否存在<br>options(section) 返回section的所有option, 会追加缺省section的option<br>has_option(section, option) 判断section是否存在这个option<br>*get(section, option, ，raw=False, vars=None[, fallback]) 从指定的段的选项上取值，如果找到返回，如果没有找到就去找DEFAULT段有没有。</p>
+<p>getint(section, option, ，raw=False, vars=None[, fallback])<br>getfloat(section, option, , raw=False, vars=None[, fallback])<br>getboolean(section, option, , raw=False, vars=None[, fallback])<br>上面3个方法和get一样，返回指定类型数据。</p>
+<p>items(raw=False, vars=None)<br>items(section, raw=False, vars=None)<br>没有section,则返回所有section名字及其对象;如果指定section, 则返回这个指定的section的键值对组成二元组。</p>
+<p>set(section, option, value)<br>section存在的情况下，写入option=value, 要求option、value必须是字符串。</p>
+<p>remove_section(section) 移除section及其所有option<br>remove_option(section, option) 移除section下的option,<br>write(fileobject, space_around_delimiters=True) 将当前config的所有内容写入fileobject中，一般open函数使用w模式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from configparser import ConfigParser<br><br>filename &#x3D; &#39;test.ini&#39;<br>newfilename &#x3D; &#39;mysql.ini&#39;<br><br>cfg &#x3D; ConfigParser()<br>read_ok &#x3D; cfg.read(filename)<br>print(read_ok)<br>print(cfg.sections())<br>print(cfg.has_section(&#39;client&#39;))<br><br>for k,v in cfg.items(): #未指定section<br>    print(k, type(k))<br>    print(v,type(v))<br>    print(cfg.items(k))<br>    print()<br>    <br>for k,v in cfg.items(&quot;mysqld&quot;):# 指定section<br>    print(k, type(k))<br>    print(v,type(v))<br><br> #取值<br>tmp &#x3D; cfg.get(&#39;mysqld&#39;,&#39;port&#39;)<br>print(type(tmp),tmp)<br>tmp &#x3D; cfg.get(&#39;msqld&#39;.&#39;a&#39;)<br>print(type(tmp),tmp)<br>#ptint(cfg.get(&#39;mysld&#39;,&#39;magedu&#39;))<br>print(cfg.get(&#39;mysqld&#39;,&#39;magedu&#39;,fallback&#x3D;&#39;python&#39;)) # 缺省值<br>#按照类型<br>tmp &#x3D; cfg.getint(&#39;mysqld&#39;,&#39;port&#39;)<br>print(type(tmp),tmp)<br><br>if cfg.has_section(&#39;test&#39;):<br>    cfg.remove_section(&#39;test&#39;)<br>cfg.add_section(&#39;test&#39;)<br>cfg.set(&#39;test&#39;,&#39;test1&#39;,&#39;1&#39;)<br>xfg.set(&#39;test&#39;,&#39;test2&#39;,&#39;2&#39;)<br>#cfg.set(&#39;test&#39;,&#39;test2&#39;,2)<br><br>with open(newfilename, &#39;w&#39;) as f:<br>    cfg.write(f)<br>print(cfg.getint(&#39;test&#39;, &#39;test2&#39;))<br>cfg.remove_option(&#39;test&#39;, &#39;test2&#39;)<br><br>#字典操作更简单<br>cfg[&#39;test&#39;][&#39;x&#39;] &#x3D; &#39;100&#39; # key不存在<br>cfg[&#39;test2&#39;] &#x3D; &#123;&#39;test2&#39;: &#39;1000&#39;&#125; # section不存在<br>print(&#39;x&#39; in cfg[&#39;test&#39;])<br>print(&#39;x&#39; in cfg[&#39;test2&#39;])<br><br>#其他内部方式<br>print(cfg._dict) # 返回默认的字典类型，默认使用有序字典&lt;class &#39;collections .OrderedDict&#39;&gt;<br><br>for k,v in cfg._sections.items():<br>print(k,v)<br>for k,v in cfg._sections[&#39;mysqld&#39;].items():<br>print(k,v)<br><br>#修改后需再次写入<br>with open(newfilename, &#39;w&#39;) as f:<br>	cfg.write(f)<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pythonS的csv和ini配置文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python的shuttil模块</title>
+    <url>/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1 文件操作"></a>1 文件操作</h2><p>　　文件有很多的操作，之前的文件操作中介绍了内建函数对文件的打开、读取以及写入，这三种操作是对文件基本的使用。文件还有复制、删除、移动、改变文件的属主属组等操作。下面主要看os模块和shutil模块提供的对文件操作的方法。</p>
+<h2 id="2-os模块"><a href="#2-os模块" class="headerlink" title="2 os模块"></a>2 os模块</h2><p>　　os模块中也有open、read、write方法，但是太低级，建议使用内建函数open、read、write，二者使用方法相似。以下是os模块提供的对文件操作的相关属性和方法：</p>
+<table>
+<thead>
+<tr>
+<th>属性或方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>os.name</td>
+<td>返回操作系统类型，windows是nt，Linux是posix。</td>
+</tr>
+<tr>
+<td>os.uname()</td>
+<td>返回操作系统信息，*nix支持。</td>
+</tr>
+<tr>
+<td>os.listdir(‘o:/temp’)</td>
+<td>返回目录内容列表。</td>
+</tr>
+<tr>
+<td>os.stat(path, *, dir_fd=None,follow_symlinks=Ture)</td>
+<td>该方法的本质是调用linux系统的stat命令。path: 路径的string或bytes，或fd文件描述符。follow_symlinks: True返回文件本身信息，False且如果是软链接则显示软链接本身。</td>
+</tr>
+<tr>
+<td>os.chmod(path, mode, *, dir_fd=None,follow_symlinks=True)</td>
+<td>改变文件权限，例如os.chmod(‘test’, 0o777)</td>
+</tr>
+<tr>
+<td>os.chown(path, uid, gid)</td>
+<td>该文件的属主、属组，但是需要足够的权限</td>
+</tr>
+</tbody></table>
+<h2 id="3-shutil模块"><a href="#3-shutil模块" class="headerlink" title="3 shutil模块"></a>3 shutil模块</h2><p>　　通过前面介绍的一些文件操作的方法，使用打开两个文件对象，读取源文件内容，然后将内容写入目标文件中来完成文件拷贝过程。但是这样会丢失stat数据信息（权限等），因为根本没有复制这些信息过去。Python提供了一个高级文件操作shutil库，下面来看下，shutil库中提供的操作文件的方法。</p>
+<h3 id="3-1-copy复制"><a href="#3-1-copy复制" class="headerlink" title="3.1 copy复制"></a>3.1 copy复制</h3><ul>
+<li><strong>copyfileobj(fsrc, fdst[, length])</strong></li>
+</ul>
+<p>　　文件对象的复制，fsrc和fdst是open打开的文件对象，复制内容。fdst要求可写。其中length指定了表示buffer的大小。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1 import shutil<br>2 <br>3 with open(&#39;test.txt&#39;, &#39;w+&#39;) as f1:<br>4     f1.write(&#39;abcd\n1234&#39;)<br>5     f1.flush()<br>6     print(f1.tell())<br>7     f1.seek(0)  # 在f1文件写入内容后文件指针会指向文件末尾，此时要将文件指针指向文件头，才能完成下面的复制过程<br>8     with open(&#39;test1.txt&#39;, &#39;w+&#39;) as f2:<br>9         shutil.copyfileobj(f1, f2)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>copyfile(src, dst, *, follow_symlinks=True)</strong></li>
+</ul>
+<p>　　复制文件内容，不含元数据。src、dst为文件的路径字符串，返回目标文件路径。本质上调用的就是copyfileobj，所以不带元数据二进制内容复制。注意：该方式的copy会覆盖目标文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1 f &#x3D; shutil.copyfile(&#39;test.txt&#39;, &#39;test1.txt&#39;)<br>2 print(f)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>copymode(src, dst, *, follow_symlinks=True)</strong></li>
+</ul>
+<p>　　仅仅复制文件的权限。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1 shutil.copymode(&#39;test.txt&#39;, &#39;test1.txt&#39;)<br>2 print(os.stat(&#39;test.txt&#39;))<br>3 print(os.stat(&#39;test1.txt&#39;))<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>copystat(src, dst, *, follow_symlinks=True)</strong></li>
+</ul>
+<p>　　复制元数据，stat包含权限。</p>
+<ul>
+<li><strong>copy(src, dst, *, follow_symlinks=True)</strong></li>
+</ul>
+<p>　　复制文件内容、权限和部分元数据，不包括创建时间和修改时间。本质上调用的是copyfile和copymode。</p>
+<ul>
+<li><strong>copy2(src, dst, *, follow_symlinks=True)</strong></li>
+</ul>
+<p>　　copy2比copy多了复制全部元数据，但是需要平台支持。本事上调用copyfile和copystat。</p>
+<ul>
+<li>copytree(src, dst, *, symlinks=False, ignore=None, copy_function=copy2, ignore_dangling_symlinks=False)</li>
+</ul>
+<p>　　递归复制目录。默认使用copy2，也就是带更多元数据的复制。src、dst必须是目录，src必须存在，dst必须不存在；ignore = func，提供callable(src, names) –&gt; ignored_names。提供一个函数，它会被调用。src是源目录，names是os.listdir(src)的结果，就是列出src中的文件名，返回值是要被过滤的文件的set类型数据。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1 # o:&#x2F;temp下有a、b目录<br>2 def ignore(src, names):<br>3     ig &#x3D; filter(lambda x: x.startswith(&#39;a&#39;), names)    # 忽略a<br>4     return set(ig)<br>5 <br>6 shutil.copytree(&#39;o:&#x2F;temp&#39;, &#39;o:&#x2F;tt&#x2F;o&#39;, ignore&#x3D;ignore)<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-rm删除"><a href="#3-2-rm删除" class="headerlink" title="3.2 rm删除"></a>3.2 rm删除</h3><ul>
+<li><strong>shutil.rmtree(path, ignore_errors=False, onerror=None)</strong></li>
+</ul>
+<p>　　递归删除。如同rm -rf一样危险，慎用。rmtree不是原子操作，有可能删除错误，就会中断，已经删除的就删除了。ignore_errors为true，忽略错误。当为False或者omitted时onerror生效；onerror为callable，接受函数function、path和execinfo。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">shutil.rmtree(&#39;o:&#x2F;tmp&#39;)    # 类似rm -rf<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-3-move移动"><a href="#3-3-move移动" class="headerlink" title="3.3 move移动"></a>3.3 move移动</h3><ul>
+<li><strong>move(src, dst, copy_function=copy2)</strong></li>
+</ul>
+<p>　　递归移动文件、目录到目标路径下，返回目标路径。其本质使用的是os.rename方法，如果不支持rename及移动的是目录则先copytree然后再删除源目录。默认使用copy2方法。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pythonS的shuttil模块</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python文件操作</title>
+    <url>/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="冯诺依曼体系架构"><a href="#冯诺依曼体系架构" class="headerlink" title="冯诺依曼体系架构"></a>冯诺依曼体系架构</h2><p><img src="https://raw.githubusercontent.com/ashjian/picBed02/main/20210507130335.png" alt="image-20210424104544869"></p>
+<ul>
+<li><p>CPU由运算 器和控制器组成</p>
+<ul>
+<li>运算器，完成各    种算数运算、逻辑运算、数据传输等数据加工处理</li>
+<li>控制器，控 制程序的执行</li>
+<li>存储器，用 千记忆程序和数据， 例如内存</li>
+<li>输入设备，将数据或者      程序输入到计算机中，例如键盘   、鼠标</li>
+<li>输出设备，将数据或     程序的处理结果展示给用户，例如显   示器、打印机等</li>
+</ul>
+<p>一般说10 操作   ，指的是   文件10 , 如果指的是网络10   ,  都 会直接说网络10</p>
+</li>
+</ul>
+<h3 id="文件10-常用操作"><a href="#文件10-常用操作" class="headerlink" title="文件10 常用操作"></a>文件10 常用操作</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>open</td>
+<td>打开</td>
+</tr>
+<tr>
+<td>read</td>
+<td>读取</td>
+</tr>
+<tr>
+<td>write</td>
+<td>写入</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td>readline</td>
+<td>行读取</td>
+</tr>
+<tr>
+<td>readlines</td>
+<td>多行读取</td>
+</tr>
+<tr>
+<td>seek</td>
+<td>文件指针操作</td>
+</tr>
+<tr>
+<td>tell</td>
+<td>指针位置</td>
+</tr>
+</tbody></table>
+<h3 id="打开操作"><a href="#打开操作" class="headerlink" title="打开操作"></a>打开操作</h3><p>open(file, mode二 ‘r’, buffe「 ing=-1, encoding 二 None, e「「0「 s=None, newline=None, closefd二 True,<br>opene「 =None )</p>
+<p>打开一个文件，返回一个文件对象（流对象）和文件描述符。打开文件失败，则返回异常</p>
+<p>基本使用：</p>
+<p>创建一个文件test , 然后打开它，用完关闭</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&quot;test&quot;)     #file对象<br>#  windows &lt;_io.TextIOWrapper name &#x3D;&#39;test&#39; mode&#x3D;&#39;r&#39; encoding&#x3D;&#39;cp936&#39;&gt;<br># linux  &lt;_io.TextWrapper name&#x3D;&#39;test&#39; mode&#x3D;&#39;r&#39; encoding&#x3D;&#39;UTF-8&#39;&gt;<br>print(f .read())   #读取文件<br>f.close()  	   #关闭文件<br></code></pre></td></tr></table></figure>
+
+<p>文件操作中，最常用的操作</p>
+<p>有两种：文本模式和二制模式。不模式下，操作函数不尽相同，表现的结果</p>
+<p>也不一样。</p>
+<h3 id="open的参数"><a href="#open的参数" class="headerlink" title="open的参数"></a>open的参数</h3><ul>
+<li>file<ul>
+<li>打开或者要创建的文件名。如果不指定路径， 默 认是当前路径</li>
+</ul>
+</li>
+</ul>
+<p>mode模式</p>
+<p><img src="https://raw.githubusercontent.com/ashjian/picBed02/main/20210507130336.png" alt="image-20210424154547696"></p>
+<p>在上面列子中，可以看到默认是文本打开模式，且是只读的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">#  r模式<br><br>f &#x3D; open(&#39;test&#39;)  #只读还是只写？<br>f.read()<br>f.writ e (&#39;abc&#39;) <br>f.close()<br><br>f &#x3D; open(&#39;test&#39;,&#39;r&#39;)<br>f . write (&#39;abc&#39;)<br>f .close()<br><br>f &#x3D; open(&#39;testl&#39;,&#39;r&#39;) #只读，文件不存在<br><br>#w模式<br>f &#x3D; open(&#39;test&#39;,&#39;w&#39;)  #只写打开<br>f.write (&#39;abc&#39;) <br>f.close()<br><br>»&gt; cat test  #看看内容<br><br>f &#x3D; open(&#39;test&#39;,mode&#x3D;&#39;w&#39;)<br>f .close()<br><br>»&gt; cat  t est  #  看看内容<br><br>f &#x3D; open(&#39;testl&#39; ,mode&#x3D;&#39;w&#39;) <br>f.write (&#39;123&#39;)<br>f.close()<br><br>»&gt; cat test1 # 看看内容<br></code></pre></td></tr></table></figure>
+
+<p>open默认是只读模式r，打开已经存在的文件。</p>
+<p>r</p>
+<p>只读打开文件，如果使用write方法，会抛异常。</p>
+<p>如果文件不存在， 抛出FileNotFoundError异常</p>
+<p>w</p>
+<p>表示只写方式打开，如果读取则抛出异常</p>
+<p>如果文件不存在，则直接创建文件</p>
+<p>如果文件存在，则清空文件内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;test2&#39;,&#39;x&#39;) <br>f.read()  #<br>f.write (&#39;abed&#39;) <br>f.close()<br><br>f &#x3D; open(&#39;test2&#39;,&#39;x&#39;)  #<br></code></pre></td></tr></table></figure>
+
+<p>x</p>
+<p>文件不存在，创建文件，并只写方式打开</p>
+<p>文件存在，抛出FileExistsError</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;test2&#39;,&#39;a&#39;)<br>f .read()  #<br><br>f.write(&#39;abcde&#39;) <br>f.close()<br><br>&gt;&gt;&gt;cat test2<br><br>f &#x3D; open(&#39;test2&#39;,&#39;a&#39;) <br>f.write (&#39;\n hello&#39;)<br>f.close()<br><br>&gt;&gt;&gt;cat test2<br><br>f &#x3D; open(&#39;test3&#39;,&#39;a&#39;)<br>f.write(&#39;test3&#39;) <br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>a</p>
+<p>文件存在，只写打开，追加内容</p>
+<p>文件不存在，则创建后，只写打开，追加内容</p>
+<p>r是只读 ， wxa 都是只写。</p>
+<p>wxa都 可以产生新文件， W不管 文件存在与否，都 会生成全新内容的文件； a不管文件是否存   在，都能  在打开的文件尾部追加； x必须要求文件事先不存在，自己造一个新文件</p>
+<p>文本模式t</p>
+<p>字符流， 将文件的字节按照某种字符编码理解，按照字符操作。open的默认mode就是rt</p>
+<p>二进制模式b</p>
+<p>字节流， 将文件就按照字节理解，与字 符编码无关。二进制模式操作时，字节操作使用bytes类型</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&quot;test3&quot;,&#39;rb&#39;)  #二进制只读<br>s &#x3D; f.read() <br>print(type(s))  #bytes <br>print(s)<br>f.close()  # 关闭文件<br><br>f &#x3D; open( &quot;test 3&quot;,&#39;wb&#39;)  #IO对象<br>s &#x3D; f.write(&quot;马哥教育&quot;.encode())<br>print(s)  # 是什么 f.close()<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>思考： windows 下 ，执行下面的代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&quot;test3&quot;,&#39;rw&#39;)  #<br>f &#x3D; open( &quot;test3&quot;,&#39;r+&#39; ) <br>s &#x3D; f.read()<br>f .write ( &quot; 马哥教育&quot;)<br>print(f.read())  #没有显示，为什么<br>f.close()<br><br>f &#x3D; open( &quot;test3&quot;,&#39;r+&#39;) <br>s  &#x3D;  f.write(&quot;magedu&quot;)  #<br>print(f.read()) <br>f.close()<br><br>&gt;&gt;&gt;cat test3<br><br>f &#x3D; writ e (&#39;test3&#39;,&#39;w+&#39;)<br>r.read()  #<br>f.close()<br><br>&gt;&gt;&gt;cat test3<br>f &#x3D; open(&#39;test3&#39;,&#39;a+&#39;)<br>f.write (&#39;mag&#39;) <br>f.read&#123;)<br>f .close()<br><br>&gt;&gt;&gt;cat test3<br><br>f &#x3D; open(&#39;test3&#39;,&#39;a+&#39;)<br>f.write (&#39;edu&#39;) <br>f.close()<br><br>&gt;&gt;&gt;cat test3<br><br>f &#x3D; open(&#39;test3&#39;,&#39;x+&#39;) #<br>f &#x3D; open(&#39;test4&#39;,&#39;x+&#39;) #<br><br>f.write (&#39;python&#39;) <br>f.read&#123;)<br>f.close()<br><br>&gt;&gt;&gt; cat test4＋<br></code></pre></td></tr></table></figure>
+
+<p>+</p>
+<p>为r、w、a、x提供缺失的读写功能，但是，获取文件对象依旧按照r、w、a、X自 己的特征。</p>
+<p>＋不能单独使用，可以认为它是为前面的模式字符做增强功能的。</p>
+<h2 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h2><p>上面的例子中，已经说明了有一个指针。</p>
+<p><strong>文件指针，指向当前字节位置</strong></p>
+<p>mode =r，指针起始在0</p>
+<p>mode=a , 指针起始在EOF</p>
+<p>tell() 显示指针当前位置</p>
+<p>seek(offset[, whence])</p>
+<p>移动文件指针位置。offest偏移多少字节，whence从哪里开始。</p>
+<p>文本模式下</p>
+<p>whence 0 缺省值 ， 表示从头开始，offset只能正整数</p>
+<p>whence 1 表示从当前位置，off est只 接受0</p>
+<p>whence 2 表示从EOF 开始，off est只 接受0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">＃文本模式<br>f &#x3D; open(&#39;test4&#39;,&#39;r+&#39;)<br>f.tell()  #起始<br>f.read()<br>f.tell()  # EOF<br>f.seek(  0 )  #起始<br>f.read()<br>f.seek( 2, 0)<br>f.read()<br>f.seek( 2, 0)<br>f.seek( 2, 1 )  #offset必须为0<br>f.seek( 2, 2)   #offset必须为0 <br>f.close()<br><br>＃中文<br>f &#x3D; open(&#39;test4&#39;,<br>f.write( &#39;马哥教育‘）<br>f.tell()<br>f.close()<br>f &#x3D; open(&#39;test4&#39;,&#39;r+&#39;) <br>f.read(3)<br>f.seek(l)<br>f.tell()<br>f.read()  #<br>f.seek( 2)  #  f.seek(3) <br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>文本模式支持从开头向后偏移的方式。</p>
+<p>whence为1表示从当前位置开始偏移 ， 但是只支持偏移0 ，相当于原地不动，所以 没什么用。</p>
+<p>whence为2表示从 EOF 开始，只支持偏移0，相当于移动文件指针到EOF 。</p>
+<p>seek是按照字节偏移的。</p>
+<p>二进制模式下</p>
+<p>whence 0 缺省值 ， 表示从头开始，offset只能正整数 </p>
+<p>whence 1 表示从当前位置，offset可正可负</p>
+<p>whence 2 表示从EOF开始，offset可正可负</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">＃ 二进制模式<br>f &#x3D; open(&#39;test4&#39;,‘r+&#39;)<br>f.tell()  #起始<br>f.read()<br>f.tell()  #EOF<br>f.write(b&#39;abc&#39;) <br>f.seek(0)  #起始<br>f.seek(2,1)  # 从当前指针开始，向后2<br>f.read()<br>f.seek(-2,1)  # 从当前指针开始， 向前2<br><br>f.seek&#123; 2, 2)  # 从EOF开始，向后2<br>f.seek&#123;0 )<br>f.seek(-2,2)  #从EOF开始，向前2<br>f.read()<br><br>f.seek(-20,2)  #OSErrof<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>二进制模式支持任意起点的位移，从头、从尾、从中间位置开始。</p>
+<p>向后seek可以超界 ，但是向前seek的时候，不能超界，否则抛异常。</p>
+<h2 id="buffering-缓冲区"><a href="#buffering-缓冲区" class="headerlink" title="buffering:缓冲区"></a>buffering:缓冲区</h2><p>-1 表示使用缺省大小的buffer。如果是二进制模式，使用io.DEFAULT_BUFFER_SIZE值 ，默认是4096或者 8192。如果是文本模式，如果是终端设备，是行 缓存方式，如果不是，则使用二进制模式的策略。</p>
+<ul>
+<li>0 只 在二进制模式使用， 表示关buffer</li>
+<li>1 只在文本模式使用， 表示使用行缓冲。意思就是见到换行符就flush</li>
+<li>大于 1 用于指定buffer的大小</li>
+</ul>
+<p>buffer缓冲区</p>
+<p>缓冲区一个内存空间，一 般来说是一个FI FO队列 ，到缓冲区满了或者达到阔值，数据才会flus h到磁盘。</p>
+<p>flush() 将 缓冲区数据写入磁盘</p>
+<p>close() 关闭前会调用flush()</p>
+<p>io.DEFAULT_BUFFER_SIZE 缺省缓冲区大小，字节</p>
+<p>先看二进制模式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import  io<br><br>f &#x3D; open(&#39;test4&#39;,&#39;w+b&#39;) <br>print(io.DEFAULT_BUFFER_SIZE)  <br>f.write(&quot;mageclu.com&quot;.encode( )) <br>#cat test4<br>f.seek(0)<br>#cat test4<br>f.write(&quot;www.magedu.com&quot;.encode( )) <br>f.flush()<br>f.close()<br><br>f &#x3D; open(&#39;test4&#39;,&#39;w+b&#39;,4) <br>f.write(b&quot;mag&quot;)<br>#cat test4<br>f.write(b&#39;edu&#39;)<br># cat test4 <br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>文本模式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">#buffering&#x3D;1，使用行缓冲<br><br>f &#x3D; open(&#39;test4&#39;,&#39;w+&#39;,1)<br>f.write(&quot;mag&quot;) #cat test4<br>f.write(&quot;magedu&quot;*4)  #cat test4 <br>f.write(&#39;\n&#39;)  #cat test4<br>f.write (&#39;Hello\nPython&#39;)  #cat test4 <br>f.close()<br><br>#buffering&gt;1，使用指定大小的缓冲区<br>f &#x3D; open(&#39;test4&#39;,&#39;w+&#39;,15)<br>f.write(&quot;mag&quot;)  #cat test4 <br>f.write(&#39;edu&#39;)  <br><br># cat test4<br><br>f.write(&#39;Hello\n&#39;)  # cat test4<br>f. writ e (&#39;\nPython&#39;)  # cat test4<br>f.write (&#39;a&#39; * (io.DEFAULT_BUFFER_SIZE - 20))   # 设置为大千1,没什么用<br>f .write (&#39;\nwwwm.magedu.com&#x2F;python&#39;)<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>buffering= 0</p>
+<p>这是一种特殊的二进制模式，不需要内存的buffre，可以看做是一个FIFO的文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;test4&#39;,&#39;wb+&#39;, 0) <br>f.write(b&quot;m&quot;)   #cat test4 <br>f.write(b&quot;a&quot;)  #cat test4 <br>f.write(b&quot;g&quot;)  #cat test4<br>f .write(b&quot;magedu&quot; * 4)  # cat test4 <br>f.write(b&#39;\n&#39;)  #cat test4<br>f .write(b&#39;Hello\nPython&#39;) <br>f.close()<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>buffering</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>buffering=-1</td>
+<td>t和b都是io.DEFAULT_BUFFER_SIZE</td>
+</tr>
+<tr>
+<td>buffering=0</td>
+<td>b关闭缓冲区，t不支持</td>
+</tr>
+<tr>
+<td>buffering=1</td>
+<td>b就1个字节，t行缓冲，遇到换行符才flush</td>
+</tr>
+<tr>
+<td>buffering&gt;1</td>
+<td>b模式表示行缓冲区大小，缓冲区的值可以超过io.DEFAULT_BUFFER_SIZE，直到设定的值超过后才把缓冲区flush；t模式是io.DEFAULT_BUFFER_SIZE,flush完后把当前字符串也写入磁盘</td>
+</tr>
+</tbody></table>
+<p>似乎看起来很麻烦，一般来说，只需要记得：</p>
+<ol>
+<li><p>文本模式，一般都用默认缓冲区大小</p>
+</li>
+<li><p>二进制模式，是一 个个字节的操作，可以指定buffer 的大小</p>
+</li>
+<li><p>一般来说，默认缓冲区大小是个比较好的选择，除非明确知道，否则不调整它</p>
+</li>
+<li><p>一般编程中，明确知道需要写磁盘了，都会手动调用一次flush，而不是等到自动flush或者close的时候</p>
+</li>
+</ol>
+<p><strong>encoding : 编码，仅文本模式使用</strong></p>
+<p>None 表示使用缺省编码，依赖操作系统。windows、linux下测试如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;testl&#39;,&#39;w&#39;) <br>f.write(&#39;啊’）<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p>windows 下缺省 GBK  (0xBOA1)，Linux下缺省  UTF-8 (0xE5 95 BA)</p>
+<h3 id="其它参数"><a href="#其它参数" class="headerlink" title="其它参数"></a>其它参数</h3><p><strong>errors</strong></p>
+<p>什么样的编码错误将被捕获</p>
+<p>None和static表示有编码错误将抛出ValueError阿异常；ignore表示忽略</p>
+<p><strong>newline</strong></p>
+<p>文本模式中，换行的转换.可以为None、”空串”、’\r’、 ‘\n’ 、’\r\n’</p>
+<p>读时， None表示\r’、’\n’、’\r\n’ 都 被转换为’\n’ ;表示不会自动转换通用换行符；其它合法字符表示换行符就是指定字符，就会按照指定字符分行</p>
+<p>写时，None表示\n’都会 被替换为系统缺省行分隔符os.linesep  ;  ‘\n’ 或’’表示\n’不替 换； 其它合法字符表示\n’会被替换为指定的字符</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;o:&#x2F;test&#39;,&#39;w&#39;)<br>f.write(&#39;python\rwww.python.org\nwww.mageclu.corn\r\npython3&#39;) <br>f.close()<br>newlines&#x3D;  [None,&#39;&#39;,&#39;\n&#39;,&#39;\r\n&#39;]<br>for nl in newline:<br>	f &#x3D; open(&#39;o:&#x2F;test&#39;,&#39;r+&#39;,newline&#x3D;n1) #缺省替换所有换行符<br>	print(f.readlines())<br>	f .close()<br></code></pre></td></tr></table></figure>
+
+<p>closefd</p>
+<p>关闭文件描述符，True表示关闭它。False 会在文件关闭后保持这个描述符。fileobj.fileno ()查看</p>
+<p><strong>read</strong></p>
+<p>read(size=-1)</p>
+<p>size表示读取的多少个字符或字节；负数或者None表示读取到EOF</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39; o: &#x2F; t est 4&#39; , &#39; r+ &#39; ,  0) f . wr i t e( &quot;mag edu&quot; )<br>f.write(&#39;\n&#39;)<br>f.write(&#39;马哥教育＇）<br>f.seek(0)<br>f.read(7)<br>f.close()<br><br>＃二进制<br>f &#x3D; open(&#39;test4&#39;,&#39;rb+&#39;) <br>f.read (7)<br>f.read(l)<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<h2 id="行读取"><a href="#行读取" class="headerlink" title="行读取"></a>行读取</h2><p>readline( size =-1)</p>
+<p>一行行读取文件内容。size设置一次能读取行内几个字符或字节。</p>
+<p>readlines(hint=-1)</p>
+<p>读取所有行的列表。指定hint则返回指定的行数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">＃按行迭代<br>f &#x3D; open(&#39;test&#39;) #返回可迭代对象<br><br>for line in f:<br>	print(line) <br>	<br>f.close()<br></code></pre></td></tr></table></figure>
+
+<p><strong>write</strong></p>
+<p>write(s)  , 把字符串s写入到文件中并返回字符的个数</p>
+<p>writelines(lines) , 将字符串列表写入文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;test&#39;,&#39;w+&#39;)<br><br>lines  &#x3D;  [&#39;abc&#39;,&#39;123\n&#39;,&#39;magedu&#39;]  #提供换行符 <br>f.writelines(lines)<br><br>f.seek(0) <br>print(f.read()) <br>f.close()<br></code></pre></td></tr></table></figure>
+
+<h3 id="close"><a href="#close" class="headerlink" title="close"></a>close</h3><p>flush并 关闭文件对象。</p>
+<p>文件已经关闭，再次关闭没有任何效果。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>seekable() 是否可 </p>
+<p>seek eadable () 是否 可读</p>
+<p>writable () 是否可写</p>
+<p>closed是否已 经关闭</p>
+<h3 id="上下文管理"><a href="#上下文管理" class="headerlink" title="上下文管理"></a>上下文管理</h3><p><strong>问题的引出</strong></p>
+<p>在Linux中 ，执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">＃ 下面必须这么写<br>1st&#x3D;[]<br>for _ in range(2000) :<br>	lst.append(open(&#39;test&#39;))<br><br>#OSError:[Errno 24] Too many open files:&#39;test&#39;<br><br>print(len(lst))<br></code></pre></td></tr></table></figure>
+
+<p>lsof 列出打开的文件。没有就     # yum install lsof</p>
+<p>$ lsof-p 14271 g「ep test I we -I </p>
+<p>lsof -p 进程号</p>
+<p>ulimit -a 查看所有限制。其中open files就是打开文件数的限制，默认1024</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">for x in 1st:<br>	x.close()<br></code></pre></td></tr></table></figure>
+
+<p>将文件一次关闭，然后就   可以继续打开了。再看一次lsof。</p>
+<p>如何解决？</p>
+<p>1、异常处理</p>
+<p>当出现异常的时候， 拦截异常。但是，因为很多代码都可能出现OSError阿异常 ， 还不好判断异常就是应为资源限制产生的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;test&#39;) <br>try:<br>	f.write(&quot;abc&quot;)  #文件只读，写入失败<br><br>finall  y:<br>	f.close()  #这样才行<br></code></pre></td></tr></table></figure>
+
+<p>使用fina lly 可以 保证打开的文件可以被关闭。</p>
+<p>2、上下文管理</p>
+<p>一种特殊的语法，交给解释器去释放文件对象</p>
+<p><strong>上下文管理</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">del   f<br><br>with  open( &#39; t est   &#39; ) f . wr i t e ( &quot; abc&quot;<br><br>＃ 测试f 是否关闭<br><br>f.closed # f的作用<br></code></pre></td></tr></table></figure>
+
+<p>上下文管理</p>
+<ol>
+<li><p>使用with … as 关键字</p>
+</li>
+<li><p>上下文管理的语句块并不会开启新的作用域</p>
+</li>
+<li><p>with语句块执行完的时候，会自动关闭文件对象另一种写法</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">fl &#x3D; open(&#39;test&#39;) <br>with  fl:<br>	fl write (&quot;abc&quot; )  #文件只读，写入失败<br>	<br>＃ 测试f是否关闭<br>fl.closed  # fl的作用域<br></code></pre></td></tr></table></figure>
+
+<p>对千类似千文件对象的10对象，一 般来说都需要在不使用的时候关闭、注销，以释放资源。</p>
+<p>10被打开的时候，会获得一个文件描述符。计算机资源是有限的，所以操作系统都会做限制。就</p>
+<p>是为了保护计算机的资源不要被完全耗尽，计算资源是共享的，不是独占的。</p>
+<p>一般清况下，除非特别明确的知道资淙情况，否则不要提高资源的限制值来解决问题。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h4 id="指定一个源文件，实现copy到目标目录。"><a href="#指定一个源文件，实现copy到目标目录。" class="headerlink" title="指定一个源文件，实现copy到目标目录。"></a>指定一个源文件，实现copy到目标目录。</h4><p>例如把/tmp /test.txt 拷贝到/tmp/test1.txt</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import os<br><br>pwd &#x3D; os.getcwd() #查看当前目录<br>print(pwd)<br><br>with open(&#39;test1.txt&#39;) as f1:<br>    with open(&#39;test2.txt&#39;,&#39;w&#39;) as f2:<br>        s &#x3D; f1.read()<br>        f2.write(s)<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="有一个文件，对其进行单词统计，不区分大小写，井显示单词重复最多的10个单词。"><a href="#有一个文件，对其进行单词统计，不区分大小写，井显示单词重复最多的10个单词。" class="headerlink" title="有一个文件，对其进行单词统计，不区分大小写，井显示单词重复最多的10个单词。"></a>有一个文件，对其进行单词统计，不区分大小写，井显示单词重复最多的10个单词。</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">简单处理后， 大概的得数如下：<br>the,  136<br>is,   60<br>a,   54<br>path,  52<br>if,    42<br>and,  39<br>to,   34<br>of,   33<br>on,  32<br>return,  30<br>实际上有效的path很多， 作为合法的单词path统计应该有100多个。<br>对单词做进一步处理后， 统计如下：<br>path,  137<br>the,  136<br>is,   60<br>a,   59<br>os,  50<br>if,    43<br>and,  40<br>to,   34<br>of,   33<br>on,  33<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">def wordcount(filename&#x3D;&#39;pathHelp.txt&#39;):<br>    word_count &#x3D; &#123;&#125;<br>    chars &#x3D; &#39;&#39;&#39;&#39;~!#$%^&amp;*()_+&#96;&#x3D;[]&#123;&#125;&lt;&gt;,.?&#x2F;&#39;&quot;|&quot;\\&#39;&#39;&#39;<br>    charset &#x3D; set(chars)<br><br>    #打开文件<br>    with open(filename) as f:<br>        for line in f: # 读取每一行<br>            wordlist &#x3D; line.split()  #空格分开字符串<br>            for word in wordlist:<br>                k &#x3D; word.strip(chars) #去掉左右两边的特殊字符<br>                if len(k) &lt; 1:<br>                    continue<br>                # print(key)<br>                #再次分割特殊字符串在中间的字符串<br>                start &#x3D; 0<br>                k &#x3D; k.lower()<br>                for i,c in enumerate(k):<br>                    if c in charset:<br>                        if start &#x3D;&#x3D; i:<br>                            start &#x3D; i + 1<br>                            continue<br>                        key &#x3D;k[start:i]<br>                        word_count[key] &#x3D; word_count.get(key,0) + 1<br>                        start &#x3D; i + 1<br>                else:<br>                    key &#x3D; k[start:]<br>                    word_count[key] &#x3D; word_count.get(key,0) + 1<br>                #字典将单词作为key，value默认值为0，统计重复出现次数逐渐加一<br>                word_count[key] &#x3D; word_count.get(key,0) + 1<br><br>    #用sorted按照字典value大小反序打印<br>    print(&quot;Start To Print&quot;)<br>    lst &#x3D; sorted(word_count.items(),key&#x3D;lambda  x:x[1],reverse&#x3D;True)<br>    for i in range(10):<br>        k,v &#x3D; lst[i]<br>        print(k,v)<br><br>wordcount()<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python文件操作序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python路径操作</title>
+    <url>/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="路径操作模块"><a href="#路径操作模块" class="headerlink" title="路径操作模块"></a>路径操作模块</h2><p>路径操作模块<br>3.4版本之前 os.path模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from os import path<br><br>p &#x3D; path.join(&#39;&#x2F;etc&#39;, &#39;sysconfig&#39;, &#39;network&#39;)<br>print(1, type(p), p)  # 路径的类型，输出路径<br>print(2, path.exists(p))  # 路径是否存在<br>print(3, path.split(p))  # 路径拆分(head, tail)<br>print(4, path.abspath(&#39;&#39;))  # 当前路径<br>p &#x3D; path.join(&#39;o:&#x2F;&#39;, p, &#39;test.txt&#39;)<br>print(5, path.dirname(p))  # 路径名<br>print(6, path.basename(p))  # 文件名<br>print(7, path.splitdrive(p))  # 以驱动器拆分输出路径<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &lt;class &#39;str&#39;&gt; &#x2F;etc\sysconfig\network<br>2 False<br>3 (&#39;&#x2F;etc\\sysconfig&#39;, &#39;network&#39;)<br>4 C:\python10\code\Python06<br>5 o:&#x2F;etc\sysconfig\network<br>6 test.txt<br>7 (&#39;o:&#39;, &#39;&#x2F;etc\\sysconfig\\network\\test.txt&#39;)<br><br>p1 &#x3D; path.abspath(__file__)<br>print(p1, path.basename(p1))<br>while p1 !&#x3D; path.dirname(p1):<br>    p1 &#x3D; path.dirname(p1)<br>    print(p1, path.basename(p1))<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>C:\python10\code\Python06\test.py test.py<br>C:\python10\code\Python06 Python06<br>C:\python10\code code<br>C:\python10 python10<br>C:\<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-4版本开始-pathlib模块"><a href="#3-4版本开始-pathlib模块" class="headerlink" title="3.4版本开始 pathlib模块"></a>3.4版本开始 pathlib模块</h3><ul>
+<li><p>建议使用pathlib模块，提供Path对象操作，包括目录和文件</p>
+</li>
+<li><p>from pathlib import Path</p>
+</li>
+</ul>
+<h2 id="pathlib模块-目录操作"><a href="#pathlib模块-目录操作" class="headerlink" title="pathlib模块-目录操作"></a>pathlib模块-目录操作</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">p &#x3D; Path()  # 当前目录<br>p &#x3D; Path(&#39;a&#39;, &#39;b&#39;, &#39;c&#x2F;d&#39;)  # 当前目录下的a&#x2F;b&#x2F;c&#x2F;d<br>p &#x3D; Path(&#39;&#x2F;etc&#39;)  # 根下的etc目录<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>路径拼接和分解</li>
+</ul>
+<h3 id="路径拼接-操作符"><a href="#路径拼接-操作符" class="headerlink" title="路径拼接 操作符/"></a>路径拼接 操作符/</h3><ul>
+<li>Path对象/Path对象</li>
+<li>Path对象/字符串或者字符串/Path对象</li>
+</ul>
+<h3 id="路径分解"><a href="#路径分解" class="headerlink" title="路径分解"></a>路径分解</h3><ul>
+<li>parts属性，可以返回路径中的每一个部分</li>
+</ul>
+<h3 id="joinpath"><a href="#joinpath" class="headerlink" title="joinpath"></a>joinpath</h3><ul>
+<li>joinpath(*other)连接多个字符串到path对象中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br><br>p &#x3D; Path()<br>p &#x3D; p &#x2F; &#39;a&#39;<br>p1 &#x3D; &#39;b&#39; &#x2F; p<br>p2 &#x3D; Path(&#39;c&#39;)<br>p3 &#x3D; p2 &#x2F; p1<br>print(1, p3)<br>print(2, p3.parts)<br>p4 &#x3D; p3.joinpath(&#39;etc&#39;, &#39;init.d&#39;, Path(&#39;httpd&#39;))<br>print(3, p4)<br>~~~~~~~~~~~~~~~~~~~~<br>1 c\b\a<br>2 (&#39;c&#39;, &#39;b&#39;, &#39;a&#39;)<br>3 c\b\a\etc\init.d\httpd<br></code></pre></td></tr></table></figure>
+
+<h3 id="获取路径"><a href="#获取路径" class="headerlink" title="获取路径"></a>获取路径</h3><ul>
+<li>str获取路径字符串</li>
+<li>bytes获取路径字符串的bytes</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br><br>p &#x3D; Path(&#39;&#x2F;etc&#39;)<br>print(str(p), bytes(p))<br>~~~~~~~~~~~~~~~~~~~~~~~~~~<br>\etc b&#39;\\etc&#39;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>父目录</p>
+<ul>
+<li><p>parent目录的逻辑父目录</p>
+</li>
+<li><p>parents父目录序列， 索引0是直接的父</p>
+</li>
+<li><p>例如，a/b/c/d, d[0]=a/b/c，索引0是直接的父</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>根目录或当前目录</th>
+<th>a/</th>
+<th>b/</th>
+<th>c/</th>
+<th>d/</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>索引</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>一般通过len(p.parents)-层数，获取想得到的目录</td>
+<td>len-1</td>
+<td>len-2</td>
+<td>len-3</td>
+<td>len-4</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br><br>p &#x3D; Path(&#39;a&#x2F;b&#x2F;c&#x2F;d&#39;)<br>print(0, p.parent)  # d索引0的父目录是<br>print(1, p.parent.parent) # d索引1的父目录是<br>print(2, p.parent.parent.parent)  # d索引2的父目录是<br>print(3, p.parent.parent.parent.parent)<br>for x in p.parents:  # x从0开始获取父目录<br>    print(x)<br>~~~~~~~~~~~~~~~~~~~~~<br>1 a\b\c<br>2 a\b<br>3 a<br>4 .<br>a\b\c<br>a\b<br>a.<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>name、Stem、Suffix、suffixes、with-suffix(suffix)、with-name(name)<ul>
+<li>name目录的最后一个部分</li>
+<li>suffix目录中最后一个部分的扩展名</li>
+<li>stem目录最后一个部分，没有后缀</li>
+<li>suffixes返回多个扩展名列表</li>
+<li>with-suffix(suffix)补充扩展名到路径尾部，返回新的路径，扩展名存在则无效</li>
+<li>with-name(name)替换目录最后一个部分并返回一个新的路径</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br><br>p &#x3D; Path(&#39;&#x2F;pythonedu&#x2F;mysqlinstall&#x2F;mysql.tar.gz&#39;)<br>print(1, p.name)<br>print(2, p.suffix)<br>print(3, p.suffixes)<br>print(4, p.stem)<br>print(5, p.with_name(&#39;mysql-5.tgz&#39;))<br>p &#x3D; Path(&#39;README&#39;)<br>print(6, p.with_suffix(&#39;.txt&#39;))<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 mysql.tar.gz<br>2 .gz<br>3 [&#39;.tar&#39;, &#39;.gz&#39;]<br>4 mysql.tar<br>5 \pythonedu\mysqlinstall\mysql-5.tgz<br>6 README.txt<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>cwd()返回当前工作目录</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">4</span>]: print(p.cwd())<br>/home/python/steven/projects/web12<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>home()返回当前家目录</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">In [<span class="hljs-number">5</span>]: print(p.home())<br>/home/python<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>is_判断<ul>
+<li>is_dir()是否是目录目录存在返回True</li>
+<li>is_file()是否是普通文件，文件存在返回True</li>
+<li>is_symlink()是否是软链接</li>
+<li>is_socket()是否是socket文件</li>
+<li>is_block_device()是否是块设备</li>
+<li>is_char_device()是否是字符设备</li>
+<li>is_absolute()是否是绝对路径</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [11]: p1 &#x3D; Path(&#39;&#x2F;dev&#39;)<br><br>In [12]: p1<br>Out[12]: PosixPath(&#39;&#x2F;dev&#39;)<br><br>In [13]: (p1 &#x2F; &#39;tty&#39;).is_char_device()<br>Out[13]: True<br><br>In [14]: (p1 &#x2F; &#39;tty&#39;).is_block_device()<br>Out[14]: False<br><br>In [15]: (p1 &#x2F; &#39;stdout&#39;).is_symlink()<br>Out[15]: True<br><br>In [16]: (p1 &#x2F; &#39;stdout&#39;).is_file()<br>Out[16]: False<br><br>In [17]: p2 &#x3D; Path()<br><br>In [18]: p2.is_absolute()<br>Out[18]: False<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>resolve()返回一个新的路径，这个新路径就是当前Path对象的绝对路径，如果是软链接则直接被解析</li>
+<li>absolute()也可以获取绝对路径，但是准荐使用resolve()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [19]: Path().resolve()<br>Out[19]: PosixPath(&#39;&#x2F;home&#x2F;python&#x2F;steven&#x2F;projects&#x2F;web&#39;)<br><br>In [4]: Path().absolute()<br>Out[4]: PosixPath(&#39;&#x2F;home&#x2F;python&#x2F;steven&#x2F;projects&#x2F;web&#39;)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>exists()目录或文件是否存在</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [8]: Path(&#39;&#x2F;etc&#x2F;test&#39;).exists()<br>Out[8]: False<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>rmdir()删除空目录。没有提供判断目录为空的方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [10]: Path(&#39;&#x2F;tmp&#x2F;test&#39;).rmdir()<br><br>In [11]: ll &#x2F;tmp<br>total 0<br><br># 如果目录有文件，会报错<br>OSError: [Errno 39] Directory not empty: &#39;&#x2F;tmp&#x2F;test&#39;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>touch(mode=0o666,exist_ok=True)创建一个文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [29]: Path(&#39;&#x2F;tmp&#x2F;1.sh&#39;).touch()<br><br>In [30]: ll &#x2F;tmp<br>total 1<br>-rw-rw-r-- 1 python    0 Apr 25 08:39 1.sh<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>as_uri()将路径返回成URI，例如’file:///etc/passwd’</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [31]: Path(&#39;&#x2F;tmp&#39;).as_uri()<br>Out[31]: &#39;file:&#x2F;&#x2F;&#x2F;tmp&#39;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>mkdir(mode=0o777,parents=False,exist_ok=False)<br>parents，是否创建父目录，True等同于mkdir -P; False时，父目录不存在，则抛出FileNotFoundError<br>exist_ok参数，在3.5版本加入。False时，路径存在，抛出FileExistsError；True时，FileExistsErrori被忽略</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [32]: Path(&#39;&#x2F;tmp&#x2F;test&#39;).mkdir()<br> <br>In [33]: ll &#x2F;tmp<br>total 1<br>drwxrwxr-x 2 python 4096 Apr 25 08:53 test&#x2F;<br><br>In [37]: Path(&#39;&#x2F;tmp&#x2F;a&#x2F;b&#x2F;c&#x2F;d&#39;).mkdir(parents&#x3D;True)<br><br>In [39]: Path(&#39;&#x2F;tmp&#x2F;a&#x2F;b&#x2F;c&#x2F;d&#39;).mkdir(parents&#x3D;True, exist_ok&#x3D;True)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>iterdir()<ul>
+<li>迭代当前路径</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br><br>p &#x3D; Path()<br>p &#x2F;&#x3D; &#39;a&#x2F;b&#x2F;c&#x2F;d&#39;<br>print(0, p)<br>print(1, p.exists())  # False<br><br><br>p.mkdir()  # FileNotFoundError<br>print(2, p.exists())  # False<br>p.mkdir(parents&#x3D;True)<br>p.mkdir(parents&#x3D;True, exist_ok&#x3D;True)<br>p &#x2F;&#x3D; &#39;readme.txt&#39;<br>print(3, p)  # 3 a&#x2F;b&#x2F;c&#x2F;d&#x2F;readme.txt<br>p.parent.rmdir()  # a&#x2F;b&#x2F;c<br>p.parent.exists()  # False &#39;a&#x2F;b&#x2F;c&#39;<br>p.mkdir()  # FileNotFoundError<br>p.mkdir(parents&#x3D;True)  # 成功，&#39;a&#x2F;b&#x2F;c&#x2F;d&#x2F;readme.txt&#39;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># 遍历，并判断文件类型，如果是目录是否可以判断其是否为空？<br><br>from pathlib import Path<br><br>p &#x3D; Path()<br>p &#x2F;&#x3D; &#39;a&#x2F;b&#x2F;c&#x2F;d&#x2F;readme.txt&#39;<br>p.mkdir(parents&#x3D;True, exist_ok&#x3D;True)<br><br>for x in p.parents[len(p.parents)-1].iterdir():<br>    &quot;&quot;&quot;<br>    p.parents[len(p.parents)-1],获取的是当前文件夹的位置, readme.txt的第4层父是. 为了获取.的位置<br>    p.parents[len(p.parents)-1].iterdir()，迭代生成器<br>    &quot;&quot;&quot;<br>    print(x, end&#x3D;&#39;\t&#39;)<br>    if x.is_dir():  # 判断是会否是文件夹<br>        flag &#x3D; False<br>        for _ in x.iterdir():  # 判断里面是否有文件夹<br>            flag &#x3D; True<br>            break<br>        # for 循环是否可以使用else子句<br>        print(&#39;dir&#39;, &#39;Not Empty&#39; if flag else &#39;Empyt&#39;, sep&#x3D;&#39;\t&#39;)<br>    elif x.is_file():  # 判断是否是文件<br>        print(&#39;file&#39;)<br>    else:<br>        print(&#39;other file&#39;)<br>~~~~~~~~~~~~~~~~~~~~<br>Untitled.ipynb  file<br>a   dir Not Empty<br>b   dir Empyt<br>Python10Training    dir Not Empty<br></code></pre></td></tr></table></figure>
+
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><ul>
+<li>glob(pattern)通配给定的模式</li>
+<li>rglob(pattern)通配给定的模式，递归目录,返回一个生成器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [4]: list(Path().glob(&#39;test*&#39;))  # 返回当前对象下的test开头的文件<br>Out[4]: <br>[PosixPath(&#39;test.b&#39;),<br> PosixPath(&#39;test1.py&#39;),<br> PosixPath(&#39;test.a&#39;),<br> PosixPath(&#39;test.py&#39;)]<br><br>In [5]: list(Path().glob(&#39;**&#x2F;*.py&#39;))  #递归所有目录，等同rglob<br>Out[5]: [PosixPath(&#39;test1.py&#39;), PosixPath(&#39;test.py&#39;)]<br><br>In [6]: g &#x3D; Path().rglob(&#39;*.py&#39;)  # 生成器<br><br>In [7]: next(g)<br>Out[7]: PosixPath(&#39;test1.py&#39;)<br><br>In [8]: next(g)<br>Out[8]: PosixPath(&#39;test.py&#39;)<br></code></pre></td></tr></table></figure>
+
+<h3 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h3><ul>
+<li>match(pattern)</li>
+<li>模式匹配，成功返回True</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">Path(&#39;a&#x2F;b.py&#39;).match(&#39;*.py&#39;)  # True<br>Path(&#39;&#x2F;a&#x2F;b&#x2F;c.py&#39;).match(&#39;b&#x2F;*.py&#39;)  # True<br>Path(&#39;&#x2F;a&#x2F;b&#x2F;c.py&#39;).match(&#39;a&#x2F;*.py&#39;)  # False<br>Path(&#39;&#x2F;a&#x2F;b&#x2F;c.py&#39;).match(&#39;a&#x2F;*&#x2F;*.py&#39;)  # True<br>Path(&#39;&#x2F;a&#x2F;b&#x2F;c.py&#39;).match(&#39;a&#x2F;**&#x2F;*.py&#39;)  # True<br>Path(&#39;&#x2F;a&#x2F;b&#x2F;c.py&#39;).match(&#39;**&#x2F;*.py&#39;)  # True<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>stat()相当于stat命令</li>
+<li>lasts()同stat()，但如果是符号链接，则显示符号链接本身的文件信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">$ ln -s test t<br>$ ll<br>total 0<br>lrwxrwxrwx 1 python python 4 Apr 25 12:30 t -&gt; test<br>-rw-rw-r-- 1 python python 0 Apr 25 12:30 test<br>In [1]: from pathlib import Path<br><br>In [2]: p &#x3D; Path(&#39;test&#39;)<br><br>In [3]: p.stat()<br>Out[3]: os.stat_result(st_mode&#x3D;33204, st_ino&#x3D;917685, st_dev&#x3D;2050, st_nlink&#x3D;1, st_uid&#x3D;502, st_gid&#x3D;502, st_size&#x3D;0, st_atime&#x3D;1524630611, st_mtime&#x3D;1524630611, st_ctime&#x3D;1524630611)<br><br>In [4]: p1 &#x3D; Path(&#39;t&#39;)<br><br>In [5]: p1.stat()<br>Out[5]: os.stat_result(st_mode&#x3D;33204, st_ino&#x3D;917685, st_dev&#x3D;2050, st_nlink&#x3D;1, st_uid&#x3D;502, st_gid&#x3D;502, st_size&#x3D;0, st_atime&#x3D;1524630611, st_mtime&#x3D;1524630611, st_ctime&#x3D;1524630611)<br><br>In [7]: p1.lstat()<br>Out[7]: os.stat_result(st_mode&#x3D;41471, st_ino&#x3D;917686, st_dev&#x3D;2050, st_nlink&#x3D;1, st_uid&#x3D;502, st_gid&#x3D;502, st_size&#x3D;4, st_atime&#x3D;1524630620, st_mtime&#x3D;1524630618, st_ctime&#x3D;1524630618)<br></code></pre></td></tr></table></figure>
+
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>open(mode=’r’,buffering=-1，encoding=None,errors=None,newline=None)</li>
+<li>使用方法类似内建函数open。返回一个文件对象</li>
+</ul>
+<h3 id="3-5增加的新函数"><a href="#3-5增加的新函数" class="headerlink" title="3.5增加的新函数"></a>3.5增加的新函数</h3><ul>
+<li>read_bytes()<ul>
+<li>以’rb’读取路径对应文件，并返回二进制流。看源码</li>
+</ul>
+</li>
+<li>read_text(encoding=None,errors=None)<ul>
+<li>以’rt’方式读取路径对应文件，返回文本。</li>
+</ul>
+</li>
+<li>Path.write_bytes(data)<ul>
+<li>以’wb’方式写入数据到路径对应文件。</li>
+</ul>
+</li>
+<li>write_text(data,encoding=None,errors=None)<ul>
+<li>以’wt方式写入字符串到路径对应文件。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">In [4]: p &#x3D; Path(&#39;my_binary_file&#39;)<br><br>In [5]: p.write_bytes(b&#39;Binary file contents&#39;)<br>Out[5]: 20<br><br>In [6]: p.read_bytes()<br>Out[6]: b&#39;Binary file contents&#39;<br><br>In [7]: p &#x3D; Path(&#39;my_test_file&#39;)<br><br>In [8]: p.write_text(&#39;Text file contents&#39;)<br>Out[8]: 18<br><br>In [9]: p.read_text()<br>Out[9]: &#39;Text file contents&#39;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from pathlib import Path<br>p &#x3D; Path(&#39;test.py&#39;)<br>p.write_text(&#39;hello python&#39;)<br>print(p.read_text())<br>with p.open() as f:<br>    print(f.read(5))<br>~~~~~~~~~~~~~~~~~~~~~~~~~<br>hello python<br>hello<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pythonS路径操作</tag>
+      </tags>
+  </entry>
 </search>
