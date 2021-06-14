@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/ashjian/picBed02/main/20210507130335.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ashjian/picBed02/main/20210507130336.png">
 <meta property="article:published_time" content="2021-05-29T07:45:53.582Z">
-<meta property="article:modified_time" content="2021-05-07T17:49:41.445Z">
+<meta property="article:modified_time" content="2021-06-12T14:09:44.519Z">
 <meta property="article:author" content="ashjian">
 <meta property="article:tag" content="python文件操作序">
 <meta name="twitter:card" content="summary">
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-08T01:49:41+08:00">
-                2021-05-08
+              <time title="更新于" itemprop="dateModified" datetime="2021-06-12T22:09:44+08:00">
+                2021-06-12
               </time>
             
           </span>
@@ -659,7 +659,7 @@
 <p><strong>read</strong></p>
 <p>read(size=-1)</p>
 <p>size表示读取的多少个字符或字节；负数或者None表示读取到EOF</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39; o: &#x2F; t est 4&#39; , &#39; r+ &#39; ,  0) f . wr i t e( &quot;mag edu&quot; )<br>f.write(&#39;\n&#39;)<br>f.write(&#39;马哥教育＇）<br>f.seek(0)<br>f.read(7)<br>f.close()<br><br>＃二进制<br>f &#x3D; open(&#39;test4&#39;,&#39;rb+&#39;) <br>f.read (7)<br>f.read(l)<br>f.close()<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plain">f &#x3D; open(&#39;o:&#x2F;test4&#39;, &#39;r+&#39;, 0) <br>f.write( &quot;magedu&quot;)<br>f.write(&#39;\n&#39;)<br>f.write(&#39;马哥教育＇）<br>f.seek(0)<br>f.read(7)<br>f.close()<br><br>＃二进制<br>f &#x3D; open(&#39;test4&#39;,&#39;rb+&#39;) <br>f.read (7)<br>f.read(l)<br>f.close()<br></code></pre></td></tr></table></figure>
 
 <h2 id="行读取"><a href="#行读取" class="headerlink" title="行读取"></a>行读取</h2><p>readline( size =-1)</p>
 <p>一行行读取文件内容。size设置一次能读取行内几个字符或字节。</p>
@@ -698,7 +698,7 @@
 <p>2、上下文管理</p>
 <p>一种特殊的语法，交给解释器去释放文件对象</p>
 <p><strong>上下文管理</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">del   f<br><br>with  open( &#39; t est   &#39; ) f . wr i t e ( &quot; abc&quot;<br><br>＃ 测试f 是否关闭<br><br>f.closed # f的作用<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">del   f<br><br>with  open(&#39;test&#39;) <br>f.write(&quot;abc&quot;)<br><br>＃ 测试f 是否关闭<br><br>f.closed # f的作用<br></code></pre></td></tr></table></figure>
 
 <p>上下文管理</p>
 <ol>
@@ -890,7 +890,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">493</span>
+                  <span class="site-state-item-count">499</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -901,7 +901,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -912,7 +912,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">110</span>
+                  <span class="site-state-item-count">116</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1035,7 +1035,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">431.2k</span>
+    <span title="本站总字数">445.4k</span>
   
 </div>
 
