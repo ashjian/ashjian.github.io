@@ -31851,9 +31851,9 @@ your browser does not support the video tag
 <p>json的数据类型</p>
 <p>值</p>
 <p>双引号引起来的字符串、数值、true和false、null、对象、数组，这些都是值!</p>
-<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150508781.png" alt="img"></p>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095444.png" alt="img"></p>
 <p>字符串<br>由双引号包围起来的任意字符的组合，可以有转义字符。<br>数值<br>有正负，有整数、浮点数。<br>对象<br>无序的键值对的集合<br>格式: {key1:value1, … ,keyn:valulen}<br>key必须是一个字符串，需要双引号包围这个字符串。<br>value可以是任意合法的值。</p>
-<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150528827.png" alt="在这里插入图片描述"></p>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095458.png" alt="在这里插入图片描述"></p>
 <p>数组<br>有序的值的集合 格式：[val…valn]</p>
 <p>实例</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&#123;<br>  &quot;person&quot;: [<br>  	&#123;<br>  	  &quot;name&quot;: &quot;tom&quot;,<br>  	  &quot;age&quot;: 18<br>  	 &#125;，<br>  	 &#123;<br>  	   &quot;name&quot;: &quot;jerry&quot;,<br>  	   &quot;age&quot;: 16 <br>  	  &#125;<br>  	 ],<br>  	 &quot;total&quot;: 2<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -31931,7 +31931,7 @@ your browser does not support the video tag
 <p> 一般json编码的数据很少落地， 数据都是通过网络传输。传输的时候，要考虑压缩它。本质上来说它就是个文本，就是个字符串。<br> json很简单，几乎编程语言都支持Json,所以应用范围十分广泛。</p>
 <h2 id="MessagePack"><a href="#MessagePack" class="headerlink" title="MessagePack"></a>MessagePack</h2><p>MessagePack是一个基于 二进制 高效的对象序列化类库，可用于跨语言通信。</p>
 <p> 它可以像JSON那样，在许多种语言之间交换结构对象。但是它比JSON更快速也更轻巧。支持Python、Ruby、 Java、 C/C++等众多语言。宣称比Google Protocol Buffers还要快4倍。<br> 兼容json和pickle。</p>
-<p><img src="Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/20190919150809992.png" alt="在这里插入图片描述"></p>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095512.png" alt="在这里插入图片描述"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># 72 bytes<br><br>&#123;&quot;person&quot;:[&#123;&quot;name&quot;:&quot;tom&quot;,”age&quot;:18&#125;,&#123;&quot;name&quot;:&quot;jerry&quot;,”age&quot;:16&#125;],&quot;total&quot;:2&#125;<br><br># 48 bytes<br><br># 82 a6 70 65 72 73 6f 6e 92 82 a4 6e 61 6d 65 a3 74 6f 6d a3 61 67 65 12 82 a4 6e 61 6d 65 a5 6a 65 72 72 79 a3 61 67 65 10 a5 74 6f 74 61 6c 02<br></code></pre></td></tr></table></figure>
 
 <p>可以看出大大节约了空间</p>
@@ -33614,5 +33614,976 @@ your browser does not support the video tag
       <tags>
         <tag>python正则表达式</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Python多继承</title>
+    <url>/Python%E5%A4%9A%E7%BB%A7%E6%89%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Python不同版本的类"><a href="#Python不同版本的类" class="headerlink" title="Python不同版本的类"></a>Python不同版本的类</h2><ul>
+<li>Python2.2之前类是没有共同的祖先的，之后引入object类，它是所有类的共同祖先类object。</li>
+<li>Python2中为了兼容，分为古典类（旧式类）和新式类。</li>
+<li>Python3中全部都是新式类。</li>
+<li>新式类都是继承自object的，新式类可以使用super。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># 以下代码在python2.x中运行<br># 古典类（旧式类）<br>class A:pass<br><br><br><br># 新式类<br>class B(object):pass<br><br><br>print(dir(A))<br>print(dir(B))<br>print(A.__bases__)<br>print(B.__bases__)<br><br><br># 古典类<br>a &#x3D; A()<br>print(a.__class__)<br>print(type(a))<br><br><br># 新式类<br>b &#x3D; B()<br>print(b.__class__)<br>print(type(b))<br></code></pre></td></tr></table></figure>
+
+<h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><ul>
+<li>OCP原则：多用”继承”、少修改</li>
+<li>继承的用途：增强基类、实现多态</li>
+<li>多态<ul>
+<li>在面向对象中，父类、子类通过继承联系在一起，如果可以通过一套方法，就可以实现不同表现，就是多态。</li>
+</ul>
+</li>
+<li>一个类继承自多个类就是多继承，它将具有多个类的持征。</li>
+</ul>
+<h2 id="多继承弊端"><a href="#多继承弊端" class="headerlink" title="多继承弊端"></a>多继承弊端</h2><ul>
+<li><p>多继承很好的模拟了世界，因为事物很少是单一继承，但是舍弃简单，然引入复杂性，带来了冲突。</p>
+</li>
+<li><p>如同一个孩子继承了来自父母双方的特征。那么到底眼睛像爸爸还是妈妈呢？孩了究竟该像谁多一点呢？</p>
+</li>
+<li><p>多继承的实现会导致编译器设计的复杂度增加，所以现在很多语言也舍弃了类的多继承。</p>
+</li>
+<li><p>C++支持多继承；Java舍弃了多继承。</p>
+<ul>
+<li>Java中，一个类可以实现多个接口一个接口也可以继承多个接口。Java的接口很纯粹，只是方法的声明，继承者之须实现这些方法，就貝有了这些能力后就能干什么。</li>
+</ul>
+</li>
+<li><p>多继承可能会带来二义性，例如，猫和狗都继承自动物类，现在如果一个类多继承了猫和狗类，猫和狗都有shout方法，子类究竟继承谁的shout呢？</p>
+</li>
+<li><p>解决方案</p>
+<ul>
+<li>实现多继承的浯言，要解决二义性0深度优先或者广度优先。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Python多继承实现"><a href="#Python多继承实现" class="headerlink" title="Python多继承实现"></a>Python多继承实现</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span><span class="hljs-params">(基类列表)</span>:</span><br>    类体<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">digraph G &#123;<br>    Myclass -&gt; D<br>    Myclass -&gt; C<br>    D -&gt; B<br>    C -&gt; A<br>    B -&gt; A<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">digraph G &#123;<br>    Myclass -&gt; D<br>    D -&gt; C<br>    C -&gt; B<br>    B -&gt; A<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>上图是多继承，下图是单一继承</p>
+</li>
+<li><p>多继承带来路径选择问题，究竟继承哪个父类的特征呢</p>
+</li>
+<li><p>Python使用MRO（method esolution order）解决基类搜索顺序问题</p>
+</li>
+<li><p>历史原因，MRO有三个搜索算法：</p>
+<ul>
+<li>经典算法，按照定义从左到右，深度优先策。2.2之前上图的MRO是MyClass,D,B,A,C,A<br>。</li>
+<li>新式类算法，经典算法的升级，重复的只保留最后一个。2.2上图的MRO是MyClass,D,B,C,A,object</li>
+<li>C3算法，在类被创建出来的时候，就计算出一个MRO有序列表。2.3之后，Python30唯一支持的算法<ul>
+<li>左图中的MROEMyCIass,D,B,C,A,object的列表</li>
+<li>C3算法解决多继承的二义性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多继承的缺点"><a href="#多继承的缺点" class="headerlink" title="多继承的缺点"></a>多继承的缺点</h2><ul>
+<li><p>当类很多，继承复杂的情况下，继承路径太多，很难说清什么样的继承路径。</p>
+</li>
+<li><p>python语法去是允许多继承，但python代码是解释执行，只有执行到的时候，才发现错误。</p>
+</li>
+<li><p>团队协作开发，如果引入多继承，那代码将不可控。</p>
+</li>
+<li><p>不管编程语言是否支持多继承，都应当避免多继承。</p>
+</li>
+<li><p>Python的面向对象，我们看到的太灵活了，太开放了，所以要团队守规矩。</p>
+</li>
+</ul>
+<h2 id="Mixin（重要）"><a href="#Mixin（重要）" class="headerlink" title="Mixin（重要）"></a>Mixin（重要）</h2><ul>
+<li><p>类有下面的继承关系</p>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095701.png" alt="image-20210625004825688"></p>
+</li>
+<li><p>文档Document子类提供打印能力</p>
+</li>
+<li><p>Word, Pdf类是Document子类提供打印能力</p>
+</li>
+</ul>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><h4 id="在Document中提供print方法"><a href="#在Document中提供print方法" class="headerlink" title="在Document中提供print方法"></a>在Document中提供print方法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Document:<br>    def __int__(self, content):<br>        self.content &#x3D; content<br><br><br>    def print(self):<br>        raise NotImplementedError()<br><br><br>class Word(Document): pass<br>class Pdf(Document): pass<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>基类提供的方法不应该具体实现，因为它未必适合子类的打印，子类中需要盖重写。</li>
+<li>print是一种能力——打印功能，不是所有的Document的子类都需要的，所以，从这个角度出发，有点问题。</li>
+</ul>
+<h4 id="需要打印的子类上增加"><a href="#需要打印的子类上增加" class="headerlink" title="需要打印的子类上增加"></a>需要打印的子类上增加</h4><ul>
+<li>如果在现有子类上直接增加，违反了OCP的原则，所以应该继承后增加。因此有下图</li>
+</ul>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095702.png" alt="image-20210625004910133"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Printable:<br>    def print(self):<br>        print(self.content)<br><br><br>class Document:  # 第三方库，不允许修改<br>    def __init__(self, content):<br>        self.content &#x3D; content<br><br><br>class Word(Document): pass  # 第三方库，不允许修改<br>class Pdf(Document): pass  # 第三方库，不允许修改<br><br><br>class PrintableWord(Printable, Word): pass<br><br>print(PrintableWord.__dict__)<br>print(PrintableWord.mro())<br><br>pw &#x3D; PrintableWord(&#39;test string&#39;)<br>pw.print()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>&#123;&#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None&#125;<br>[&lt;class &#39;__main__.PrintableWord&#39;&gt;, &lt;class &#39;__main__.Printable&#39;&gt;, &lt;class &#39;__main__.Word&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br>test string<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>看似不错，如果需要还要提供其他能力，如何继承？</p>
+</li>
+<li><p>应用于网络，文档应该具备序列化的能力，类上就应该实现序列化。</p>
+</li>
+<li><p>可序列化还可能分为使用pickle、json、messagepack等.。</p>
+</li>
+<li><p>这个时候发现，类可能太多了，继承的方式不是很好了·</p>
+</li>
+<li><p>功能太多，A类需要某几样功能，B类需要另几样功能，很繁琐。</p>
+</li>
+</ul>
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><ul>
+<li>用装饰器增强一个类，把功能给类附加上去，那个类需要，就装饰它</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">def printable(cls):<br>    def _print(self):<br>        print(self.content, &#39;装饰器&#39;)<br>    cls.print &#x3D; _print<br>    return cls<br><br>class Document:  # 第三方库，不允许修改<br>    def __init__(self, content):<br>        self.content &#x3D; content<br><br><br>class Word(Document): pass  # 第三方库，不允许修改<br>class Pdf(Document): pass  # 第三方库，不允许修改<br><br><br>@printable  # 先继承，后装饰<br>class PrintableWord(Word): pass<br><br>print(PrintableWord.__dict__)<br>print(PrintableWord.mro())<br><br>pw &#x3D; PrintableWord(&#39;test string&#39;)<br>pw.print()<br><br><br>@printable<br>class PrintablePdf(Word): pass<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>&#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;, &#39;print&#39;: &lt;function printable.&lt;locals&gt;._print at 0x00000290683E19D8&gt;&#125;<br>[&lt;class &#39;__main__.PrintableWord&#39;&gt;, &lt;class &#39;__main__.Word&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br>test string 装饰器<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>优点：</li>
+<li>简单方便，在需要的地方动态增加，直接使用装饰器</li>
+</ul>
+<h4 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h4><ul>
+<li>先看代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Document:  # 第三方库，不允许修改<br>    def __init__(self, content):<br>        self.content &#x3D; content<br><br><br>class Word(Document): pass  # 第三方库，不允许修改<br>class Pdf(Document): pass  # 第三方库，不允许修改<br><br><br>class PrintableMixin:<br>    def print(self):<br>        print(self.content, &#39;Mixin&#39;)<br><br><br>class PrintableWord(PrintableMixin, Word): pass<br><br>print(1, PrintableWord.__dict__)<br>print(2, PrintableWord.mro())<br><br>def printable(cls):<br>    def _print(self):<br>        print(self.content, &#39;装饰器&#39;)<br>    cls.print &#x3D; _print<br>    return cls<br><br><br>@printable<br>class PrintablePdf(Word): pass<br>print(3, PrintablePdf.__dict__)<br>print(4, PrintablePdf.mro())<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &#123;&#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None&#125;<br>2 [&lt;class &#39;__main__.PrintableWord&#39;&gt;, &lt;class &#39;__main__.PrintableMixin&#39;&gt;, &lt;class &#39;__main__.Word&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br>3 &#123;&#39;print&#39;: &lt;function printable.&lt;locals&gt;._print at 0x000001C50E361AE8&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None&#125;<br>4 [&lt;class &#39;__main__.PrintablePdf&#39;&gt;, &lt;class &#39;__main__.Word&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Mixin就是其他类混合进来，同时带来了类的属性和方法。</li>
+<li>这里看来Mixin类和装饰器效果一样，也没有什么特别的。但是Mixin是类，就可以继承。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Document:  # 第三方库，不允许修改<br>    def __init__(self, content):<br>        self.content &#x3D; content<br><br><br>class Word(Document): pass  # 第三方库，不允许修改<br>class Pdf(Document): pass  # 第三方库，不允许修改<br><br><br>class PrintableMixin:<br>    def print(self):<br>        print(self.content, &#39;Mixin&#39;)<br><br><br>class PrintableWord(PrintableMixin, Word): pass<br><br>print(1, PrintableWord.__dict__)<br>print(2, PrintableWord.mro())<br><br>pw &#x3D; PrintableWord(&#39;test string&#39;)<br>pw.print()<br><br><br>class SuperPrintableMixin(PrintableMixin):<br>    def print(self):<br>        print(&#39;~&#39; * 20)  # 打印增强<br>        super().print()<br>        print(&#39;~&#39; * 20)  # 打印增强<br><br># PrintableMixin 类的增强<br>class SuperPrintablePdf(SuperPrintableMixin, Pdf): pass<br><br>print(3, SuperPrintablePdf.__dict__)<br>print(4, SuperPrintablePdf.mro())<br><br><br>spp &#x3D; SuperPrintablePdf(&#39;super print pdf&#39;)<br>spp.print()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;&#125;<br>2 [&lt;class &#39;__main__.PrintableWord&#39;&gt;, &lt;class &#39;__main__.PrintableMixin&#39;&gt;, &lt;class &#39;__main__.Word&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br>test string Mixin<br>3 &#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;&#125;<br>4 [&lt;class &#39;__main__.SuperPrintablePdf&#39;&gt;, &lt;class &#39;__main__.SuperPrintableMixin&#39;&gt;, &lt;class &#39;__main__.PrintableMixin&#39;&gt;, &lt;class &#39;__main__.Pdf&#39;&gt;, &lt;class &#39;__main__.Document&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br>~~~~~~~~~~~~~~~~~~~~<br>super print pdf Mixin<br>~~~~~~~~~~~~~~~~~~~~<br></code></pre></td></tr></table></figure>
+
+<h2 id="Mixin类"><a href="#Mixin类" class="headerlink" title="Mixin类"></a>Mixin类</h2><ul>
+<li><p>Mixin本质上就是多继承实现的。（通过多继承改变mro的搜索顺序列表，引入Mixin类来添加或覆盖新功能）</p>
+</li>
+<li><p>Mixin体现的是一种组合的设计模式。</p>
+</li>
+<li><p>在面向对象的设计中，一个复杂的类，往往需要很多功能，而这些功能有来自不同的类提供，这就需要很多的类组合在一起。</p>
+</li>
+<li><p>从设计模式的角度来说，多组合，少继承。（组合优于继承，虽然Mixin也是通过继承来使用的，但视为组合)（在python中，组合是通过多继承来实现的）</p>
+</li>
+<li><p>Mixin类的使用原则</p>
+<ul>
+<li>Mixin类中不应该显式的出现<strong>init</strong>初始化方法</li>
+<li>Mixin类通常不能独立工作，因为它是准备混入别的类中的部分功能实现</li>
+<li>Mixin类的祖先类也应是Mixin类</li>
+</ul>
+</li>
+<li><p>使用时，Mixin类通常在继承列表的第一个位置，例如class PrintableWord(PrintableMixin,Word):pass</p>
+</li>
+<li><p>Mixin类和装饰器</p>
+<ul>
+<li>这两种方式都可以使用，看个人喜好。</li>
+<li>如果还需要继承就得使用Mixin类的方式。</li>
+</ul>
+</li>
+</ul>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆"><a href="#Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆" class="headerlink" title="Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆"></a>Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span>:</span><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><span class="hljs-keyword">pass</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, radius)</span>:</span><br>        self.radius = radius<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.radius**<span class="hljs-number">2</span> * <span class="hljs-number">3.14</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, x, y, z)</span>:</span><br>        self.x = x<br>        self.y = y<br>        self.z = z<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        x, y, z = self.x, self.y, self.z<br>        p = (x + y + z) / <span class="hljs-number">2</span><br>        area = math.sqrt((p - x) * (p - y) * (p - z))<br>        <span class="hljs-keyword">return</span> area<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, length, width)</span>:</span><br>        self.length = length<br>        self.width = width<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.length * self.width<br><br>c = Circle(<span class="hljs-number">5</span>)<br>print(c.area)<br><br>t = Triangle(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br>print(t.area)<br><br>r = Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br>print(r.area)<br></code></pre></td></tr></table></figure>
+
+<h3 id="上题圆类的数据可序列化"><a href="#上题圆类的数据可序列化" class="headerlink" title="上题圆类的数据可序列化"></a>上题圆类的数据可序列化</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-keyword">import</span> pickle<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span>:</span><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><span class="hljs-keyword">pass</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, radius)</span>:</span><br>        self.radius = radius<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.radius**<span class="hljs-number">2</span> * <span class="hljs-number">3.14</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Triangle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, x, y, z)</span>:</span><br>        self.x = x<br>        self.y = y<br>        self.z = z<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        x, y, z = self.x, self.y, self.z<br>        p = (x + y + z) / <span class="hljs-number">2</span><br>        area = math.sqrt((p - x) * (p - y) * (p - z))<br>        <span class="hljs-keyword">return</span> area<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span><span class="hljs-params">(Shape)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, length, width)</span>:</span><br>        self.length = length<br>        self.width = width<br><br><span class="hljs-meta">    @property</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.length * self.width<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SerialCircle</span><span class="hljs-params">(Circle)</span>:</span>  <span class="hljs-comment">#使用继承过于死板，建议使用装饰函数或Mixin组合功能</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">serial</span><span class="hljs-params">(self, file)</span>:</span>	<span class="hljs-comment">#支持的格式过于单一，而且序列化应该支持内存不落地序列化</span><br>        <span class="hljs-keyword">with</span> open(file, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:<br>            pickle.dump(self, f)  <span class="hljs-comment">#序列化不支持自定义类，只支持内建类</span><br><br><br>filename = <span class="hljs-string">'D:/MyMD/Python/08-Python面向对象/serialCircle.txt'</span><br>c = SerialCircle(<span class="hljs-number">5</span>)<br>c.serial(filename)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ul>
+<li>用面向对象实现LinkList链表<ul>
+<li>单向链表实现append, iternodes方法</li>
+<li>双向链表实现append, pop, insert, remove, iternoders方法</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/ashjian/picBed/raw/master/20210625095647.png" alt="image-20210625011155851"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkList</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span><br>        self.lst = []<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">append</span><span class="hljs-params">(self, item)</span>:</span><br>        self.lst.append(item)  <span class="hljs-comment">#在类的方法能和内置函数同名，不会像在方法中内嵌函数和内置函数同名造成递归</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">iternodes</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> self.lst<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> str(self.lst)<br><br>l = LinkList()<br>l.append(<span class="hljs-number">5</span>)<br>l.append(<span class="hljs-number">7</span>)<br>l.append(<span class="hljs-number">8</span>)<br>print(l)<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> l.iternodes():<br>    print(i)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class SingleNode:<br>    &quot;&quot;&quot;<br>    这是一个节点<br>    &quot;&quot;&quot;<br>    def __init__(self, value, next &#x3D; None):<br>        self.value &#x3D; value<br>        self.next &#x3D; next<br>        self.prev &#x3D; None<br><br>    def __repr__(self):<br>        return str(self.value)<br><br>class LinkedList:<br>    &quot;&quot;&quot;<br>    这是链表<br>    &quot;&quot;&quot;<br>    def __init__(self):<br>        self.nodes &#x3D; []<br>        self.head &#x3D; None<br>        self.tail &#x3D; None<br><br>    def append(self, value):<br>        node &#x3D; SingleNode(value)<br>        self.nodes.append(node)<br>        prev &#x3D; self.tail<br>        if prev is None:<br>            self.head &#x3D; node<br>        else:<br>            prev.next &#x3D; node<br>        self.tail &#x3D; node<br><br><br>    def iternodes(self):<br>        current &#x3D; self.head<br>        while current:<br>            yield current<br>            current &#x3D; current.next<br><br>    def __repr__(self):<br>        return str(self.nodes)<br><br>l &#x3D; LinkedList()<br>l.append(5)<br>l.append(6)<br>l.append(4)<br>print(l)<br>for i in l.iternodes():<br>    print(i)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs pyton">class SingleNode:<br>    &quot;&quot;&quot;<br>    这是一个节点<br>    &quot;&quot;&quot;<br>    def __init__(self, value, next &#x3D; None, prev &#x3D; None):<br>        self.value &#x3D; value<br>        self.next &#x3D; next<br>        self.prev &#x3D; prev<br><br>    def __repr__(self):<br>        return str(self.value)<br><br>    def __str__(self):<br>        return str(self.value)<br><br>class LinkedList:<br>    &quot;&quot;&quot;<br>    这是链表<br>    &quot;&quot;&quot;<br>    def __init__(self):<br>        self.nodes &#x3D; []<br>        self.head &#x3D; None<br>        self.tail &#x3D; None<br><br>    def append(self, value):<br>        node &#x3D; SingleNode(value)<br>        self.nodes.append(node)<br>        prev &#x3D; self.tail<br>        if self.head is None:<br>            self.head &#x3D; node<br>        else:<br>            self.tail.next &#x3D; node<br>            node.prev &#x3D; self.tail<br>        self.tail &#x3D; node<br><br><br>    def iternodes(self, reverse&#x3D;False):<br>        current &#x3D; self.tail if reverse else self.head<br>        while current:<br>            yield current<br>            current &#x3D; current.prev if reverse else current.next<br><br>    def pop(self):<br>        if self.tail is None:<br>            raise Exception(&quot;Empty&quot;)<br>        tail &#x3D; self.tail<br>        head &#x3D; self.head<br>        prev &#x3D; tail.prev<br>        if head is None:<br>            self.head &#x3D; None<br>            self.tail &#x3D; None<br>        else:<br>            self.tail &#x3D; prev<br>            prev.next &#x3D; None<br>            self.nodes.pop()<br>        return tail.value<br><br>    # def getitem(self, index):<br>    #     return self.nodes[index]<br><br>    def getitem(self, index):<br>        if index &lt; 0:<br>            return<br>        for i, node in enumerate(self.iternodes()):<br>            if i &#x3D;&#x3D; index:<br>                return node<br><br>    def insert(self, index, value):<br>        node &#x3D; SingleNode(value)<br>        if index &lt; 0:<br>            return<br>        current &#x3D; None<br>        for i, item in enumerate(self.iternodes()):<br>            if i &#x3D;&#x3D; index:<br>                current &#x3D; item<br>        if current is None:<br>            self.append(node)<br>            return<br>        elif self.head &#x3D;&#x3D; current:<br>            self.head &#x3D; node<br>            node.prev &#x3D; current.prev<br>            node.next &#x3D; current<br>            current.prev &#x3D; node<br>            self.nodes.insert(index, node)<br>        else:<br>            node.prev &#x3D; current.prev<br>            node.next &#x3D; current<br>            current.prev.next &#x3D; node<br>            current.prev &#x3D; node<br>            self.nodes.insert(index, node)<br><br>    def remove(self, index):<br>        if index &lt; 0:<br>            return<br>        current &#x3D; None<br>        for i, item in enumerate(self.iternodes()):<br>            if i &#x3D;&#x3D; index:<br>                current &#x3D; item<br>                self.nodes.pop(index)<br>        if current is None:<br>            return<br>        elif self.head &#x3D;&#x3D; current:<br>            next &#x3D; current.next<br>            next.prev &#x3D; None<br>            self.head &#x3D; next<br>        elif self.tail &#x3D;&#x3D; current:<br>            prev &#x3D; current.prev<br>            prev.next &#x3D; None<br>            self.tail &#x3D; prev<br>        else:<br>            prev &#x3D; current.prev<br>            next &#x3D; current.next<br>            prev.next &#x3D; next<br>            next.prev &#x3D; prev<br>        del current<br><br>    def __repr__(self):<br>        return str(self.nodes)<br><br>    def __str__(self):<br>        return str(self.nodes)<br><br>    def __getitem__(self, index):<br>        return self.nodes[index]<br><br>l &#x3D; LinkedList()<br>l.append(0)<br>l.append(1)<br>l.append(2)<br>l.append(3)<br>l.append(4)<br>l.append(5)<br>print(l)<br>for i in l.iternodes():<br>    print(i)<br><br>print(l[0])<br>l.pop()<br>print(l)<br>for i in l.iternodes():<br>    print(i)<br><br>print(l.getitem(2))<br><br>l.insert(0,&#39;abc&#39;)<br>l.insert(2,&#39;xyz&#39;)<br>print(l)<br>for i in l.iternodes():<br>    print(i)<br><br>l.remove(2)<br>l.remove(0)<br>print(l)<br>for i in l.iternodes(reverse&#x3D;True):<br>    print(i)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="作业参考"><a href="#作业参考" class="headerlink" title="作业参考"></a>作业参考</h2><h3 id="Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆-1"><a href="#Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆-1" class="headerlink" title="Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆"></a>Shape基类，要求所有子类都必须提供面积的计算，子类有三角形、矩形、圆</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import math<br><br><br>class Shape:<br>    @property<br>    def area(self):<br>        raise NotImplementedError(&#39;基类未实现&#39;)<br><br><br>class Triangle(Shape):<br>    def __init__(self, a, b, c):<br>        self.a &#x3D; a<br>        self.b &#x3D; b<br>        self.c &#x3D; c<br><br><br>    @property<br>    def area(self):<br>        a, b, c &#x3D; self.a, self.b, self.c<br>        p &#x3D; (a + b + c) &#x2F; 2<br>        return math.sqrt(p * (p - a) * (p - b) * (p - c))<br><br><br>class Rectangle(Shape):<br>    def __init__(self, width, height):<br>        self.width &#x3D; width<br>        self.height &#x3D; height<br><br><br>    @property<br>    def area(self):<br>        width, height &#x3D; self.width, self.height<br>        return width * height<br><br><br>class Circle(Shape):<br>    def __init__(self, radius):<br>        self.radius &#x3D; radius<br>        # self.d &#x3D; redius * 2<br><br><br>    @property<br>    def area(self):<br>        radius &#x3D; self.radius<br>        return math.pi * math.pow(radius, 2)<br>        # return math.pi * self.d * self.d * 0.25<br><br><br>shapes &#x3D; [Triangle(3, 4, 5), Rectangle(3, 4), Circle(4)]<br>for s in shapes:<br>    print(&#39;The area of &#123;&#125; &#x3D; &#123;&#125;&#39;.format(s.__class__.__name__, s.area))<br></code></pre></td></tr></table></figure>
+
+<h3 id="上题圆类的数据可序列化-1"><a href="#上题圆类的数据可序列化-1" class="headerlink" title="上题圆类的数据可序列化"></a>上题圆类的数据可序列化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import json<br># import msgpack<br><br><br>class SerizlizableMixin:<br>    def dumps(self, t&#x3D;&#39;json&#39;):<br>        if t &#x3D;&#x3D; &#39;json&#39;:<br>            return json.dumps(self.__dict__)<br>        # elif t &#x3D;&#x3D; &#39;msgpack&#39;:<br>        #     return msgpack.packb(self.__dict__)<br>        else:<br>            raise NotImplementedError(&#39;没有实现的序列化&#39;)<br><br><br>class SerializableCircleMixin(SerizlizableMixin, Circle):<br>    pass<br><br><br>scm &#x3D; SerializableCircleMixin(4)<br>print(scm.area)<br>s &#x3D; scm.dumps(&#39;json&#39;)<br>print(s)<br>~~~~~~~~~~~~~~~~~~~~~~~<br>50.26548245743669<br>&#123;&quot;radius&quot;: 4&#125;<br></code></pre></td></tr></table></figure>
+
+<p>链表是连续的，但不是在内存中连续，而是通过某种方式连接在一起，而List是在内存中连续的。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python多继承</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python类的继承</title>
+    <url>/Python%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p>面向对象三要素之一，继承Inheritance</p>
+</li>
+<li><p>人类和猫类都继承自动物类。</p>
+</li>
+<li><p>个体继承自父母，继承了父母的一部分特征，但也可以有自己的个性。</p>
+<p>在面向对象的世界中，从父类继承，就可以直接拥有父类的属性和方法，这样可以减少代码、多复用。子类可以定义自己的属性和方法。</p>
+<blockquote>
+<p>看一个不用继承的例子</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def shout(self):<br>        print(&#39;Animal shouts&#39;)<br><br>a &#x3D; Animal()<br>a.shout()<br><br><br>class Cat:<br>    def shout(self):<br>        print(&#39;Cat shuts&#39;)<br><br><br>c &#x3D; Cat()<br>c.shout()<br>~~~~~~~~~~~~~~~~~~~~~~~~~<br>Animal shouts<br>Cat shuts<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上面的2个类虽然有关系，但是定义时并没有简历这种关系，而是各自完成定义。</li>
+<li>动物类和毛类都有吃，但是他们的吃有区别，所以分别定义。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def __init__(self, name):<br>        self._name &#x3D; name<br><br>    def shout(self):<br>        print(&#39;&#123;&#125; shouts&#39;.format(self.__class__.__name__))<br><br>    @property<br>    def name(self):<br>        return self._name<br><br>a &#x3D; Animal(&#39;monster&#39;)<br>a.shout()<br><br>class Cat(Animal):<br>    pass<br><br>cat &#x3D; Cat(&#39;garfield&#39;)<br>cat.shout()<br>print(1, cat.name)<br><br>class Dog(Animal):<br>    pass<br><br>dog &#x3D; Dog(&#39;ahuang&#39;)<br>dog.shout()<br>print(2, dog.name)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Animal shouts<br>Cat shouts<br>1 garfield<br>Dog shouts<br>2 ahuang<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上例可以看出，通过继承， 猫类、狗类不用写代码，直接继承了父亲的属性和方法。</li>
+</ul>
+<h3 id="基本概念总结"><a href="#基本概念总结" class="headerlink" title="基本概念总结"></a>基本概念总结</h3><ul>
+<li><p>继承</p>
+<ul>
+<li>class Cat(Animal)这种形式就是从父亲继承，括号中写上继承的类的列表。</li>
+<li>继承可以让子类从父亲获取特征（属性和方法）</li>
+</ul>
+</li>
+<li><p>父亲</p>
+<ul>
+<li>Animal就是Cat的父类，也称为基类，超类。</li>
+</ul>
+</li>
+<li><p>子类</p>
+<ul>
+<li>Cat就是Animal的子类，也称为派生类</li>
+</ul>
+</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>格式如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class 子类名(基类1[,基类2,...]):<br>    语句块<br></code></pre></td></tr></table></figure>
+
+<p>如果类定义时，没有基类列表，等同于继承自object。在Python3中，object类是所有对象的根基类。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span><br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 等价于</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(object)</span>:</span><br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>注意，上例在Python2中，两种写法是不同的。</li>
+<li>Python支持多继承，继承也可以多级。</li>
+<li>查看继承的特殊属性和方法有</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特殊属性和方法</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>base</strong></td>
+<td>类的基类</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>bases</strong></td>
+<td>类的基类元组</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>mro</strong></td>
+<td>显示方法查找顺序，基类的元组</td>
+<td></td>
+</tr>
+<tr>
+<td>mor()方法</td>
+<td>同上</td>
+<td>int.mro()</td>
+</tr>
+<tr>
+<td><strong>subclasses</strong>()</td>
+<td>类的子类列表</td>
+<td>int.<strong>subclasses</strong>()</td>
+</tr>
+</tbody></table>
+<h2 id="继承中的访问控制"><a href="#继承中的访问控制" class="headerlink" title="继承中的访问控制"></a>继承中的访问控制</h2><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    __COUNT &#x3D; 100<br>    HEIGHT &#x3D; 0<br><br><br>    def __init__(self, age, weight, height):<br>        self.__COUNT +&#x3D; 1<br>        self.age &#x3D; age<br>        self.__weight &#x3D; weight<br>        self.HEIGHT &#x3D; height<br><br><br>    def eat(self):<br>        print(&#39;&#123;&#125; eat&#39;.format(self.__class__.__name__))<br><br><br>    def __getweight(self):<br>        print(self.__weight)<br><br><br>    @classmethod<br>    def showcount1(cls):<br>        print(cls.__COUNT)<br><br><br>    @classmethod<br>    def __showcount2(cls):<br>        print(cls.__COUNT)<br><br><br>    def showcount3(self):<br>        print(self.__COUNT)<br><br><br>class Cat(Animal):<br>    NAME &#x3D; &#39;CAT&#39;<br>    __COUNT &#x3D; 200<br><br># c &#x3D; Cat()  # __init__函数参数错误<br>c &#x3D; Cat(3, 5, 15)<br>c.eat()<br>print(1, c.HEIGHT)<br># print(2, c.__COUNT)  # 私有的不可访问<br># c.__getweight()  # 私有的不可访问<br>c.showcount1()<br># c.__showcount2()  # 私有的不可访问<br>c.showcount3()<br>print(3, c.NAME)<br><br><br>print(10, &quot;&#123;&#125;&quot;.format(Animal.__dict__))<br>print(11, &quot;&#123;&#125;&quot;.format(Cat.__dict__))<br>print(12, c.__dict__)<br>print(13, c.__class__.mro())<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Cat eat<br>1 15<br>100<br>101<br>3 CAT<br>10 &#123;&#39;_Animal__getweight&#39;: &lt;function Animal.__getweight at 0x000002B9DEEA1AE8&gt;, &#39;HEIGHT&#39;: 0, &#39;__init__&#39;: &lt;function Animal.__init__ at 0x000002B9DEEA19D8&gt;, &#39;showcount1&#39;: &lt;classmethod object at 0x000002B9DEEAAA20&gt;, &#39;showcount3&#39;: &lt;function Animal.showcount3 at 0x000002B9DEEA1C80&gt;, &#39;eat&#39;: &lt;function Animal.eat at 0x000002B9DEEA1A60&gt;, &#39;__doc__&#39;: None, &#39;_Animal__COUNT&#39;: 100, &#39;_Animal__showcount2&#39;: &lt;classmethod object at 0x000002B9DEEAAA58&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Animal&#39; objects&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Animal&#39; objects&gt;&#125;<br>11 &#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;, &#39;_Cat__COUNT&#39;: 200, &#39;NAME&#39;: &#39;CAT&#39;&#125;<br>12 &#123;&#39;age&#39;: 3, &#39;_Animal__weight&#39;: 5, &#39;_Animal__COUNT&#39;: 101, &#39;HEIGHT&#39;: 15&#125;<br>13 [&lt;class &#39;__main__.Cat&#39;&gt;, &lt;class &#39;__main__.Animal&#39;&gt;, &lt;class &#39;object&#39;&gt;]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>从父类继承，自己没有的，就可以到父类中找。</p>
+</li>
+<li><p>私有的都是不可以访问的，但是本质上依然是改了名称放在这个属性所在类的了<strong>dict</strong>中。知道这个新名称就可以直接找到这个隐藏的变量孬这是个黑魔法技巧，慎用。</p>
+</li>
+<li><p>总结</p>
+<ul>
+<li>继承时，公有的，子类和实例都可以随意访问；私有成员被隐藏，子类和实例不可直接访问，当<br>私有变量所在的类内的方法中可以访问这个私有变量。</li>
+<li>Python通过自己一套实现，实现和其它语言一样的面向对象的继承机制。</li>
+</ul>
+</li>
+<li><p>属性查找顺序</p>
+<ul>
+<li>实例的<strong>dict</strong>》类<strong>dict</strong>如果有继承==》父类<strong>dict</strong></li>
+<li>如果搜索这些地方后没有找到就会抛异常，先找到就立即返回了。</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法的重写、覆盖override"><a href="#方法的重写、覆盖override" class="headerlink" title="方法的重写、覆盖override"></a>方法的重写、覆盖override</h2><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def shout(self):<br>        print(&#39;Animal shouts&#39;)<br><br><br>class Cat(Animal):<br>    # 覆盖了父类方法<br>    def shout(self):<br>        print(&#39;miao&#39;)<br><br><br>a &#x3D; Animal()<br>a.shout()<br>c &#x3D; Cat()<br>c.shout()<br><br>print(1, a.__dict__)<br>print(2, c.__dict__)<br>print(3, Animal.__dict__)<br>print(4, Cat.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Animal shouts<br>miao<br>1 &#123;&#125;<br>2 &#123;&#125;<br>3 &#123;&#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Animal&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Animal&#39; objects&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None, &#39;shout&#39;: &lt;function Animal.shout at 0x000001E62CAC19D8&gt;&#125;<br>4 &#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;, &#39;shout&#39;: &lt;function Cat.shout at 0x000001E62CAC1A60&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Cat中能否覆盖自己的方法吗？</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def shout(self):<br>        print(&#39;Animal shouts&#39;)<br><br><br>class Cat(Animal):<br>    # 覆盖了父类方法<br>    def shout(self):<br>        print(&#39;miao&#39;)<br>    # 覆盖了自己的方法，显示调用了父类的方法<br>    def shout(self):<br>        print(10, super())<br>        print(11, super(Cat, self))<br>        super().shout()<br>        super(Cat, self).shout()  # 等价于super()<br>        self.__class__.__base__.shout(self)  # 不推荐<br><br><br>a &#x3D; Animal()<br>a.shout()<br>c &#x3D; Cat()<br>c.shout()<br><br>print(1, a.__dict__)<br>print(2, c.__dict__)<br>print(3, Animal.__dict__)<br>print(4, Cat.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Animal shouts<br>10 &lt;super: &lt;class &#39;Cat&#39;&gt;, &lt;Cat object&gt;&gt;<br>11 &lt;super: &lt;class &#39;Cat&#39;&gt;, &lt;Cat object&gt;&gt;<br>Animal shouts<br>Animal shouts<br>Animal shouts<br>1 &#123;&#125;<br>2 &#123;&#125;<br>3 &#123;&#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Animal&#39; objects&gt;, &#39;shout&#39;: &lt;function Animal.shout at 0x0000016DDBE519D8&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Animal&#39; objects&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None&#125;<br>4 &#123;&#39;shout&#39;: &lt;function Cat.shout at 0x0000016DDBE51AE8&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>super()可以访问到父类的属性，其具体原理后面说。</li>
+<li>那对于类方法和静态方法呢？</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    @classmethod<br>    def class_method(cls):<br>        print(&#39;class_method_animal&#39;)<br><br><br>    @staticmethod<br>    def static_method():<br>        print(&#39;static_method_animal&#39;)<br><br><br>class Cat(Animal):<br>    @classmethod<br>    def class_method(cls):<br>        print(&#39;class_method_cat&#39;)<br><br><br>    @staticmethod<br>    def static_method():<br>        print(&#39;static_method_cat&#39;)<br><br>c &#x3D; Cat()<br>c.class_method()<br>c.static_method()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>class_method_cat<br>static_method_cat<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>这些方法都可以覆盖，原理都一样，属性字典的搜索顺序。</li>
+</ul>
+<h2 id="继承中的初始化"><a href="#继承中的初始化" class="headerlink" title="继承中的初始化"></a>继承中的初始化</h2><ul>
+<li>先看下面一段代码，有没有问题</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self, a):<br>        self.a &#x3D; a<br><br><br>class B(A):<br>    def __init__(self, b, c):<br>        self.b &#x3D; b<br>        self.c &#x3D; c<br><br><br>    def printv(self):<br>        print(self.b)<br>        # print(self.a)  # 出错吗？AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;<br><br><br>f &#x3D; B(200, 300)<br>print(1, f.__dict__)<br>print(2, f.__class__.__bases__)<br>f.printv()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &#123;&#39;b&#39;: 200, &#39;c&#39;: 300&#125;<br>2 (&lt;class &#39;__main__.A&#39;&gt;,)<br>200<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上例代码可知:<ul>
+<li>如果类B定义时声明继承自类A，则在类B中<strong>bases</strong>中是可以看到类A。</li>
+<li>但是这和是否调用类A的构造方法是两回事。</li>
+<li>如果B中调了A的构造方法，就可以拥有父类的属性了。如何理解这一句话呢？</li>
+<li>观察B的实例f的<strong>dict</strong>中的属性。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self, a, d&#x3D;10):<br>        self.a &#x3D; a<br>        self.__d &#x3D; d<br><br><br>class B(A):<br>    def __init__(self, b, c):<br>        A.__init__(self, b + c, b - c)<br>        self.b &#x3D; b<br>        self.c &#x3D; c<br><br><br>    def printv(self):<br>        print(self.b)<br>        print(self.a)  # 出错吗？AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;<br><br><br>f &#x3D; B(200, 300)<br>print(1, f.__dict__)<br>print(2, f.__class__.__bases__)<br>f.printv()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &#123;&#39;c&#39;: 300, &#39;b&#39;: 200, &#39;a&#39;: 500, &#39;_A__d&#39;: -100&#125;<br>2 (&lt;class &#39;__main__.A&#39;&gt;,)<br>200<br>500<br></code></pre></td></tr></table></figure>
+
+<p>上例代码可知：</p>
+<p>如果类 B定义时声明继承自类A , 则在类B中__bases__ 中是可以看到类A。但是这和是否调用类A的构造方法是两回事。</p>
+<p>如果B中调用了A的构造方法，就可以拥有父类的属性了。如何理解这一句话呢？</p>
+<p>观察B的实例 f的_ diet_ 中的属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self, a, d&#x3D;10):<br>        self.a &#x3D; a<br>        self.__d &#x3D; d<br><br>class B(A):<br>    def __init__(self, b, c):<br>        A.__init__(self, b + c, b - c)<br>        self.b &#x3D; b<br>        self.c &#x3D; c<br><br><br>    def printv(self):<br>        print(self.b)<br>        print(self.a)  # 出错吗？AttributeError: &#39;B&#39; object has no attribute &#39;a&#39;<br><br><br>f &#x3D; B(200, 300)<br>print(1, f.__dict__)<br>print(2, f.__class__.__bases__)<br>f.printv()<br><br>#输出：<br>1 &#123;&#39;a&#39;: 500, &#39;_A__d&#39;: -100, &#39;b&#39;: 200, &#39;c&#39;: 300&#125;<br>2 (&lt;class &#39;__main__.A&#39;&gt;,)<br>200<br>500<br></code></pre></td></tr></table></figure>
+
+<p>作为好的习惯，如果父类定义了 __init__ 方法 ，你就该在子类的 __init__ 中调 用 它。那子类什么时候自动调用父类的__init__方法呢？</p>
+<p>示例1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self):<br>        self.a1 &#x3D; &#39;a1&#39;<br>        self.__a2 &#x3D; &#39;a2&#39;<br>        print(&#39;A init&#39;)<br><br>class B(A):<br>    pass<br><br>b &#x3D; B()<br>print(b.__dict__)<br><br>#输出：<br>A init<br>&#123;&#39;a1&#39;: &#39;a1&#39;, &#39;_A__a2&#39;: &#39;a2&#39;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>B实例的 初始化 会自动调用基类 A的__init__方法</p>
+<p>示例2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self):<br>        self.a1 &#x3D; &#39;a1&#39;<br>        self.__a2 &#x3D; &#39;a2&#39;<br>        print(&#39;A init&#39;)<br><br>class B(A):<br>    def __init__(self):<br>        self.b1 &#x3D; &#39;b1&#39;<br>        self.__a2 &#x3D; &#39;a2&#39;<br>        print(&#39;B init&#39;)<br><br>b &#x3D; B()<br>print(b.__dict__)<br><br>#输出<br>B init<br>&#123;&#39;b1&#39;: &#39;b1&#39;, &#39;_B__a2&#39;: &#39;a2&#39;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>B实例的初始化时，类有本身的 __init__ 方法时，不会自动调用父类的 __init__ 方法，建议手动显式调用父类 __init__ 方法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class A:<br>    def __init__(self):<br>        self.a1 &#x3D; &#39;a1&#39;<br>        self.__a2 &#x3D; &#39;a2&#39;<br>        print(&#39;A init&#39;)<br><br>class B(A):<br>    def __init__(self):<br>        self.b1 &#x3D; &#39;b1&#39;<br>        print(&#39;B init&#39;)<br>        A.__init__(self)<br><br>b &#x3D; B()<br>print(b.__dict__)<br>#输出：<br>B init<br>A init<br>&#123;&#39;b1&#39;: &#39;b1&#39;, &#39;a1&#39;: &#39;a1&#39;, &#39;_A__a2&#39;: &#39;a2&#39;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如何正确初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def __init__(self, age):<br>        print(&#39;Animal init&#39;)<br>        self.age &#x3D; age<br><br>    def show(self):<br>        print(self.age)<br><br><br>class Cat(Animal):<br>    def __init__(self, age, weight):<br>    	#调用父类的__init__方法的顺序位置决定了show()的不同结果<br>        super().__init__(age)<br>        print(&#39;Cat init&#39;)<br>        self.age &#x3D; age + 1<br>        self.weight &#x3D; weight<br>        #uper().__init__(age)<br><br>c &#x3D; Cat(10, 5)<br>c.show()<br>#输出：<br>Cat init<br>11<br></code></pre></td></tr></table></figure>
+
+<p>注意，调用 父类的__init__方法，出现在不同的位置，可能导致出现不同的结果。那么，直接将上例中所有的实例属性改成私有变星呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Animal:<br>    def __init__(self, age):<br>        print(&#39;Animal init&#39;)<br>        self.__age &#x3D; age<br><br>    def show(self):<br>        print(self.__age)<br><br><br>class Cat(Animal):<br>    def __init__(self, age, weight):<br>        #调用父类的__init__方法的顺序位置决定了show()的不同结果<br>        super().__init__(age)<br>        print(&#39;Cat init&#39;)<br>        self.__age &#x3D; age + 1<br>        self.__weight &#x3D; weight<br>        #uper().__init__(age)<br><br>c &#x3D; Cat(10, 5)<br>c.show()<br><br>print(c.__dict__)<br><br>#输出L<br>Animal init<br>Cat init<br>10<br>&#123;&#39;_Animal__age&#39;: 10, &#39;_Cat__age&#39;: 11, &#39;_Cat__weight&#39;: 5&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>上例中打印10，原因 看__dict__就知 道了。因为父类Animal的 show方法中__age__会被解释为</p>
+<p>_Animal__age__  , 因此显示的是10，而不是11。</p>
+<p>这样的设计不好， Ca t的实例c应该显示自己的属性值更好。</p>
+<p>解决的办法： 一 个原则，自己的私有属性 ，就该自己的方法读取和修改，不要 借助其他类的方法，即使是父类或者派生类的方法。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python类的继承</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python面向对象</title>
+    <url>/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="语言的分类"><a href="#语言的分类" class="headerlink" title="语言的分类"></a>语言的分类</h2><h3 id="面向机器"><a href="#面向机器" class="headerlink" title="面向机器"></a>面向机器</h3><ul>
+<li>抽象成机器指令，机器容甥理解</li>
+<li>代表：汇编语言</li>
+</ul>
+<h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><ul>
+<li>做一件事情，排出个步骤，第一步干什么，第二步干什么，如果出现情况A，做什么处理，如果出现了情况，做什么处理。</li>
+<li>问题规模小，可以步骤化，按部就班处理。</li>
+<li>代表，C语言</li>
+</ul>
+<h3 id="面向对象OOP"><a href="#面向对象OOP" class="headerlink" title="面向对象OOP"></a>面向对象OOP</h3><ul>
+<li>随看计算机需要解决的问题的规模扩大，情况越来越复杂需要很多人、很多部门协作，面向过程编程不太适合了。</li>
+<li>代表：C++、Java、Python等</li>
+</ul>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
+<li>什么是面向对象呢？<ul>
+<li>一种认识世界、分析世界的方法论。将万事万物抽象为类。</li>
+</ul>
+</li>
+<li>类Class<ul>
+<li>类是抽象的概念，是万事万物的抽象，是一类事物的共同特征的集合。</li>
+<li>用计算机语言来描述类，就是属性和方法的集合</li>
+</ul>
+</li>
+<li>对象instance、Object<ul>
+<li>对象是类的具象，是一个实体。</li>
+<li>对于我们每个人这个个体，都是抽象概念人类的不同的实体。</li>
+</ul>
+</li>
+</ul>
+<h3 id="面向对象举例"><a href="#面向对象举例" class="headerlink" title="面向对象举例"></a>面向对象举例</h3><p>你吃鱼<br>你，就是对象；<br>鱼，也是对象；<br>吃就是动作；<br>你是具体的人，是具体的对象。你属于人类，人类是个抽象的概念，是无数具体的个体的抽象。<br>鱼，也是具体的对象，就是你吃的这一条具体的角。这条角属于角类，是无数的鱼抽象出来的概念。<br>吃，是动作，也是操作，也是方法，这个吃是你的动作，也就是人类具有的方法。如果反过来，鱼吃人。吃就是鱼类的动作了。<br>吃，这个动作，很多动物都具有的动作，人类和鱼类都属于动物类，而动物类是抽象的概念，是动物都有吃的动作，但是吃法不同而已。<br>你驾驶车，这个车也是车类的具体的对象（实例），驾驶这个动作是鱼类不具有的，是人类具有的方法。<br>属性，它是对象状态的抽象，用数据结构来描述。<br>操作。它是对象行为的抽象，用操作名和实现该操作的方法来庙述。<br>每个人都有名字、身高、体重等信息，这些信息是个人的属性，但是，这些信息不能保存在人类中，因为它是抽象的概念，不能保留具体的值。<br>而人类的实例，是具体的人，他可以存储这些具体的属性，而且可以不同人有不同的属性。</p>
+<h3 id="面向对象哲学"><a href="#面向对象哲学" class="headerlink" title="面向对象哲学"></a>面向对象哲学</h3><ul>
+<li>一切皆对象</li>
+<li>对象是数据和操作的封装</li>
+<li>对象是独立的，但是对象之间可以相互作用</li>
+<li>目前OOP是最接近人类认知的编程范式</li>
+</ul>
+<h3 id="面向对象3要素"><a href="#面向对象3要素" class="headerlink" title="面向对象3要素"></a>面向对象3要素</h3><ul>
+<li>1.封装<ul>
+<li>组装：将数据和操作组装到一起。</li>
+<li>隐藏数据：对外只暴露一些接口，通过接口访问对象。比如驾驶员使用汽车，不需要了解汽车</li>
+<li>构造细节，只需要知道使用什么部件怎么驾驶就行，踩了油门就能跑，可以不了解后面的机动原理。</li>
+</ul>
+</li>
+<li>2.继承<ul>
+<li>多复用，继承来的就不用自己写了</li>
+<li>多继承少修改，OCP（Open-closedPrinciple），使用继承来改变，来体现个性</li>
+</ul>
+</li>
+<li>3.多态<ul>
+<li>面向对象编程最灵活的地方，动态绑定</li>
+</ul>
+</li>
+<li>人类就是封装，<ul>
+<li>人类继承自动物类，孩子继承父母特征。分为单一继承、多继承；多态，继承自动物类的人类、猫类的操作”吃“不同。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Python的类"><a href="#Python的类" class="headerlink" title="Python的类"></a>Python的类</h2><ul>
+<li>定义</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class ClassName:<br>    语句块<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>1.必须使用class关键字</li>
+<li>2.类名必须使用大驼峰命名</li>
+<li>3.类定义完成后，就产生了一个类对象，绑定到了标识符ClassName上</li>
+</ul>
+<h3 id="类的举例"><a href="#类的举例" class="headerlink" title="类的举例"></a>类的举例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class MyClass:<br>    &quot;&quot;&quot;A example class&quot;&quot;&quot;<br>    x &#x3D; &#39;abc&#39;  # 类属性<br><br>    def foo(self):  # 类属性foo，也是方法<br>        return &#39;MyClass&#39;<br><br><br>print(1, MyClass.x)<br>print(2, MyClass.foo)<br>print(3, MyClass.__doc__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 abc<br>2 &lt;function MyClass.foo at 0x0000016C925F19D8&gt;<br>3 A example class<br></code></pre></td></tr></table></figure>
+
+<h3 id="类对象及类属性"><a href="#类对象及类属性" class="headerlink" title="类对象及类属性"></a>类对象及类属性</h3><ul>
+<li>类对象，类的定义就会生成一个类对象</li>
+<li>类的属性，类定义中的变量和类中定义的方法都是类的属性</li>
+<li>类变量，上例中×是类My创ass的变量</li>
+<li>MyClass中，×、foo都是类的属性，doc也是类的属性</li>
+<li>foo方法是类的属性，如同吃是人类的方法，但是每一个具体的人才能吃东西，也就是说吃是人的实例才能调用的方法。</li>
+<li>foo是方法对象method不是普通的函数对象function了，它一般要求至少有一个参数。第一个参数可以是self（self只是个惯用标识符，可以换名字），这个参数位置就留给了self</li>
+<li>self指代当前实例本身</li>
+<li>问题<ul>
+<li>上例中，类是谁？实例是谁？</li>
+</ul>
+</li>
+</ul>
+<h3 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">a &#x3D; MyClass()  # 实例化<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>使用上面的语法，在类对象名称后面加上一个括号，就调用类的实例化方法，完成实例化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">tom &#x3D; Person()<br>jerry &#x3D; Person()<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上面的tom，jerry都是Person类的实例，通过实例化生成了2个实例</li>
+<li>每次实例化后获得的实例，是不同的实例，即使是视同同样的参数实例化，也得到不一样的对象。</li>
+<li>Python类实例化后，会自动调用<strong>init</strong>方法。这个方法第一个参数必须留给self，其他参数随意。</li>
+</ul>
+<h4 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a><strong>init</strong>方法</h4><ul>
+<li>MyClass()实际上调用的是<strong>init</strong>(self)方法，可以不定义，如果没有定义会在实例化后<code>隐式</code>调用。</li>
+<li>作用：对实例进行<code>初始化</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class MyClass:<br>    def __init__(self):<br>        print(&#39;init&#39;)<br><br><br>print(1, MyClass)  # 不会调用<br>print(2, MyClass())  # 调用__init__<br>a &#x3D; MyClass()  # 调用__init__<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 &lt;class &#39;__main__.MyClass&#39;&gt;<br>init<br>2 &lt;__main__.MyClass object at 0x0000017A09B00390&gt;<br>init<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>初始化函数可以多个参数，请注意第一个位置必须是self，例如<code>__init__(self, name, age)</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age):<br>        self.name &#x3D; name<br>        self.age &#x3D; age<br><br><br>    def showage(self):<br>        print(&#39;&#123;&#125; is &#123;&#125;&#39;.format(self.name, self.age))<br><br><br>tom &#x3D; Person(&#39;Tom&#39;, 20) # 实例化<br>jerry &#x3D; Person(&#39;Je&#39;, 25)<br>print(tom.name, jerry.age)<br>jerry.age +&#x3D;1<br>print(jerry.age)<br>jerry.showage()<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Tom 25<br>26<br>Je is 26<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<code>__init__()方法不能有返回值，也就是只能是None</code></li>
+</ul>
+<h3 id="实例对象instance"><a href="#实例对象instance" class="headerlink" title="实例对象instance"></a>实例对象instance</h3><ul>
+<li>类实例化后一定会获得一个对象，就是实例对象。</li>
+<li>上例中的tom、jerry就是Person类的实例。</li>
+<li>_init__方法的第参数self就是指代某一个实例。</li>
+<li>类实例化后，得到一个实例对象，实例对象会绑定方法，调用方法时采用jerry.showage()的方式。</li>
+<li>但是函数签名是showage(self)，少传一个参数self吗？</li>
+<li>这个self就是jerry，Python会把方法的调用者作为作为第一参数self的实参传入。</li>
+<li>self.name就是Jerry对象的name，name是保存在了jerry对象上，而不是Person类上。所以，称为实例变量。</li>
+</ul>
+<h3 id="self举例"><a href="#self举例" class="headerlink" title="self举例"></a>self举例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class MyClass:<br>    def __init__(self):<br>        print(&#39;self in init &#x3D; &#123;&#125;&#39;.format(id(self)))<br><br><br>c &#x3D; MyClass()  # 会调用__init__<br>print(&#39;c &#x3D; &#123;&#125;&#39;.format(id(c)))<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>self in init &#x3D; 1892697973760<br>c &#x3D; 1892697973760<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上例说明，self就是调用者，就是c对应的实例对象。</li>
+<li>self这个名字只是一个惯例，它可以修改，但是请不要修改，否则影响代码的可读性</li>
+<li>看打印的结果，思考下执行的顺序，为什么？</li>
+</ul>
+<h2 id="实例变量和类变量"><a href="#实例变量和类变量" class="headerlink" title="实例变量和类变量"></a>实例变量和类变量</h2><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    age &#x3D; 3<br>    def __init__(self, name):<br>        self.name &#x3D; name<br><br><br># tom &#x3D; Person(&#39;Tom&#39;, 20)  # TypeError: __init__() takes 2 positional arguments but 3 were given<br>tom &#x3D; Person(&#39;Tom&#39;)<br>jerry &#x3D; Person(&#39;Jerry&#39;)<br><br>print(1, tom.name, tom.age)<br>print(2, jerry.name, jerry.age)<br>print(3, Person.age)<br># print(4, Person.name) # AttributeError: type object &#39;Person&#39; has no attribute &#39;name&#39;<br>Person.age &#x3D; 30<br>print(5, Person.age, tom.age, jerry.age)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 Tom 3<br>2 Jerry 3<br>3 3<br>5 30 30 30<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>实例变量是每一个实例自己的变量，是自己独有的；类变量是类的变量，是类的所有实例共享的属性和方法</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特殊属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>name</strong></td>
+<td>对象名</td>
+</tr>
+<tr>
+<td><strong>class</strong></td>
+<td>对象的类型</td>
+</tr>
+<tr>
+<td><strong>dict</strong></td>
+<td>对象的属性的字典</td>
+</tr>
+<tr>
+<td><strong>qualname</strong></td>
+<td>类的限定名</td>
+</tr>
+</tbody></table>
+<p>- 注意：<br>- Python中每一种对象都拥有不同的属性。函数、类都是对象，类的实例也是对象。</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    age &#x3D; 3<br><br>    def __init__(self, name):<br>        self.name &#x3D; name<br><br><br>print(&#39;----class----&#39;)<br>print(1, Person.__class__)<br>print(2, sorted(Person.__dict__.items()), end&#x3D;&#39;\n\n&#39;)  # 属性字典<br><br>tom &#x3D; Person(&#39;Tom&#39;)<br>print(&#39;----instance tom----&#39;)<br>print(3, tom.__class__)<br>print(4, sorted(tom.__dict__.items()), end&#x3D;&#39;\n\n&#39;)<br><br>print(&quot;----tom&#39;s class----&quot;)<br>print(5, tom.__class__.__name__)<br>print(6, sorted(tom.__class__.__dict__.items()), end&#x3D;&#39;\n\n&#39;)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>----class----<br>1 &lt;class &#39;type&#39;&gt;<br>2 [(&#39;__dict__&#39;, &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;), (&#39;__doc__&#39;, None), (&#39;__init__&#39;, &lt;function Person.__init__ at 0x0000019B375819D8&gt;), (&#39;__module__&#39;, &#39;__main__&#39;), (&#39;__weakref__&#39;, &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;), (&#39;age&#39;, 3)]<br><br>----instance tom----<br>3 &lt;class &#39;__main__.Person&#39;&gt;<br>4 [(&#39;name&#39;, &#39;Tom&#39;)]<br><br>----tom&#39;s class----<br>5 Person<br>6 [(&#39;__dict__&#39;, &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;), (&#39;__doc__&#39;, None), (&#39;__init__&#39;, &lt;function Person.__init__ at 0x0000019B375819D8&gt;), (&#39;__module__&#39;, &#39;__main__&#39;), (&#39;__weakref__&#39;, &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;), (&#39;age&#39;, 3)]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上例中，可以看到类属性保存在类的<code>__dict__</code>中，实例属性保存在实例的<code>__dict__</code>中，如果从实例访问类的属性，就需要借助<code>__class__</code>找到所属的类。</li>
+<li>有了上面知识，再看下面的代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    age &#x3D; 3<br>    height &#x3D; 170<br><br>    def __init__(self, name, age &#x3D;18):<br>        self.name &#x3D; name<br>        self.age &#x3D; age<br><br><br>tom &#x3D; Person(&#39;Tom&#39;)<br>jerry &#x3D; Person(&#39;Jerry&#39;, 20)<br><br>Person.age &#x3D; 30<br>print(1, Person.age, tom.age, jerry.age)  # 输出什么结果<br><br>print(2, Person.height, tom.height, jerry.height)  # 输出什么结果<br>jerry.height &#x3D; 175<br>print(3, Person.height, tom.height, jerry.height)  # 输出什么结果<br><br>tom.height +&#x3D; 10<br>print(4, Person.height, tom.height, jerry.height)  # 输出什么结果<br><br>Person.height +&#x3D; 15<br>print(5, Person.height, tom.height, jerry.height)  # 输出什么结果<br><br>Person.weight &#x3D; 70<br>print(6, Person.weight, tom.weight, jerry.weight)  # 输出什么结果<br><br>print(7, tom.__dict__[&#39;height&#39;])<br># print(8, tom.__dict__[&#39;weight&#39;])  # 可以么？KeyError: &#39;weight&#39;<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 30 18 20<br>2 170 170 170<br>3 170 170 175<br>4 170 180 175<br>5 185 180 175<br>6 70 70 70<br>7 180<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>总结</p>
+<ul>
+<li>是类的，也是这个类所有实例的，其实例都可以访问到；是实例的，就是这个实例自己的，通过<br>类访问不到。</li>
+<li>类变量是属于类的变量，这个类的所有实例可以<code>共享</code>这个变量。</li>
+</ul>
+</li>
+<li><p>实例可以动态的给自己增加一个属性。<code>实例.__dict__[变量名]</code>和<code>实例.变量名</code>都可以访问到。</p>
+</li>
+<li><p>实例的同名变量会<code>隐藏</code>这类变量，或者说是覆盖了这个类变量。</p>
+</li>
+</ul>
+<blockquote>
+<p><code>实例属性的查找顺序</code></p>
+</blockquote>
+<ul>
+<li><p>指的是实例使用.来访问属性，会先找自己的<code>__dict__</code>，如果没有，然后通过属性<code>__class__</code>找到自己的类，再去类的<code>__dict__</code>中找</p>
+</li>
+<li><p>找到自己的类，再去类的<code>__dict__</code>中找</p>
+</li>
+<li><p>注意，如果实例使用<code>__dict__[变量名]</code>访问变量，将不会按照上面的找顺序找变量了，这是<br>指明使用字典的key查找，不是属性查找。</p>
+</li>
+<li><p>一般来说，类变量使用全大写来命名。</p>
+</li>
+</ul>
+<h2 id="装饰一个类"><a href="#装饰一个类" class="headerlink" title="装饰一个类"></a>装饰一个类</h2><ul>
+<li>回顾，什么是高阶函数？什么是装饰器函数？</li>
+<li>思考，如何装饰一个类？</li>
+<li>需求，为一个类通过装饰，增加一些类属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># 增加类变量<br>def add_name1(name, cls):<br>    cls.NAME &#x3D; name  # 动态增加类属性<br><br><br># 改进成装饰器<br>def add_name(name):<br>    def wrapper(cls):<br>        cls.NAME &#x3D; name<br>        return cls<br>    return wrapper<br><br><br>@add_name(&#39;Tom&#39;)<br>class Person:<br>    AGE &#x3D; 3<br><br><br>print(Person.NAME)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Tom<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>之所以能够装饰，本质上是为类对象动态的增加了一个属性，而Person这个标识符指向这个类对象。</li>
+</ul>
+<h2 id="类方法和静态方法"><a href="#类方法和静态方法" class="headerlink" title="类方法和静态方法"></a>类方法和静态方法</h2><ul>
+<li>前面的例子中定义的<strong>init</strong>等方法，这些方法本身都是类的属性，第一个参数必须是self，而self必须指向一个对象，也就是类必须实例化之后，由实例来调用这个方法。</li>
+</ul>
+<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def normal_method():<br>        print(&#39;normal&#39;)<br><br><br># 如何调用<br>Person.mormal_method()  # 可以么？<br>Person().normal_method()  # 可以么？<br><br>print(Person.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>&#123;&#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;, &#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;, &#39;normal_method&#39;: &lt;function Person.normal_method at 0x000002159F4B19D8&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Person.normal_method()</p>
+<ul>
+<li>可以，因为这个方法只是被Person这个名词空间管理的一个普通的方法，normal_method这是Person的一个属性而已。</li>
+</ul>
+</li>
+<li><p>由于normal_method在定义的时候没有指定self，所以不能完成实例对象的绑定，不能用Person().normal_method()调用。</p>
+</li>
+<li><p>注意：虽然语法是对的，但是，没有人这么用，也就是说禁止这么写</p>
+</li>
+</ul>
+<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    @classmethod<br>    def class_method(cls):  # cls是什么<br>        print(&#39;class &#x3D; &#123;0.__name__&#125;(&#123;0&#125;)&#39;.format(cls))<br>        cls.HEIGHT &#x3D; 170<br><br><br>Person.class_method() #通过@classmethod装饰的函数，会隐形自动将.前面的对象代入第一个参数<br>						#如果前面是实例，则相当于查找其__class__后再代入参数<br>print(Person.__dict__) <br>~~~~~~~~~~~~~~~~~~~~~~~~~<br>class &#x3D; Person(&lt;class &#39;__main__.Person&#39;&gt;)<br>&#123;&#39;__doc__&#39;: None, &#39;__module__&#39;: &#39;__main__&#39;, &#39;class_method&#39;: &lt;classmethod object at 0x0000027724C92400&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;, &#39;HEIGHT&#39;: 170&#125;<br></code></pre></td></tr></table></figure>
+
+<p>类方法</p>
+<ul>
+<li><p>在类定义中，使用@classmethod装饰器修饰的方法</p>
+</li>
+<li><p>必须至少有一个参数，且第一个参数留给了cls，cls指代调用者即类对象自身</p>
+</li>
+<li><p>cls这个标识符可以是任意合法名称，但是为了易读，请不要修改</p>
+</li>
+<li><p>通过cls可以直接操作类的属性</p>
+</li>
+<li><p>注意：无法通过cls操作类的实例。为什么</p>
+</li>
+<li><p>类方法，类似于C++、Java中的静态方法</p>
+</li>
+</ul>
+<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    @classmethod<br>    def class_method(cls):<br>        print(&#39;class &#x3D; &#123;0.__name__&#125;(&#123;0&#125;)&#39;.format(cls))<br>        cls.HEIGHT &#x3D; 170<br><br><br>    @staticmethod #静态方法语法出现代替了普通方法的无参写法<br>    def static_methd():<br>        print(Person.HEIGHT)<br><br><br>Person.class_method()<br>Person.static_methd()<br>print(Person.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~<br>class &#x3D; Person(&lt;class &#39;__main__.Person&#39;&gt;)<br>170<br>&#123;&#39;class_method&#39;: &lt;classmethod object at 0x000001DC18272400&gt;, &#39;HEIGHT&#39;: 170, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None, &#39;static_methd&#39;: &lt;staticmethod object at 0x000001DC18272320&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>静态方法<ul>
+<li>在类定义中，使用@staticmethod装饰器修饰的方法</li>
+<li>调用时，不会隐式的传入参数</li>
+<li>静态方法，只是表明这个方法属于这个名词空间。函数归在一起，方便组织管理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="方法的调用"><a href="#方法的调用" class="headerlink" title="方法的调用"></a>方法的调用</h3><ul>
+<li>类可以定义这么多种方法，究竟如何调用他们？</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def normal_method():<br>        print(&#39;normal&#39;)<br><br><br>    def method(self):<br>        print(&quot;&#123;&#125;&#39;s method&quot;.format(self))<br><br><br>    @classmethod<br>    def class_method(cls):<br>        print(&#39;class &#x3D; &#123;0.__name__&#125;(&#123;0&#125;)&#39;.format(cls))<br>        cls.HEIGHT &#x3D; 170<br><br><br>    @staticmethod<br>    def static_methd():<br>        print(Person.HEIGHT)<br><br><br>print(&#39;~~~~类访问~~~~&#39;)<br>print(1, Person.normal_method())<br># print(2, Person.method())<br>print(3, Person.class_method())<br>print(4, Person.static_methd())<br>print(5, Person.__dict__)<br>print(&#39;~~~~实例访问~~~~&#39;)<br>print(&#39;----tom----&#39;)<br>tom &#x3D; Person()<br># print(1, tom.normal_method())<br>print(2, tom.method())<br>print(3, tom.class_method())<br>print(4, tom.static_methd())<br>print(&#39;----jerry----&#39;)<br>jerry &#x3D; Person()<br># print(1, jerry.normal_method())<br>print(2, jerry.method())<br>print(3, jerry.class_method())<br>print(4, jerry.static_methd())<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~类访问~~~~<br>normal<br>1 None<br>class &#x3D; Person(&lt;class &#39;__main__.Person&#39;&gt;)<br>3 None<br>170<br>4 None<br>5 &#123;&#39;normal_method&#39;: &lt;function Person.normal_method at 0x00000196458619D8&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;, &#39;method&#39;: &lt;function Person.method at 0x0000019645861A60&gt;, &#39;class_method&#39;: &lt;classmethod object at 0x000001964586A240&gt;, &#39;static_methd&#39;: &lt;staticmethod object at 0x000001964586A748&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;, &#39;__doc__&#39;: None, &#39;HEIGHT&#39;: 170&#125;<br>~~~~实例访问~~~~<br>----tom----<br>&lt;__main__.Person object at 0x000001964586A860&gt;&#39;s method<br>2 None<br>class &#x3D; Person(&lt;class &#39;__main__.Person&#39;&gt;)<br>3 None<br>170<br>4 None<br>----jerry----<br>&lt;__main__.Person object at 0x000001964586A7F0&gt;&#39;s method<br>2 None<br>class &#x3D; Person(&lt;class &#39;__main__.Person&#39;&gt;)<br>3 None<br>170<br>4 None<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>类几乎可以调用所有内部定义的方法，但是调用<code>普通的方法</code>时会报错，原因是第一参数须是<br>类的实例。</p>
+</li>
+<li><p>实例也几乎可以调所有的方法，<code>普通的函数</code>的调用一般不可能出现，因为不允许这么定义。<br>类除了普通方法都可以调用，普通方法需要对象的实例作为第一参数。</p>
+</li>
+<li><p>实例可以调所有类中定义的方法（包括类方法、静态方法），普通方法传入实例本身，静态方<br>法和类方法需要找到实例的类。</p>
+</li>
+</ul>
+<h2 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h2><h3 id="私有-Private-属性"><a href="#私有-Private-属性" class="headerlink" title="私有(Private)属性"></a>私有(Private)属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self.age &#x3D; age<br><br><br>    def growup(self, i&#x3D;1):<br>        if i &gt; 0 and i &lt; 150: # 控制逻辑<br>            self.age +&#x3D; i<br><br><br>p1 &#x3D; Person(&#39;tom&#39;)<br>p1.growup(20) # 正常的范围<br>p1.age &#x3D; 160  # 超过了范围，并绕过了控制逻辑<br>print(p1.age)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>160<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>上例，本来是想通过方法控制属性，但是由于属性在外部可以访问，或者说可见，就可以直接绕<br>过方法，直接修改这个属性。</li>
+<li>Python提供了私有属性可以解决这个问题。</li>
+<li>私有属性<ul>
+<li>使用<code>双下划线开头</code>的属性名，就是私有属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br><br>    def growup(self, i&#x3D;1):<br>        if i &gt; 0 and i &lt; 150:  # 控制逻辑<br>            self.__age +&#x3D; i<br><br><br>p1 &#x3D; Person(&#39;tom&#39;)<br>p1.growup(20)  # 正常的范围<br>print(p1.__age)  # 可以吗<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>通过实验可以看出，外部已经访问不到__age了，age根本就没有定义，更是访问不到。</li>
+<li>那么，如果访问这个私有变量__age呢？</li>
+<li>使用方法来访问</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br><br>    def growup(self, i&#x3D;1):<br>        if i &gt; 0 and i &lt; 150:  # 控制逻辑<br>            self.__age +&#x3D; i<br><br><br>    def getage(self):<br>        return self.__age<br><br><br>print(Person(&#39;tom&#39;).getage())<br>~~~~~~~~~~~~~~~~~~~~<br>18<br></code></pre></td></tr></table></figure>
+
+<h3 id="私有变量的本质"><a href="#私有变量的本质" class="headerlink" title="私有变量的本质"></a>私有变量的本质</h3><p>外部访问不到，能够动态增加一个__age呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br><br>    def growup(self, i&#x3D;1):<br>        if i &gt; 0 and i &lt; 150:  # 控制逻辑<br>            self.__age +&#x3D; i<br><br><br>    def getage(self):<br>        return self.__age<br><br><br>p1 &#x3D; Person(&#39;tom&#39;)<br>p1.growup(20)  # 正常的范围<br># print(p1.__age)  # 访问不到<br>p1.__age &#x3D; 28<br>print(1, p1.__age)<br>print(2, p1.getage())<br># 为什么年龄不一样？__age没有覆盖吗？<br>print(3, p1.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 28<br>2 38<br>3 &#123;&#39;_Person__age&#39;: 38, &#39;__age&#39;: 28, &#39;name&#39;: &#39;tom&#39;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>秘密都在<strong>dict</strong>中，里面是{‘_Person__age’: 38, ‘__age’: 28, ‘name’: ‘tom’}</p>
+</li>
+<li><p>私有变量的本质：</p>
+<ul>
+<li>类定义的时候，如果声明一个实例变量的时候，使用双下划线，Python解释器会将其<code>改名</code>，转换名称为<code>_类名_变量名</code>的名称，所以用原来的名字访问不到了。</li>
+</ul>
+</li>
+<li><p>知道了这个名字，能否直接修改呢？</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br><br>    def growup(self, i&#x3D;1):<br>        if i &gt; 0 and i &lt; 150:  # 控制逻辑<br>            self.__age +&#x3D; i<br><br><br>    def getage(self):<br>        return self.__age<br><br><br>p1 &#x3D; Person(&#39;tom&#39;)<br>p1.growup(20)  # 正常的范围<br># print(p1.__age)  # 访问不到<br>p1.__age &#x3D; 28<br>print(1, p1.__age)<br>print(2, p1.getage())<br># 为什么年龄不一样？__age没有覆盖吗？<br>print(3, p1.__dict__)<br><br># 直接修改私有变量<br>p1._Person__age &#x3D; 15<br>print(4, p1.getage())<br>print(5, p1.__dict__)<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 28<br>2 38<br>3 &#123;&#39;__age&#39;: 28, &#39;name&#39;: &#39;tom&#39;, &#39;_Person__age&#39;: 38&#125;<br>4 15<br>5 &#123;&#39;__age&#39;: 28, &#39;name&#39;: &#39;tom&#39;, &#39;_Person__age&#39;: 15&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>从上例可以看出，知道了私有变量的新名称，就可以直接从外部访问到，并可以修改它。</li>
+</ul>
+<h3 id="保护变量"><a href="#保护变量" class="headerlink" title="保护变量"></a>保护变量</h3><ul>
+<li>在变量名前使用一个下划线，称为保护变量。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self._age &#x3D; age<br><br><br>tom &#x3D; Person(&#39;Tom&#39;)<br>print(tom._age)<br>print(tom.__dict__)<br>~~~~~~~~~~~~~~~~~~~~<br>18<br>&#123;&#39;_age&#39;: 18, &#39;name&#39;: &#39;Tom&#39;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>可以看出，这个_age属性根本就没有改变名称，和普通的属性一样，解释器不做任何特殊处理。</li>
+<li>这只是开发者共同的约定，看见这种变量，就如同私有变量，不要直接使用。</li>
+</ul>
+<h3 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h3><ul>
+<li>参照保护变量、私有变量，使用单下划线、双下划线命名方法。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self, name, age&#x3D;18):<br>        self.name &#x3D; name<br>        self._age &#x3D; age<br><br><br>    def _getname(self):<br>        return self.name<br><br><br>    def __getage(self):<br>        return self._age<br><br><br>tom &#x3D; Person(&#39;Tom&#39;)<br>print(1, tom._getname())  # 没改名<br># print(2, tom.__getage())<br>print(3, tom.__dict__)<br>print(4, tom.__class__.__dict__)<br>print(5, tom._Person__getage())  # 改名了<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>1 Tom<br>3 &#123;&#39;name&#39;: &#39;Tom&#39;, &#39;_age&#39;: 18&#125;<br>4 &#123;&#39;__doc__&#39;: None, &#39;__init__&#39;: &lt;function Person.__init__ at 0x0000023A58BB19D8&gt;, &#39;__module__&#39;: &#39;__main__&#39;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Person&#39; objects&gt;, &#39;_getname&#39;: &lt;function Person._getname at 0x0000023A58BB1A60&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Person&#39; objects&gt;, &#39;_Person__getage&#39;: &lt;function Person.__getage at 0x0000023A58BB1AE8&gt;&#125;<br>5 18<br></code></pre></td></tr></table></figure>
+
+<h3 id="私有方法的本质"><a href="#私有方法的本质" class="headerlink" title="私有方法的本质"></a>私有方法的本质</h3><ul>
+<li>单下划线的方法只是开发者之间的约定，解释器不做任何改变。</li>
+<li>双下划线的方法，是私有方法，解释器会改名，改名策略和私有变量相同，_类名_方法名。</li>
+<li>方法变量都在类的<strong>dict</strong>中可以找到。</li>
+</ul>
+<h3 id="私有成员的总结"><a href="#私有成员的总结" class="headerlink" title="私有成员的总结"></a>私有成员的总结</h3><ul>
+<li><p>在Python中使用<em>单下划线或者_</em>双下划线来标识一个成员被保护或者被私有化隐藏起来。</p>
+</li>
+<li><p>但是，不管使用亻十么样的访问控制，都不能真正的阻止用户修改类的成员。Python中没有绝对的安全的保护成员或者私有成员。</p>
+</li>
+<li><p>因此。前导的下划线只是一种警告或者提醒。请遵守这个约定。除非真有必要，不要修改或者使<br>用保护成员或者私有成员，更不要修改它们。</p>
+</li>
+</ul>
+<h2 id="补丁"><a href="#补丁" class="headerlink" title="补丁"></a>补丁</h2><ul>
+<li>可以通过修改或者替换类的成员。使用者调用的方式没有改变，但是，类提供的功能可能已经改变了。</li>
+</ul>
+<h3 id="猴子补丁〔MonkeyPatch）"><a href="#猴子补丁〔MonkeyPatch）" class="headerlink" title="猴子补丁〔MonkeyPatch）"></a>猴子补丁〔MonkeyPatch）</h3><ul>
+<li>在运行时，对属性、方法、函数等进行动态替换。</li>
+<li>其目的往往是为了通过替换、修改来增强、扩展原有代码的能力。</li>
+<li>黑魔法，慎用。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">#test1.py<br>from test2 import Person<br>from test3 import get_score<br>def monkeypatch():<br>    Person.get_score &#x3D; get_score<br><br>monkeypatch()<br>if __name__&#x3D;&#x3D;&#39;__main__&#39;:<br>    print(Person().get.score())<br><br>#test2.py<br>class Person:<br>    def get_score(self):<br>        ret &#x3D; &#123;&#39;English&#39;:80,&#39;Chinese&#39;:70,&#39;Math&#39;:80&#125;<br>        return ret<br>    <br>#test3.py<br>def get.score(self):<br>    return dict(name&#x3D;self.__class__.__name__,English &#x3D; 88,Chinese&#x3D;90,Math &#x3D; 100)<br></code></pre></td></tr></table></figure>
+
+<p>上例中,假设Person类get_score方法是从数据库拿数据,但是测试的时候,不方便<br>为了测试的方便,使用猴子补丁,替换了get_score方法,返回模拟的数据</p>
+<h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><p>一般好的设计是:把实例的某些属性保护起来,不让外部直接访问,外部使用getter读取属性和setter方法设置属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self,name,age&#x3D;20):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br>    def age(self):<br>        return self.__age<br>    def set_age(self,age):<br>        self.__age &#x3D; age<br>tom &#x3D; Person(&#39;tom&#39;)<br>print(tom.age())<br>tom.set_age(18)<br>print(tom.age())<br></code></pre></td></tr></table></figure>
+
+<p>通过age和set_age方法操作属性。</p>
+<p>有没有简单的方式呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self,name,age&#x3D;20):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br>    @property<br>    def age(self):<br>        return self.__age<br><br>    @age.setter<br>    def age(self,age):<br>        self.__age &#x3D; age<br><br>    @age.deleter<br>    def age(self):<br>        del self.__age<br>        print(&#39;del age&#39;)<br>tom &#x3D; Person(&#39;tom&#39;)<br>print(tom.age)<br>tom.age &#x3D; 12<br>print(tom.age)<br>del tom.age<br></code></pre></td></tr></table></figure>
+
+<p>特别注意:使用property装饰器的时候这三个方法同名</p>
+<ul>
+<li>property装饰器<br>后面跟的函数名就是以后的属性名,它就是getter,这个必须有,有了它至少是只读属性</li>
+<li>setter装饰器<br>与属性名同名,且接受2个参数,第一个是self,第二个是将要赋值的值,有了它,属性可写</li>
+<li>deleter装饰器<br>可以控制是否删除属性,很少用<br>propery装饰器必须在前,setter deleter装饰器在后<br>propery装饰器能通过简单的方式,把对方法的操作变成对属性的访问,并起到了一定隐藏效果</li>
+</ul>
+<p>其他的写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self,name,age&#x3D;20):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br><br>    def getage(self):<br>        return self.__age<br>    <br>    def setage(self,age):<br>        self.__age &#x3D; age<br>        <br>    def delage(self):<br>        print(&#39;del&#39;)<br>    <br>    age &#x3D; propery(getage,setage,delage,&#39;age peopery&#39;)<br>tom &#x3D; Person(&#39;tom&#39;)<br>print(tom.age)<br>tom.age &#x3D; 20<br>print(tom.age)<br>del tom.age<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self,name,age&#x3D;20):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br>    age &#x3D; propery(lambda self:self.__age)<br>tom &#x3D; Person(&#39;tom&#39;)<br>print(tom.age)<br></code></pre></td></tr></table></figure>
+
+<h3 id="对象的销毁"><a href="#对象的销毁" class="headerlink" title="对象的销毁"></a>对象的销毁</h3><p>类中可以定义<strong>del</strong>方法,称为析构函数(方法)</p>
+<p>作用:销毁类的实例的时候调用,以释放占用的资源.其中就放些清理资源的代码,比如释放连接</p>
+<p>注意这个方法不能引起对象的真正销毁,只是对象销毁的时候会自动调用它</p>
+<p>使用del语句删除实例,引用技术减1,当引用计数为0时,会自动调用<strong>del</strong>方法<br>由于Python实现了垃圾回收机制,不能确定对象何时执行垃圾回收</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Person:<br>    def __init__(self,name,age&#x3D;20):<br>        self.name &#x3D; name<br>        self.__age &#x3D; age<br>    def __del__(self):<br>        print(self.name)<br><br>del test()<br>    tom &#x3D; Person(&#39;tom&#39;)<br>    tom.__del__()<br>    tom.__del__()<br>    tom.__del__()<br>    tom.__del__()<br>    tom &#x3D; tom2<br>    tom3 &#x3D; tom2<br><br>test()<br></code></pre></td></tr></table></figure>
+
+<p>由于垃圾回收对象销毁时,才会真正清理对象,还会在回收对象之前自动调用<strong>del</strong>方法,除非你明确知道自己的目的,建议不要手动调用这个方法</p>
+<h3 id="方法重载-overload"><a href="#方法重载-overload" class="headerlink" title="方法重载(overload)"></a>方法重载(overload)</h3><p>其他面向对象的高级语言中,会有重载的概念<br>所谓重载,就是同一个方法名,但是参数个数 类型不一样,就是同一个方法的重载</p>
+<p>Python没有重载!<br>Python不需要重载!<br>Python中,方法(函数)定义中,形参非常灵活,不需要指定类型(就算指定了也只是一个说明而非约束),参数个数也不固定(可变参数),一个函数的定义可以实现很多中不同形式实参的调用,所以Python不需要方法的重载</p>
+<p>或者说Python语法本身就实现了其他语言的重载</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>面向对象的三要素之一,封装Encapsulation</p>
+<p>将数据和操作组织到类中,即属性和方法<br>将数据隐藏起来,给使用者提供操作(方法).使用者通过操作就可以获取或者修改数据.</p>
+<p>getter和setter.</p>
+<p>通过访问控制,暴露适当的数据和操作给用户,该隐藏的隐藏起来,例如保护成员或私有成员</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="随机整数生成"><a href="#随机整数生成" class="headerlink" title="随机整数生成"></a>随机整数生成</h3><ul>
+<li>可以指定一批生成的个数，可以指定数值的范围，可以调整数字的个数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import random<br><br>class RandomInt:  # 对象<br>    def __init__(self, count&#x3D;10, start&#x3D;1, stop&#x3D;100):<br>        self.count &#x3D; count<br>        self.start &#x3D; start<br>        self.stop &#x3D; stop<br><br>    def genint(self):<br>        return [random.randint(self.start, self.stop) for _ in range(self.count)]<br><br>class RandomInt2:  # 工具类<br>    @classmethod<br>    def genint(cls, count&#x3D;10, start&#x3D;1, stop&#x3D;100):<br>        return [random.randint(start, stop) for _ in range(count)]<br><br>#自己的<br>import random<br><br>class Num:<br>    def rd(self, number&#x3D;10, start&#x3D;0, end&#x3D;10):<br>        return [random.randint(start, end) for _ in range(number)]<br><br><br>test &#x3D; Num()<br>print(test.rd(5, 2, 4))<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import random<br><br>class genrateRandom:<br>    def __init__(self, amount&#x3D;20, srange&#x3D;0, lrange&#x3D;100):<br>        self.__amount &#x3D; amount<br>        self.__srange &#x3D; srange<br>        self.__lrange &#x3D; lrange<br><br>    def genrate(self):<br>        return [random.randint(self.__srange, self.__lrange) for _ in range(self.__amount)]<br><br>a &#x3D; genrateRandom(18, 40, 50)<br>lst &#x3D; a.genrate()<br>print(lst)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="打印坐标"><a href="#打印坐标" class="headerlink" title="打印坐标"></a>打印坐标</h3><ul>
+<li>使用上题中的类，随机生成20个数字，两两配对形成二维坐标系的坐标，把这些坐标组织起来，并打印输出，</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">import random<br><br>class RandomInt3:<br>    def __init__(self, count&#x3D;10, start&#x3D;1, stop&#x3D;100):<br>        self._count &#x3D; count<br>        self.start &#x3D; start<br>        self.stop &#x3D; stop<br>        self._gen &#x3D; self._generate()<br><br>    def _generate(self):<br>        # 生成器， 无限生成，要多少不在这里处理<br>        while True:<br>            yield [random.randint(self.start, self.stop) for _ in range(self._count)]<br><br>    def generate(self, count&#x3D;0):<br>        if count &gt; 0:<br>            self._count &#x3D; count<br>        # return next(self._gen)<br>        ret &#x3D; next(self._gen)<br>        return ret<br><br>ri &#x3D; RandomInt3()<br><br>class Point:<br>    def __init__(self, x, y):<br>        self.x &#x3D; x<br>        self.y &#x3D; y<br><br>    def<br>points &#x3D; [Point(x, y) for x, y in zip(ri.generate(), ri.generate())]<br># points2 &#x3D; [Point(*v) for v in zip(ri.generate(), ri.generate())]<br><br># print(points, len(points))<br>for point in points:<br>    print(&quot;&#123;&#125;&#123;&#125;.format(point)&quot;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">from test02 import GenrateRandom<br><br>class Coordinate:<br>    container &#x3D; []<br>    def __init__(self, x&#x3D;0, y&#x3D;0):<br>        self.__x &#x3D; x<br>        self.__y &#x3D; y<br>        self.__loaction &#x3D; [x, y]<br>        #container.append(self.__loaction) 无法识别上级变量container<br>        Coordinate.container.append(self.__loaction)<br><br>    def iter2Coordinate(iterable):<br>        return [Coordinate(iterable[i - 1], iterable[i]) for i in range(1, len(iterable), 2)] #如果数量为奇数，则舍弃最后一位<br><br>if __name__ &#x3D;&#x3D; &#39;__main__&#39;:<br>    a &#x3D; GenrateRandom(19, 40, 50 ) #定义每批生成19个数，范围是40-50<br>    lst &#x3D; a.genrate()   #开始生成列表<br>    print(lst)<br><br>    print(Coordinate.iter2Coordinate(lst))<br>    print(Coordinate.container)<br><br>    c &#x3D; Coordinate()<br>    print(c)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenrateRandom</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, amount=<span class="hljs-number">20</span>, srange=<span class="hljs-number">0</span>, lrange=<span class="hljs-number">100</span>)</span>:</span><br>        self.__amount = amount<br>        self.__srange = srange<br>        self.__lrange = lrange<br>        self.__g = self.__generate() <span class="hljs-comment">#避免重复生成新的生成器</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__generate</span><span class="hljs-params">(self)</span>:</span>  <span class="hljs-comment">#对外隐蔽生成器</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:  <span class="hljs-comment">#允许多次使用生成器</span><br>            <span class="hljs-keyword">yield</span> [random.randint(self.__srange, self.__lrange) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(self.__amount)]<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">genrate</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> next(self.__g)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    a = GenrateRandom(<span class="hljs-number">18</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>)<br>    lst = a.genrate()<br>    print(lst)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="车辆信息"><a href="#车辆信息" class="headerlink" title="车辆信息"></a>车辆信息</h3><ul>
+<li>记录车的品牌mark,颜色color，价格price，速度speed等特征，并实现增加车辆信息、显示全部车辆信息的功能</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"><br>class Car:  # 你管理车辆的抽象<br>    id &#x3D; 0<br><br>    @classmethod<br>    def genid(cls):  # 生成id用函数<br>        cls.id &#x3D; cls.id +1<br><br>    def __init__(self, mark, speed, color, price&#x3D;-1, **kwargs):<br>        self.id &#x3D; self.genid()<br>        self.mark &#x3D; mark<br>        self.color &#x3D; color<br>        self.price &#x3D; price<br>        self.__dict__.update(kwargs)<br>        self.properties &#x3D; kwargs<br><br>    def __repr__(self):<br>        return &quot;&lt;Car &#123;&#125; &quot;<br><br>car1 &#x3D; Car(&#39;Red Flag&#39;, 100, &#39;red&#39;)<br>car2 &#x3D; Car(&#39;audi&#39;, 120, &#39;black&#39;)<br><br><br>class CarInfo:  # 车辆信息的管理<br>    cars &#x3D; []<br><br>    def addcar(self, *cars:Car):<br>        self.cars.extend(cars)<br><br>    def getall(self):<br>        return self.cars<br><br><br>    # def getcatbyid(self, id):<br><br>ci &#x3D; CarInfo()<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Car:<br>    __cars &#x3D; []<br>    def __init__(self, mark&#x3D;&#39;奥迪双钻&#39;, color&#x3D;&quot;透明&quot;, price&#x3D;&#39;白送&#39;, speed&#x3D;&quot;车祸的速度&quot;):<br>        self.__mark &#x3D; mark<br>        self.__color &#x3D; color<br>        self.__price &#x3D; price<br>        self.__speed &#x3D; speed<br>        Car.__cars.append(self)<br><br>    @staticmethod<br>    def showCars():<br>        for i in Car.__cars:<br>            print(i.__mark, i.__color, i.__price, i.__price)<br><br>if __name__ &#x3D;&#x3D;&#39;__main__&#39;:<br>    a &#x3D; Car()<br>    b &#x3D; Car(&#39;丰田&#39;,&#39;red&#39;,500,1000)<br>    Car.showCars()<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="实现温度的处理"><a href="#实现温度的处理" class="headerlink" title="实现温度的处理"></a>实现温度的处理</h3><ul>
+<li>实现华氏温度和摄氏温度的转换。</li>
+<li>℃ = 5 * (℉ - 32) / 9</li>
+<li>℉ = 9 * ℃ / 5 +32</li>
+<li>完成以上转换后，增加与开始温度的转换，K = ℃ + 273.15</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Temperature:<br>    def __init__(self, t, unit&#x3D;&#39;c&#39;):<br>        self._c &#x3D; None<br>        self._f &#x3D; None<br>        self._k &#x3D; None<br><br>        if unit &#x3D;&#x3D; &#39;f&#39;:<br>            self._f &#x3D; t<br>            self._c &#x3D; self.f2c(t)<br>        elif unit &#x3D;&#x3D; &#39;k&#39;:<br>            self._k &#x3D; t<br>            self._c &#x3D; self.k2c(t)<br>        else:<br>            self._c &#x3D;t<br><br><br>    @property<br>    def c(self):<br>        return self._c<br><br>    @property<br>    def f(self):<br>        if self._f is None:<br>            self._f &#x3D; self.c2f(self._c)<br>        return self._f<br><br>    @property<br>    def k(self):<br>        if self._k is None:<br>            self._k &#x3D; self.c2k(self._c)<br>        return self._k<br><br>    @classmethod<br>    def c2f(cls, c):<br>        return 9 * c &#x2F; 5 + 32<br><br>    @classmethod<br>    def f2c(cls, f):<br>        return 5 * (f - 32) &#x2F; 9<br><br>    @classmethod<br>    def c2k(cls, c):<br>        return c + 273.15<br><br>    @classmethod<br>    def k2c(cls, k):<br>        return k - 273.15<br><br>    @classmethod<br>    def f2k(cls, f):<br>        return cls.c2k(cls.f2c(f))<br><br>    @classmethod<br>    def k2f(cla, k):<br>        return cls.c2f(cls.k2c(k))<br><br>t1 &#x3D; Temperature.c2k(68)<br>t2 &#x3D; Temperature(68, &#39;f&#39;)<br>[x, ]<br></code></pre></td></tr></table></figure>
+
+<h3 id="模拟购物车购物"><a href="#模拟购物车购物" class="headerlink" title="模拟购物车购物"></a>模拟购物车购物</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Color:<br>    RED &#x3D; 0<br>    BLUE &#x3D; 1<br>    GREEN &#x3D; 2<br>    GOLDEN &#x3D; 3<br>    BLACK &#x3D; 4<br>    OTHER &#x3D; 1000<br><br>class Item:<br>    def __init__(self, **kwargs):<br>        self.__spec &#x3D; kwargs<br><br><br>    def __repr__(self):<br>        return str(sorted(self.__spec.items()))<br><br><br>class Cart:<br>    def __init__(self):<br>        self.items &#x3D; []<br><br><br>    def additem(self, item:Item):<br>        self.items.append(item)<br><br><br>    def getallitems(self):<br>        return self.items<br><br><br>mycart &#x3D; Cart()<br>myphone &#x3D; Item(mark&#x3D;&#39;Huawei&#39;, color&#x3D;Color.GOLDEN, memory&#x3D;&#39;4G&#39;)<br>mycart.additem(mycart)<br><br>mycar &#x3D; Item(mark&#x3D;&#39;Red Flag&#39;, color&#x3D;Color.BLACK, year&#x3D;2017)<br>mycart.additem(mycar)<br><br>print(mycart.getallitems())<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">class Item:<br>    def __init__(self, idnum, price):<br>        self.__id &#x3D; idnum<br>        self.__price &#x3D; price<br><br>    @property<br>    def price(self):<br>        return self.__price<br><br>    def __repr__(self):<br>        return &#39;id:&#123;&#125;  price:&#123;&#125;$&#39;.format(self.__id, self.__price)<br><br>class Car:<br>    def __init__(self):<br>        self.__lst &#x3D; []<br><br>    def add(self, item:Item):<br>        self.__lst.append(item)<br><br>    def dele(self):<br>        self.__lst.pop()<br><br>    def show(self):<br>        for item in self.__lst:<br>            print(item)<br><br>    def clear(self):<br>        self.__lst.clear()<br><br>    def checkout(self):<br>        print(&quot;Your Car has:&quot;)<br>        self.show()<br>        sum &#x3D; 0<br>        for item in self.__lst:<br>            sum +&#x3D; item.price<br>        print(&quot;check out is &#123;&#125;$&quot;.format(sum))<br><br>if __name__ &#x3D;&#x3D; &#39;__main__&#39;:<br>    c &#x3D; Car()<br>    a1 &#x3D; Item(&#39;001&#39;, 10)<br>    a2 &#x3D; Item(&#39;002&#39;, 17)<br>    c.show()<br>    c.checkout()<br>    c.add(a1)<br>    c.add(a2)<br>    c.checkout()<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象</title>
+    <url>/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一种认识世界,分析世界的方法论.将万事万物抽象为类.</p>
+<h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><p>流水线,一步一步走</p>
+<p>优点:逻辑清晰</p>
+<p>缺点:上一步错了,下一步就一起错</p>
+<h3 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h3><p>是抽象概念,一类事物的共同特征的集合</p>
+<h5 id="定义时候发生的事"><a href="#定义时候发生的事" class="headerlink" title="定义时候发生的事"></a>定义时候发生的事</h5><h3 id="对象instance-object"><a href="#对象instance-object" class="headerlink" title="对象instance,object"></a>对象instance,object</h3><p>对象是具体的,一个实体</p>
+<p>用就按及语言来描述类,就是属性和方法的集合.</p>
+<p>属性,是对对象状态的抽象,用数据结构来描述</p>
+<p>方法,是对对象行为的抽象,用操作名和实现该操作的方法来描述</p>
+<p>类内部的函数就是方法</p>
+<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>Python中,一切皆对象</p>
+<p>对象是对数据和操作的封装</p>
+<p>对象是独立的,但是对象之间可以相互使用</p>
+<p>目前OOP(Object Oriented Programming)是最接近人类认知的编程范式</p>
+<h3 id="面向对象三要素"><a href="#面向对象三要素" class="headerlink" title="面向对象三要素"></a>面向对象三要素</h3><h5 id="1-封装"><a href="#1-封装" class="headerlink" title="1.封装"></a>1.封装</h5><ul>
+<li>组装:将数据和操作组装到一起</li>
+<li>隐藏数据:对外只暴露一些接口,通过接口访问对象.</li>
+</ul>
+<h5 id="2-继承"><a href="#2-继承" class="headerlink" title="2.继承"></a>2.继承</h5><ul>
+<li>多重复,继承来的就不用自己写</li>
+<li>多继承少修改,OCP(Open-closed Principle),使用继承来改变,来体现个性</li>
+</ul>
+<h5 id="3-多态"><a href="#3-多态" class="headerlink" title="3.多态"></a>3.多态</h5><ul>
+<li>面向对象编程最灵活的地方,动态绑定</li>
+<li>多态也称多态性</li>
+<li>目的:统一子类编写规范,为了让使用者更加方便调用功能的方法.</li>
+</ul>
+<h3 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span>:</span><br>    x = <span class="hljs-number">123</span> <span class="hljs-comment">#类属性 </span><br>    <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span><br>        print(<span class="hljs-string">'init'</span>)<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.x<br>a = MyClass()  <span class="hljs-comment">#实例化</span><br>&gt;&gt;&gt;init<br></code></pre></td></tr></table></figure>
+
+<p>使用上述语法,在类对象名称后加一个括号,就调用类的实例化方法,完成实例化.</p>
+<p>实例化就真正创建了一个该类的对象(实例),同时产生对象的名字空间(字典)</p>
+<h5 id="init-初始化方法"><a href="#init-初始化方法" class="headerlink" title="__init__初始化方法"></a><code>__init__</code>初始化方法</h5><p>作用:对实例进行初始化(只做对实例的属性进行初始化)</p>
+<p>Python类实例化后,会自动调用<strong>init</strong>方法.初始化可以多个参数,但是第一个参数必须留给self,其他参数随意.</p>
+<p>MyClass()实际上就是在调用<strong>init</strong>方法,可以不定义,如果没有定义会在实例化后隐式调用</p>
+<p><strong>init</strong>方法不能有返回值,只能是None.(约定)</p>
+<p>Python之禅说,显式比隐式更好,所以,应该使用<code>__init__</code></p>
+<p>通过类方法,即可以对类的属性进行修改,也可以对实例的属性进行修改.</p>
+<h2 id="实例对象instance-object"><a href="#实例对象instance-object" class="headerlink" title="实例对象instance(object)"></a>实例对象instance(object)</h2><p>类实例化后一定会获得一个对象,这就是实例对象.</p>
+<p>self.name 就是对jerry对象的name,name保存在对象jerry对象上,而不是Person类上,所以叫实例变量.name称为实例的属性</p>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a>self</h2><p>self就是调用者,就是对应的实例对象.</p>
+<h3 id="实例变量-和-类变量"><a href="#实例变量-和-类变量" class="headerlink" title="实例变量 和 类变量"></a>实例变量 和 类变量</h3><p>类的属性可在类内部或者外部更改,更改后,后续定义的类的属性也会被更改</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span>  <span class="hljs-title">Person</span>:</span><br>	age=  <span class="hljs-number">3</span><br>	<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span> <br>		self.name=  name<br><br><span class="hljs-comment">#tom = Person('Tom',20)  #</span><br>tom = Person(<span class="hljs-string">'Tom'</span>)  <span class="hljs-comment"># 实例化、初始化</span><br>jerry  =  Person( <span class="hljs-string">' Jer ry '</span> )<br><br>print(tom.name,  tom.age) <br>print(jerry.name, jerry.age)<br>print(Person.age) <br><span class="hljs-comment">#print&#123;Person.name)  # </span><br>Person.age = <span class="hljs-number">30</span> <br>print(Person.age, tom.age, jerry,age)<br><br>＃ 运行结果<br>Tom  <span class="hljs-number">3</span><br>Jerry  <span class="hljs-number">3</span><br><span class="hljs-number">3</span><br><span class="hljs-number">30</span>  <span class="hljs-number">30</span>  <span class="hljs-number">30</span><br></code></pre></td></tr></table></figure>
+
+<p>age = 3 是类变量</p>
+<p>name 是实例变量</p>
+<ul>
+<li>实例变量是每一个实例自己的变量;</li>
+<li>类变量是类的变量,是类的所有实例共享的属性和方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">特殊属性</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>name</strong></td>
+<td align="center">类的对象名(实例没有)</td>
+</tr>
+<tr>
+<td align="center"><strong>class</strong></td>
+<td align="center">对象的类型(同type)</td>
+</tr>
+<tr>
+<td align="center"><strong>dict</strong></td>
+<td align="center">对象的属性字典</td>
+</tr>
+<tr>
+<td align="center"><strong>qualname</strong></td>
+<td align="center">类的限定名(实例没有)</td>
+</tr>
+</tbody></table>
+<p>总结</p>
+<p>是类的,也是这个类所有实例的,其实例都可以访问到;是实例的,就是这个实例自己的,通过类访问不到.</p>
+<p>类变量是书屋类的变量,这个类的所有实例可以共享这个变量.</p>
+<p>实例可以动态的给自己增加一个属性.比如:<strong>dict</strong>[变量名]和实例.变量名都可以访问到.</p>
+<p>实例的同名变量会隐藏这些类变量,或者说覆盖了这个类变量.</p>
+<ul>
+<li>实例属性的查找顺序<ul>
+<li>指的是实例使用 . 来访问属性,会首先找自己的<strong>dict</strong>,给如果没有,在通过<strong>class</strong>找到自己的类,再去类的<strong>dicr</strong>中找</li>
+<li>如果实例使用<strong>dict</strong>[变量名]访问变量,将不会按照上面的查找顺序找变量,这个是指明使用字典的key查找,不是属性查找</li>
+<li>一般来说,==类变量使用全大写来命名.</li>
+</ul>
+</li>
+</ul>
+<h3 id="类方法和实例方法"><a href="#类方法和实例方法" class="headerlink" title="类方法和实例方法"></a>类方法和实例方法</h3><h5 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@classmethod</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clsmtd</span><span class="hljs-params">(cls)</span>:</span><br>    print(xxx)<br></code></pre></td></tr></table></figure>
+
+<p>a = MyClass()</p>
+<p>a.clsmtd()是可以调用的, 等同于<code>a.__class__.clsmtd()</code></p>
+<ol>
+<li>在类定义中,使用@classmethod装饰器修饰的方法</li>
+<li>必须至少有一个参数,且第一个参数就给了cls,cls指调用者就是对象自己</li>
+<li>cls可以是任意合法名称,但是为了易读性,不要改</li>
+<li>通过cls可以直接操作类的属性,但是无法通过cls操作类的实例</li>
+</ol>
+<h5 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h5><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@staticmethod</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">staticmtd</span><span class="hljs-params">()</span>:</span><br>    print(<span class="hljs-string">'static'</span>)<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>在类的定义中,使用@staticmethod装饰器修饰的方法</li>
+<li>调用时,不会隐式传入参数</li>
+</ol>
+<p>静态方法,指时表明这个方法属于这个名词空间,函数归结在一起,方便组织管理.</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>类除了普通方法都可以调用,普通 方法 需要对象的实例作为第一参数.</p>
+<p>实例可以调用所有类中定义的方法(包括类方法,静态方法),普通方法传入实例自身,静态方法和类方法需要找到实例的类.</p>
+<h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><h5 id="私有-private-属性"><a href="#私有-private-属性" class="headerlink" title="私有(private)属性"></a>私有(private)属性</h5><p>双下划线开头</p>
+<p>实例.__方法 外部不可使用此方法;在内部定义一个获取此方法的方法,才可以使用</p>
+<p>外部无法访问,但是类内部接口可以访问</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,name,age=<span class="hljs-number">18</span>)</span>:</span><br>        self.name= name<br>        self.__age= age<br>        <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">growup</span><span class="hljs-params">(self,increase = <span class="hljs-number">1</span>)</span>:</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-number">0</span>&lt; increase &lt; <span class="hljs-number">150</span>:<br>            self.__age += increase<br>            <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getage</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> self.__age<br></code></pre></td></tr></table></figure>
+
+<p>此时age在外部不可见,但是可以通过调用getage来访问</p>
+<p>本质:python通过内部改名来实现,将其改名为<code>_类名__方法名</code></p>
+<p><code>__age</code>存在于实例的属性字典中</p>
+<p>如果<code>__growup</code>属于私有方法,存放在类的属性字典中</p>
+<h5 id="保护变量-protected"><a href="#保护变量-protected" class="headerlink" title="保护变量(protected)"></a>保护变量(protected)</h5><p>单下划线开头</p>
+<p>开发者约定 ,单下划线不要改</p>
+<h5 id="公共方法-public"><a href="#公共方法-public" class="headerlink" title="公共方法(public)"></a>公共方法(public)</h5><h5 id="私有成员总结"><a href="#私有成员总结" class="headerlink" title="私有成员总结"></a>私有成员总结</h5><p>python使用中,使用单下划线或者双下划线来表示一个成员被保护或者被私有化隐藏起来.不要使用或者修改</p>
+<h3 id="补丁"><a href="#补丁" class="headerlink" title="补丁"></a>补丁</h3><p>通过修改或者替换类的成员,使用者调用的方式没有改变,但是,类提供的功能可能已经改变了</p>
+<h5 id="猴子补丁-monkey-patch"><a href="#猴子补丁-monkey-patch" class="headerlink" title="猴子补丁(monkey patch)"></a>猴子补丁(monkey patch)</h5><p>在运行时,对其属性进行动态替换(慎用)</p>
+<h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><p>一般好的设计:把实例的属性保护起来,不让外部直接访问,外部使用getter读取属性和setter方法设置属性.</p>
+<ul>
+<li><p>property装饰器</p>
+<p>后面跟函数名就是以后的属性名.它就是getter,这个必须有,有了它至少是只读属性</p>
+<p>将类内部的方法def()变成def,</p>
+</li>
+<li><p>setter装饰器</p>
+<p>与属性同名,接收两个参数,第一个是self,第二是将要赴的值.有了它,属性可写</p>
+</li>
+<li><p>deleter装饰器</p>
+<p>可以控制是否删除属性,很少用</p>
+</li>
+<li><p>property装饰器必须在前,setter,deleter装饰器在后</p>
+</li>
+</ul>
+<p>![img](../../../Program Files/Typora)</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>实现:</p>
+<ol>
+<li>继承</li>
+<li>抽象类(abc模块)abc模块强制子类按照父类内属性定义,也可派生新的属性和方法</li>
+</ol>
+<h4 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h4><p>使用代码外部规范来定义代码形式</p>
+<p>-继承:耦合性太高,程序的可扩展性差</p>
+<p>-鸭子类型:耦合度低,程序的可扩展性强</p>
+<h3 id="对象的销毁"><a href="#对象的销毁" class="headerlink" title="对象的销毁"></a>对象的销毁</h3><p>类中可以定义<code>__del__</code>方法,称为析构函数(方法).</p>
+<p>作用:销毁类的实例的调用,以释放专用内存</p>
+<h3 id="方法重载-overload"><a href="#方法重载-overload" class="headerlink" title="方法重载(overload)"></a>方法重载(overload)</h3><p>重载就是同一个方法名,但是参数数量.类型不一样,就是同一个方法的重载.</p>
+<p>Python没有重载,因为Python支持可变形参,参数的数据类型也无法固定,所以没必要.</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>面向对象的三要素之一,封装Encapsulation</p>
+<p>封装</p>
+<p>将数据和操作组织到类中,及属性和方法.</p>
+<p>将数据隐藏起来,给使用者提供操作.是用者通过操作就可以获取或者修改数据,getter ,setter</p>
+<p>通过访问控制,暴露适当的数据和操作给用户.</p>
+<h3 id="方法绑定-bound-method"><a href="#方法绑定-bound-method" class="headerlink" title="方法绑定(bound method)"></a>方法绑定(bound method)</h3><p>类内部的方法主要是给对象用的</p>
+<p>1.类调用类内部的函数,该函数只是一个普通的函数.</p>
+<p>普通函数需要接收几个参数就要传入几个参数.</p>
+<p>2.对象调用类内部方法:称之为方法绑定</p>
+<p>不同的对象调用类内部方法,会产生不同的对象的方法绑定,对象的绑定方法,是由对象来调用.但其方法功能都是一致的.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span>:</span><br>    school = <span class="hljs-string">'oldboy'</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,name,age,sex)</span>:</span><br>        self.name = name<br>        self.age = age<br>        self.sex = sex,<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">learn</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">pass</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eat</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">pass</span><br>stu1 = Student(<span class="hljs-string">'james'</span>,<span class="hljs-number">15</span>,<span class="hljs-string">'male'</span>)<br>stu2 = Student(<span class="hljs-string">'james'</span>,<span class="hljs-number">15</span>,<span class="hljs-string">'male'</span>)<br>print(stu1.__dict__)<br><br>print(Student.learn)<br>print(stu1.learn)<br>print(stu2.learn)<br><br>&gt;&gt;&gt;&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'james'</span>, <span class="hljs-string">'age'</span>: <span class="hljs-number">15</span>, <span class="hljs-string">'sex'</span>: (<span class="hljs-string">'male'</span>,)&#125;<br>&gt;&gt;&gt;&lt;function Student.learn at <span class="hljs-number">0x0000021246682598</span>&gt;<br>&gt;&gt;&gt;&lt;bound method Student.learn of &lt;__main__.Student object at <span class="hljs-number">0x000002125D67C710</span>&gt;&gt;<br>&gt;&gt;&gt;&lt;bound method Student.learn of &lt;__main__.Student object at <span class="hljs-number">0x000002125D67C550</span>&gt;&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="—————————————————————"><a href="#—————————————————————" class="headerlink" title="—————————————————————"></a>—————————————————————</h3><ul>
+<li>类名必须使用驼峰体来命名</li>
+<li>在定义类发生的事情:<ol>
+<li>生成一个名称空间(类的字典)</li>
+<li>把类中所有名字,放入类的字典中</li>
+<li>使用<code>__dict__</code> 方法查看</li>
+</ol>
+</li>
+</ul>
+<p>注意:类在定义阶段就已经产生好了名称空间,执行Python文件时会执行类内部的代码.</p>
+<ul>
+<li>调用类发生的事情:<ol>
+<li>首先产生一个空的对象,产生名称空间</li>
+<li>自动触发<code>__init__</code></li>
+<li>把对象本身以及括号内的参数一并传给<code>__init__</code>函数</li>
+</ol>
+</li>
+<li>对象与类的查找顺序:<ol>
+<li>对象 . 属性,若对象本身有,则优先查找对象自己的</li>
+<li>若对象本身没有,则取类里面找</li>
+<li>若类没有,报错</li>
+</ol>
+</li>
+</ul>
+]]></content>
   </entry>
 </search>
