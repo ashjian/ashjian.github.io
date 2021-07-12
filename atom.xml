@@ -81,11 +81,11 @@
   </entry>
   
   <entry>
-    <title>Python面向对象</title>
-    <link href="http://www.ashjian.xyz/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://www.ashjian.xyz/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
-    <published>2021-06-29T03:14:44.557Z</published>
-    <updated>2021-06-18T08:24:52.063Z</updated>
+    <title>Python包管理和打包分发</title>
+    <link href="http://www.ashjian.xyz/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/"/>
+    <id>http://www.ashjian.xyz/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/</id>
+    <published>2021-07-12T15:14:43.941Z</published>
+    <updated>2021-07-12T06:08:03.875Z</updated>
     
     <summary type="html">
     
@@ -103,16 +103,43 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python面向对象" scheme="http://www.ashjian.xyz/tags/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="python包管理和打包分发" scheme="http://www.ashjian.xyz/tags/python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title>Python类的继承</title>
-    <link href="http://www.ashjian.xyz/Python%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/"/>
-    <id>http://www.ashjian.xyz/Python%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/</id>
-    <published>2021-06-29T03:14:44.533Z</published>
-    <updated>2021-06-24T13:43:44.832Z</updated>
+    <title>Pycharm中使用Git之Git分支和工作流管理</title>
+    <link href="http://www.ashjian.xyz/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/"/>
+    <id>http://www.ashjian.xyz/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/</id>
+    <published>2021-07-12T15:14:43.940Z</published>
+    <updated>2021-07-12T07:54:46.072Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
+    
+    
+      <category term="Pycharm使用git" scheme="http://www.ashjian.xyz/tags/Pycharm%E4%BD%BF%E7%94%A8git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gogs安装</title>
+    <link href="http://www.ashjian.xyz/Gogs%E5%AE%89%E8%A3%85/"/>
+    <id>http://www.ashjian.xyz/Gogs%E5%AE%89%E8%A3%85/</id>
+    <published>2021-07-12T15:14:43.939Z</published>
+    <updated>2021-07-12T06:16:14.822Z</updated>
     
     <summary type="html">
     
@@ -130,16 +157,97 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python类的继承" scheme="http://www.ashjian.xyz/tags/python%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/"/>
+      <category term="Gogs安装" scheme="http://www.ashjian.xyz/tags/Gogs%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
-    <title>Python多继承</title>
-    <link href="http://www.ashjian.xyz/Python%E5%A4%9A%E7%BB%A7%E6%89%BF/"/>
-    <id>http://www.ashjian.xyz/Python%E5%A4%9A%E7%BB%A7%E6%89%BF/</id>
-    <published>2021-06-29T03:14:44.509Z</published>
-    <updated>2021-06-27T14:56:32.580Z</updated>
+    <title>Git由来和基本概念操作</title>
+    <link href="http://www.ashjian.xyz/Git%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.ashjian.xyz/Git%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-07-12T15:14:43.937Z</published>
+    <updated>2021-07-12T07:55:36.202Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
+    
+    
+      <category term="GIt由来和基础概念" scheme="http://www.ashjian.xyz/tags/GIt%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git的Push和Clone</title>
+    <link href="http://www.ashjian.xyz/Git%E7%9A%84Push%E5%92%8CClone/"/>
+    <id>http://www.ashjian.xyz/Git%E7%9A%84Push%E5%92%8CClone/</id>
+    <published>2021-07-12T15:14:43.936Z</published>
+    <updated>2021-07-12T06:23:53.109Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
+    
+    
+      <category term="GIt操作" scheme="http://www.ashjian.xyz/tags/GIt%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git操作增删改检出重置比较</title>
+    <link href="http://www.ashjian.xyz/Git%E6%93%8D%E4%BD%9C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%A3%80%E5%87%BA%E9%87%8D%E7%BD%AE%E6%AF%94%E8%BE%83/"/>
+    <id>http://www.ashjian.xyz/Git%E6%93%8D%E4%BD%9C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%A3%80%E5%87%BA%E9%87%8D%E7%BD%AE%E6%AF%94%E8%BE%83/</id>
+    <published>2021-07-12T15:14:43.935Z</published>
+    <updated>2021-07-12T12:18:37.010Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
+    
+    
+      <category term="Git操作" scheme="http://www.ashjian.xyz/tags/Git%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python之slots、反向方法、生成器交互</title>
+    <link href="http://www.ashjian.xyz/Python%E4%B9%8Bslots%E3%80%81%E5%8F%8D%E5%90%91%E6%96%B9%E6%B3%95%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8%E4%BA%A4%E4%BA%92/"/>
+    <id>http://www.ashjian.xyz/Python%E4%B9%8Bslots%E3%80%81%E5%8F%8D%E5%90%91%E6%96%B9%E6%B3%95%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8%E4%BA%A4%E4%BA%92/</id>
+    <published>2021-07-12T05:49:28.958Z</published>
+    <updated>2021-07-12T05:47:42.052Z</updated>
     
     <summary type="html">
     
@@ -157,39 +265,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python多继承" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BB%A7%E6%89%BF/"/>
+      <category term="python补充" scheme="http://www.ashjian.xyz/tags/python%E8%A1%A5%E5%85%85/"/>
     
   </entry>
   
   <entry>
-    <title>面向对象</title>
-    <link href="http://www.ashjian.xyz/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://www.ashjian.xyz/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
-    <published>2021-06-29T03:14:44.484Z</published>
-    <updated>2021-06-25T08:56:26.095Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python信息提取</title>
-    <link href="http://www.ashjian.xyz/Python%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
-    <id>http://www.ashjian.xyz/Python%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</id>
-    <published>2021-06-14T05:26:21.683Z</published>
-    <updated>2021-06-12T10:27:11.438Z</updated>
+    <title>Python异常处理</title>
+    <link href="http://www.ashjian.xyz/Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <id>http://www.ashjian.xyz/Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</id>
+    <published>2021-07-12T05:49:28.956Z</published>
+    <updated>2021-07-06T09:15:17.350Z</updated>
     
     <summary type="html">
     
@@ -207,16 +292,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python信息提取" scheme="http://www.ashjian.xyz/tags/python%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
+      <category term="python异常处理" scheme="http://www.ashjian.xyz/tags/python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
   <entry>
-    <title>Python数据分发</title>
-    <link href="http://www.ashjian.xyz/Python%E6%95%B0%E6%8D%AE%E5%88%86%E5%8F%91/"/>
-    <id>http://www.ashjian.xyz/Python%E6%95%B0%E6%8D%AE%E5%88%86%E5%8F%91/</id>
-    <published>2021-06-14T05:26:21.680Z</published>
-    <updated>2021-06-14T05:24:28.030Z</updated>
+    <title>Python模块化</title>
+    <link href="http://www.ashjian.xyz/Python%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>http://www.ashjian.xyz/Python%E6%A8%A1%E5%9D%97%E5%8C%96/</id>
+    <published>2021-07-12T05:49:28.954Z</published>
+    <updated>2021-07-12T14:04:52.586Z</updated>
     
     <summary type="html">
     
@@ -234,16 +319,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python数据分发" scheme="http://www.ashjian.xyz/tags/python%E6%95%B0%E6%8D%AE%E5%88%86%E5%8F%91/"/>
+      <category term="python模块化" scheme="http://www.ashjian.xyz/tags/python%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
   </entry>
   
   <entry>
-    <title>Python浏览器分析</title>
-    <link href="http://www.ashjian.xyz/Python%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E6%9E%90/"/>
-    <id>http://www.ashjian.xyz/Python%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E6%9E%90/</id>
-    <published>2021-06-14T05:26:21.679Z</published>
-    <updated>2021-06-13T14:21:04.583Z</updated>
+    <title>Python分发</title>
+    <link href="http://www.ashjian.xyz/Python%E5%88%86%E5%8F%91/"/>
+    <id>http://www.ashjian.xyz/Python%E5%88%86%E5%8F%91/</id>
+    <published>2021-07-12T05:49:28.918Z</published>
+    <updated>2021-06-01T07:43:41.624Z</updated>
     
     <summary type="html">
     
@@ -261,16 +346,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python正则表达式" scheme="http://www.ashjian.xyz/tags/python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="python分发" scheme="http://www.ashjian.xyz/tags/python%E5%88%86%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title>Python滑动窗口</title>
-    <link href="http://www.ashjian.xyz/Python%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    <id>http://www.ashjian.xyz/Python%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</id>
-    <published>2021-06-14T05:26:21.677Z</published>
-    <updated>2021-06-14T05:24:09.882Z</updated>
+    <title>Python插件化开发</title>
+    <link href="http://www.ashjian.xyz/Python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/"/>
+    <id>http://www.ashjian.xyz/Python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/</id>
+    <published>2021-07-12T05:49:28.917Z</published>
+    <updated>2021-07-12T05:47:47.106Z</updated>
     
     <summary type="html">
     
@@ -288,16 +373,66 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python滑动窗口" scheme="http://www.ashjian.xyz/tags/python%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+      <category term="python插件化开发" scheme="http://www.ashjian.xyz/tags/python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title>Python正则表达式</title>
-    <link href="http://www.ashjian.xyz/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>http://www.ashjian.xyz/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
-    <published>2021-06-14T05:26:21.654Z</published>
-    <updated>2021-06-05T05:15:09.967Z</updated>
+    <title>一键搭载Git私服Gogs</title>
+    <link href="http://www.ashjian.xyz/%E4%B8%80%E9%94%AE%E6%90%AD%E8%BD%BDGit%E7%A7%81%E6%9C%8DGogs/"/>
+    <id>http://www.ashjian.xyz/%E4%B8%80%E9%94%AE%E6%90%AD%E8%BD%BDGit%E7%A7%81%E6%9C%8DGogs/</id>
+    <published>2021-07-12T05:49:28.915Z</published>
+    <updated>2021-07-12T05:37:37.718Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
+    
+    
+      <category term="git" scheme="http://www.ashjian.xyz/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中函数和方法的区别</title>
+    <link href="http://www.ashjian.xyz/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.ashjian.xyz/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2021-07-05T15:50:36.058Z</published>
+    <updated>2021-06-28T08:11:35.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python魔术方法上下文管理</title>
+    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86/"/>
+    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86/</id>
+    <published>2021-07-05T15:50:36.037Z</published>
+    <updated>2021-06-29T08:29:32.447Z</updated>
     
     <summary type="html">
     
@@ -315,16 +450,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python正则表达式" scheme="http://www.ashjian.xyz/tags/python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>Python文件加载及分析器</title>
-    <link href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%8A%E5%88%86%E6%9E%90%E5%99%A8/"/>
-    <id>http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%8A%E5%88%86%E6%9E%90%E5%99%A8/</id>
-    <published>2021-06-13T05:21:00.024Z</published>
-    <updated>2021-06-13T05:20:31.851Z</updated>
+    <title>Python魔术方法反射</title>
+    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E5%8F%8D%E5%B0%84/"/>
+    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E5%8F%8D%E5%B0%84/</id>
+    <published>2021-07-05T15:50:35.989Z</published>
+    <updated>2021-07-05T15:39:53.110Z</updated>
     
     <summary type="html">
     
@@ -342,16 +477,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python文件加载及分析器" scheme="http://www.ashjian.xyz/tags/python%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%8A%E5%88%86%E6%9E%90%E5%99%A8/"/>
+      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>Python序列化和反序列化</title>
-    <link href="http://www.ashjian.xyz/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    <id>http://www.ashjian.xyz/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</id>
-    <published>2021-05-29T07:45:53.602Z</published>
-    <updated>2021-06-25T01:55:22.968Z</updated>
+    <title>Python魔术方法</title>
+    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
+    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</id>
+    <published>2021-07-05T15:50:35.938Z</published>
+    <updated>2021-07-05T15:50:01.619Z</updated>
     
     <summary type="html">
     
@@ -366,15 +501,19 @@
     </summary>
     
     
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>Python文件操作练习</title>
-    <link href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
-    <id>http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/</id>
-    <published>2021-05-29T07:45:53.583Z</published>
-    <updated>2021-05-29T07:44:58.670Z</updated>
+    <title>Python描述器练习</title>
+    <link href="http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8%E7%BB%83%E4%B9%A0/"/>
+    <id>http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8%E7%BB%83%E4%B9%A0/</id>
+    <published>2021-07-05T15:50:35.936Z</published>
+    <updated>2021-07-05T15:48:50.979Z</updated>
     
     <summary type="html">
     
@@ -397,11 +536,11 @@
   </entry>
   
   <entry>
-    <title>Python文件操作</title>
-    <link href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</id>
-    <published>2021-05-29T07:45:53.582Z</published>
-    <updated>2021-06-12T14:09:44.519Z</updated>
+    <title>Python描述器</title>
+    <link href="http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8/"/>
+    <id>http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8/</id>
+    <published>2021-07-05T15:50:35.935Z</published>
+    <updated>2021-07-05T15:40:32.665Z</updated>
     
     <summary type="html">
     
@@ -419,138 +558,7 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python文件操作序" scheme="http://www.ashjian.xyz/tags/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python路径操作</title>
-    <link href="http://www.ashjian.xyz/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.ashjian.xyz/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/</id>
-    <published>2021-05-29T07:45:53.567Z</published>
-    <updated>2021-05-10T13:16:10.479Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="pythonS路径操作" scheme="http://www.ashjian.xyz/tags/pythonS%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的shuttil模块</title>
-    <link href="http://www.ashjian.xyz/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.ashjian.xyz/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/</id>
-    <published>2021-05-29T07:45:53.527Z</published>
-    <updated>2021-05-10T15:00:32.048Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="pythonS的shuttil模块" scheme="http://www.ashjian.xyz/tags/pythonS%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的csv和ini配置文件</title>
-    <link href="http://www.ashjian.xyz/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    <id>http://www.ashjian.xyz/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
-    <published>2021-05-29T07:45:53.497Z</published>
-    <updated>2021-05-12T08:40:56.450Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="pythonS的csv和ini配置文件" scheme="http://www.ashjian.xyz/tags/pythonS%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的argparse使用</title>
-    <link href="http://www.ashjian.xyz/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.ashjian.xyz/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/</id>
-    <published>2021-05-29T07:45:53.456Z</published>
-    <updated>2021-05-29T11:45:59.407Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python之StringIO和BytesIO</title>
-    <link href="http://www.ashjian.xyz/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/"/>
-    <id>http://www.ashjian.xyz/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/</id>
-    <published>2021-05-29T07:45:53.434Z</published>
-    <updated>2021-04-25T09:12:44.165Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
-    
-    
-      <category term="pythonS之tringIO和BytesIO" scheme="http://www.ashjian.xyz/tags/pythonS%E4%B9%8BtringIO%E5%92%8CBytesIO/"/>
+      <category term="python描述器" scheme="http://www.ashjian.xyz/tags/python%E6%8F%8F%E8%BF%B0%E5%99%A8/"/>
     
   </entry>
   
