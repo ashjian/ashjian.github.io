@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/concurrent.futures%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -330,7 +330,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" itemprop="url">Python序列化和反序列化</a></h1>
+                <a class="post-title-link" href="/concurrent.futures%E4%BD%BF%E7%94%A8/" itemprop="url">concurrent.futures使用</a></h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
               </time>
             
 
@@ -358,12 +358,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-06-25T09:55:22+08:00">
-                2021-06-25
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T11:19:47+08:00">
+                2021-07-21
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -373,8 +395,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" itemprop="commentCount"></span>
+                <a href="/concurrent.futures%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/concurrent.futures%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  2k
                 </span>
               
 
@@ -434,14 +456,18 @@
       
         
           
-          序列化和反序列化为什么要序列化
-内存中的字典、列表、集合以及各种对象，如何保存到一个文件中？如果是自己定义的类的示例，如何保存到文件中？如何从文件中读取数据，并让它们在内存中再次恢复成自己对应的类的实例？
+          
+总结：
 
-要设计一套协议，按照某种规则，把内存中数据保存到文件中，文件是一个字节序列，所以必须吧数据转
+并发的解决方案：同步阻塞，异步非阻塞的方式（效率高）差异；
+对于是IO密集型、还是CPU密集型；
+
+
+1. concurrent包concurrent.futuresFuture对象是futures库实现异步任务的核心，该对象由线程池/进程池对象进行初始化，并返回给客户端，告诉客户端这是
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/#more" rel="contents">
+            <a class="btn" href="/concurrent.futures%E4%BD%BF%E7%94%A8/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -496,7 +522,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/barrier%E3%80%81semaphore%E5%92%8CGIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -515,7 +541,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/" itemprop="url">Python文件操作练习</a></h1>
+                <a class="post-title-link" href="/barrier%E3%80%81semaphore%E5%92%8CGIL/" itemprop="url">barrier、semaphore和GIL</a></h1>
         
 
         <div class="post-meta">
@@ -527,8 +553,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
               </time>
             
 
@@ -543,8 +569,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-29T15:44:58+08:00">
-                2021-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T11:18:09+08:00">
+                2021-07-21
               </time>
             
           </span>
@@ -580,427 +606,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  860
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-
-      
-        
-          
-          对samle文件进行不区分大小写的单词统计要求用户可以排除一些单词的统计，例如a、the、of等不应该出现在具有实际意义的统计中，应当忽略 要求，全部代码使用函数封装、调用完成
-12
-
-有一个配置文件test.ini内容如下，将其转换成json格式文件123456789101112[DEFAULT]
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-     <!-- 文章末尾统一添加“本文结束”标记 -->
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ashjian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" itemprop="url">Python文件操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2021-06-12T22:09:44+08:00">
-                2021-06-12
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  17
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-
-      
-        
-          
-          冯诺依曼体系架构
-
-CPU由运算 器和控制器组成
-
-运算器，完成各    种算数运算、逻辑运算、数据传输等数据加工处理
-控制器，控 制程序的执行
-存储器，用 千记忆程序和数据， 例如内存
-输入设备，将数据或者      程序输入到计算机中，例如键盘   、鼠标
-输出设备，将数据或     程序的处理
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-     <!-- 文章末尾统一添加“本文结束”标记 -->
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ashjian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/" itemprop="url">Python路径操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-10T21:16:10+08:00">
-                2021-05-10
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/" itemprop="commentCount"></span>
+                <a href="/barrier%E3%80%81semaphore%E5%92%8CGIL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/barrier%E3%80%81semaphore%E5%92%8CGIL/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1038,7 +645,7 @@ CPU由运算 器和控制器组成
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  9
                 </span>
               
             </div>
@@ -1060,12 +667,18 @@ CPU由运算 器和控制器组成
       
         
           
-          路径操作模块路径操作模块3.4版本之前 os.path模块
-12345678910111213141516171819202122232425262728293031from os import pathp &#x3D; path.join(&#39;&#x2F;etc&#39;, &#39;sys
+          
+总结：
+
+和Lock很像,信号量和锁都是解决资源有限的问题的；
+最常见的池：连接池、线程池；
+GIL全局解释器锁*(面试常问):假并行的本质、解决方案；**GIL是进程级别的锁，你可以绕开它（使用多进程）；
+线程安全的类型目前只有 queue ； 内置数据类型 其实不是线程安全的；
+欠的债都是要还
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/#more" rel="contents">
+            <a class="btn" href="/barrier%E3%80%81semaphore%E5%92%8CGIL/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1120,7 +733,7 @@ CPU由运算 器和控制器组成
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E7%BA%BF%E7%A8%8B%E9%9A%9C%E7%A2%8D%E5%AF%B9%E8%B1%A1Barrier/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -1139,7 +752,7 @@ CPU由运算 器和控制器组成
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/" itemprop="url">Python的shuttil模块</a></h1>
+                <a class="post-title-link" href="/%E7%BA%BF%E7%A8%8B%E9%9A%9C%E7%A2%8D%E5%AF%B9%E8%B1%A1Barrier/" itemprop="url">线程障碍对象Barrier</a></h1>
         
 
         <div class="post-meta">
@@ -1151,8 +764,8 @@ CPU由运算 器和控制器组成
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
               </time>
             
 
@@ -1167,8 +780,8 @@ CPU由运算 器和控制器组成
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-10T23:00:32+08:00">
-                2021-05-10
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T11:17:04+08:00">
+                2021-07-21
               </time>
             
           </span>
@@ -1204,8 +817,8 @@ CPU由运算 器和控制器组成
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                <a href="/%E7%BA%BF%E7%A8%8B%E9%9A%9C%E7%A2%8D%E5%AF%B9%E8%B1%A1Barrier/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E7%BA%BF%E7%A8%8B%E9%9A%9C%E7%A2%8D%E5%AF%B9%E8%B1%A1Barrier/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1227,7 +840,221 @@ CPU由运算 器和控制器组成
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  844
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+
+      
+        
+          
+          总结1. Barrierpython线程Barrier俗称障碍对象，也称栅栏，也叫屏障  ；   3.2引入Python的新功能。
+
+
+
+名称
+含义
+
+
+
+Barrier(parties, action=None,timeout=None)
+构建Barrier对象，指定参与方数目。timeout是w
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/%E7%BA%BF%E7%A8%8B%E9%9A%9C%E7%A2%8D%E5%AF%B9%E8%B1%A1Barrier/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+     <!-- 文章末尾统一添加“本文结束”标记 -->
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B9%8BEvent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ashjian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B9%8BEvent/" itemprop="url">线程同步之Event</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T11:12:29+08:00">
+                2021-07-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B9%8BEvent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B9%8BEvent/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  987
                 </span>
               
 
@@ -1265,12 +1092,18 @@ CPU由运算 器和控制器组成
       
         
           
-          1 文件操作　　文件有很多的操作，之前的文件操作中介绍了内建函数对文件的打开、读取以及写入，这三种操作是对文件基本的使用。文件还有复制、删除、移动、改变文件的属主属组等操作。下面主要看os模块和shutil模块提供的对文件操作的方法。
-2 os模块　　os模块中也有open、read、write方法
+          
+总结：
+
+Python multiprocessing 多进程之间相互协调的方式有如下几种: Lock:锁,Queue:队列, Semaphore:信号量 ,Event:事件，Pipe:管道 ；
+event：看状态的变化；使用同一个event对象；
+线程真正区别 是靠 线程ID；线程name;
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E7%9A%84shuttil%E6%A8%A1%E5%9D%97/#more" rel="contents">
+            <a class="btn" href="/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B9%8BEvent/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1325,7 +1158,7 @@ CPU由运算 器和控制器组成
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%8F%8Astart%E3%80%81run%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -1344,7 +1177,7 @@ CPU由运算 器和控制器组成
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" itemprop="url">Python的csv和ini配置文件</a></h1>
+                <a class="post-title-link" href="/%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%8F%8Astart%E3%80%81run%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">线程属性和方法及start、run的区别</a></h1>
         
 
         <div class="post-meta">
@@ -1356,8 +1189,8 @@ CPU由运算 器和控制器组成
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
               </time>
             
 
@@ -1372,8 +1205,8 @@ CPU由运算 器和控制器组成
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-12T16:40:56+08:00">
-                2021-05-12
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T10:37:46+08:00">
+                2021-07-21
               </time>
             
           </span>
@@ -1409,8 +1242,427 @@ CPU由运算 器和控制器组成
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" itemprop="commentCount"></span>
+                <a href="/%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%8F%8Astart%E3%80%81run%E7%9A%84%E5%8C%BA%E5%88%AB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%8F%8Astart%E3%80%81run%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+
+      
+        
+          
+          
+总结：
+
+线程和进程都是操作系统的基本理论；当前线程（工作线程、主线程）、工作线程、主线程的区别； 2. 线程是一种并行的解决并发的方案； 3.. 线程的name这是一个名称，可以重复；ID必须唯一，但可以在线程退出后再利用。
+使用start方法启动线程，启动了一个新的线程，名字叫做worker运
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%8F%8Astart%E3%80%81run%E7%9A%84%E5%8C%BA%E5%88%AB/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+     <!-- 文章末尾统一添加“本文结束”标记 -->
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8Cdaemon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ashjian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8Cdaemon/" itemprop="url">线程安全和daemon</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T10:39:01+08:00">
+                2021-07-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8Cdaemon/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8Cdaemon/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+
+      
+        
+          
+          
+总结：
+
+线程的核心概念：函数的执行是在各自线程的栈上完成的，栈是线程的；多线程各压各的栈，互不干扰；
+只要提到多线程，一定要想到线程安全问题；
+线程安全是有代价的，线程不安全往往简单的方法就有很高的效率；
+进程分前台和后台、
+主线程是non-daemon;其他线程都为daemon，他就不会等待，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8Cdaemon/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+     <!-- 文章末尾统一添加“本文结束”标记 -->
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E6%97%A5%E5%BF%97%E6%B5%81%E3%80%81Formater%E3%80%81Filter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ashjian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/%E6%97%A5%E5%BF%97%E6%B5%81%E3%80%81Formater%E3%80%81Filter/" itemprop="url">日志流、Formater、Filter</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T11:21:28+08:00">
+                2021-07-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E6%97%A5%E5%BF%97%E6%B5%81%E3%80%81Formater%E3%80%81Filter/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E6%97%A5%E5%BF%97%E6%B5%81%E3%80%81Formater%E3%80%81Filter/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1470,13 +1722,14 @@ CPU由运算 器和控制器组成
       
         
           
-          csv文件CSVX文件简介参看RFC 4180http://www.ietf.org/rfc/rfc4180.txt逗号分隔值Comma-Separated Values。CSV是一个被行分隔符、 列分隔符划分成行和列的文本文件。
-CSV不指定字符编码。
-行分隔符为\r\n,最后-行可以没有换行符列
+          1. 处理器- HandlerHandler 控制日志信息的输出目的地，可以是控制台、文件。 可以单独设置level 可以单独设置格式Formatter 可以设置设置过滤器
+Handler类继承Handler  处理器类型有很多种，比较常用的有三个
+
+StreamHandler # 不指定使用sys
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E7%9A%84csv%E5%92%8Cini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more" rel="contents">
+            <a class="btn" href="/%E6%97%A5%E5%BF%97%E6%B5%81%E3%80%81Formater%E3%80%81Filter/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1531,7 +1784,7 @@ CSV不指定字符编码。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BC%A0%E5%8F%82/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -1550,7 +1803,7 @@ CSV不指定字符编码。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/" itemprop="url">Python的argparse使用</a></h1>
+                <a class="post-title-link" href="/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BC%A0%E5%8F%82/" itemprop="url">进程和线程以及线程的创建和传参</a></h1>
         
 
         <div class="post-meta">
@@ -1562,8 +1815,8 @@ CSV不指定字符编码。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-21T11:26:36+08:00">
+                2021-07-21
               </time>
             
 
@@ -1578,196 +1831,8 @@ CSV不指定字符编码。
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-29T19:45:59+08:00">
-                2021-05-29
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.8k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  13
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-
-      
-        
-          
-          
-实现ls 命令功能-l 、 -a 、 -a 和–all 、-h选项
-显示路径下的文件列表
--a 和–all 显示包含 “.”’开头的文件
--l 显示详细列表显示
--h 和 -l 配合, 个性化显示文件大小, 如1K, 1G, 1T,等, 可以按照1G = 1000M处理
-类型字符- c 字符- d
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python%E7%9A%84argparse%E4%BD%BF%E7%94%A8/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-     <!-- 文章末尾统一添加“本文结束”标记 -->
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ashjian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/" itemprop="url">Python之StringIO和BytesIO</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:45:53+08:00">
-                2021-05-29
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2021-04-25T17:12:44+08:00">
-                2021-04-25
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-21T10:36:05+08:00">
+                2021-07-21
               </time>
             
           </span>
@@ -1803,8 +1868,8 @@ CSV不指定字符编码。
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/" itemprop="commentCount"></span>
+                <a href="/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BC%A0%E5%8F%82/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BC%A0%E5%8F%82/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1826,7 +1891,7 @@ CSV不指定字符编码。
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  345
+                  1.4k
                 </span>
               
 
@@ -1842,7 +1907,7 @@ CSV不指定字符编码。
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -1864,21 +1929,20 @@ CSV不指定字符编码。
       
         
           
-          StringIO
-io模块中的类
-from io import StringIO
+          
+总结：
+
+进程管理：现代操作系统必须实现进程管理；不同操作系统实现进程管理是由差异的；
+Python中关于线程的概念能简化就简化了，不像其他语言中要学习那么多；没有close\exit等方法；
+Python中传参数是 单个参数args 是元组（5，）
 
 
-内存中，开辟的一个文本模式的buffer，可以像文件对象一样操作它
-当close方法被调用的时候，这个buffer会被释放
-
-StringIO操作
-getvalue() 获取全部内容。跟文件指针没有关系
-12345
+1. 进程与线程
+线程：操作系统能够进行运
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E4%B9%8BStringIO%E5%92%8CBytesIO/#more" rel="contents">
+            <a class="btn" href="/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BC%A0%E5%8F%82/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1933,7 +1997,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -1952,7 +2016,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/" itemprop="url">Python解析式、生成器</a></h1>
+                <a class="post-title-link" href="/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/" itemprop="url">Python包管理和打包分发</a></h1>
         
 
         <div class="post-meta">
@@ -1964,8 +2028,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-24T11:56:08+08:00">
-                2021-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-12T23:14:43+08:00">
+                2021-07-12
               </time>
             
 
@@ -1980,8 +2044,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-24T11:56:08+08:00">
-                2021-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-12T14:08:03+08:00">
+                2021-07-12
               </time>
             
           </span>
@@ -2017,8 +2081,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/" itemprop="commentCount"></span>
+                <a href="/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2040,7 +2104,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.6k
                 </span>
               
 
@@ -2078,21 +2142,19 @@ getvalue() 获取全部内容。跟文件指针没有关系
       
         
           
-          列表解析
-举例
+          
+总结：
 
-生成一个列表，元素0~9，对每一个元素自增1后求平方返回新列表
+技术人员水平与管理水平
+Pypi里面的模块没有太好的审核机制，不保证安全，请慎重使用。
 
-12345l1 &#x3D; list(range(10))l2 &#x3D; []for i in l1:l2.append((i+1)**2)print(l2)
 
-
-列表解析式
-
-1234l1 &#x3D; li
+Python 模块分为目录型（包）和文件型（.py）
+1. 包管理为什么使用包管理？Python的模块或者源文件直接可以复制到目标项目目录中，就可以导入使用了。 但是为了更多项目调用使用，或者共享
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Python%E8%A7%A3%E6%9E%90%E5%BC%8F%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8/#more" rel="contents">
+            <a class="btn" href="/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2147,7 +2209,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/python%E6%A0%87%E5%87%86%E5%BA%93datetime/">
+    <link itemprop="mainEntityOfPage" href="http://www.ashjian.xyz/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ashjian">
@@ -2166,7 +2228,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/python%E6%A0%87%E5%87%86%E5%BA%93datetime/" itemprop="url">python标准库datetime</a></h1>
+                <a class="post-title-link" href="/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/" itemprop="url">Pycharm中使用Git之Git分支和工作流管理</a></h1>
         
 
         <div class="post-meta">
@@ -2178,8 +2240,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-24T11:56:08+08:00">
-                2021-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-12T23:14:43+08:00">
+                2021-07-12
               </time>
             
 
@@ -2194,8 +2256,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-24T11:56:08+08:00">
-                2021-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-12T15:54:46+08:00">
+                2021-07-12
               </time>
             
           </span>
@@ -2213,8 +2275,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -2231,8 +2293,8 @@ getvalue() 获取全部内容。跟文件指针没有关系
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/python%E6%A0%87%E5%87%86%E5%BA%93datetime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/python%E6%A0%87%E5%87%86%E5%BA%93datetime/" itemprop="commentCount"></span>
+                <a href="/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2254,7 +2316,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400
+                  1.2k
                 </span>
               
 
@@ -2270,7 +2332,7 @@ getvalue() 获取全部内容。跟文件指针没有关系
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -2292,19 +2354,21 @@ getvalue() 获取全部内容。跟文件指针没有关系
       
         
           
-          标准库datetime
-datetime模块
+          
+总结：
 
-对日期、时间、时间戳的处理
-datetime类
-类方法
-today() 返回本地时区当前时间的datetime对象
-now(tz=None) 返回当前时间的datetime对象，时间到微秒，如果tz为None，返回和today()一样
-utcnow()
+做项目肯定就是模块化；都必定要使用版本管理工具Git；
+. 开头的都是特殊文件；
+大多数企业都是两条分支开发；分支越多，不一定管理的了；
+
+
+1. 从本地windows生成git ssh密钥记得安装过程中要添加一个git.exe文件，这个文件在上一个安装文件的路径下面
+
+从程序目录启动“
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/python%E6%A0%87%E5%87%86%E5%BA%93datetime/#more" rel="contents">
+            <a class="btn" href="/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2350,7 +2414,7 @@ utcnow()
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="extend next" rel="next" href="/page/5/">&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/5/">&gt;</a>
   </nav>
 
 
@@ -2400,7 +2464,7 @@ utcnow()
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">521</span>
+                  <span class="site-state-item-count">557</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2422,7 +2486,7 @@ utcnow()
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">137</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2529,7 +2593,7 @@ utcnow()
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">502.2k</span>
+    <span title="本站总字数">561.5k</span>
   
 </div>
 

@@ -81,11 +81,11 @@
   </entry>
   
   <entry>
-    <title>Python包管理和打包分发</title>
-    <link href="http://www.ashjian.xyz/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/"/>
-    <id>http://www.ashjian.xyz/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/</id>
-    <published>2021-07-12T15:14:43.941Z</published>
-    <updated>2021-07-12T06:08:03.875Z</updated>
+    <title>[Python 模块] logging模块、Logger类</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E6%A8%A1%E5%9D%97]%20logging%E6%A8%A1%E5%9D%97%E3%80%81Logger%E7%B1%BB/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E6%A8%A1%E5%9D%97]%20logging%E6%A8%A1%E5%9D%97%E3%80%81Logger%E7%B1%BB/</id>
+    <published>2021-07-21T06:36:23.027Z</published>
+    <updated>2021-07-21T03:58:44.716Z</updated>
     
     <summary type="html">
     
@@ -103,43 +103,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python包管理和打包分发" scheme="http://www.ashjian.xyz/tags/python%E5%8C%85%E7%AE%A1%E7%90%86%E5%92%8C%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91/"/>
+      <category term="python模块" scheme="http://www.ashjian.xyz/tags/python%E6%A8%A1%E5%9D%97/"/>
     
   </entry>
   
   <entry>
-    <title>Pycharm中使用Git之Git分支和工作流管理</title>
-    <link href="http://www.ashjian.xyz/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/"/>
-    <id>http://www.ashjian.xyz/Pycharm%E4%B8%AD%E4%BD%BF%E7%94%A8Git%E4%B9%8BGit%E5%88%86%E6%94%AF%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AE%A1%E7%90%86/</id>
-    <published>2021-07-12T15:14:43.940Z</published>
-    <updated>2021-07-12T07:54:46.072Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
-    
-    
-      <category term="Pycharm使用git" scheme="http://www.ashjian.xyz/tags/Pycharm%E4%BD%BF%E7%94%A8git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gogs安装</title>
-    <link href="http://www.ashjian.xyz/Gogs%E5%AE%89%E8%A3%85/"/>
-    <id>http://www.ashjian.xyz/Gogs%E5%AE%89%E8%A3%85/</id>
-    <published>2021-07-12T15:14:43.939Z</published>
-    <updated>2021-07-12T06:16:14.822Z</updated>
+    <title>python并发和线程</title>
+    <link href="http://www.ashjian.xyz/python%E5%B9%B6%E5%8F%91%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://www.ashjian.xyz/python%E5%B9%B6%E5%8F%91%E5%92%8C%E7%BA%BF%E7%A8%8B/</id>
+    <published>2021-07-21T03:26:49.183Z</published>
+    <updated>2021-07-15T03:57:03.486Z</updated>
     
     <summary type="html">
     
@@ -157,97 +130,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="Gogs安装" scheme="http://www.ashjian.xyz/tags/Gogs%E5%AE%89%E8%A3%85/"/>
+      <category term="python并发和线程" scheme="http://www.ashjian.xyz/tags/python%E5%B9%B6%E5%8F%91%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Git由来和基本概念操作</title>
-    <link href="http://www.ashjian.xyz/Git%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.ashjian.xyz/Git%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E6%93%8D%E4%BD%9C/</id>
-    <published>2021-07-12T15:14:43.937Z</published>
-    <updated>2021-07-12T07:55:36.202Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
-    
-    
-      <category term="GIt由来和基础概念" scheme="http://www.ashjian.xyz/tags/GIt%E7%94%B1%E6%9D%A5%E5%92%8C%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git的Push和Clone</title>
-    <link href="http://www.ashjian.xyz/Git%E7%9A%84Push%E5%92%8CClone/"/>
-    <id>http://www.ashjian.xyz/Git%E7%9A%84Push%E5%92%8CClone/</id>
-    <published>2021-07-12T15:14:43.936Z</published>
-    <updated>2021-07-12T06:23:53.109Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
-    
-    
-      <category term="GIt操作" scheme="http://www.ashjian.xyz/tags/GIt%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git操作增删改检出重置比较</title>
-    <link href="http://www.ashjian.xyz/Git%E6%93%8D%E4%BD%9C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%A3%80%E5%87%BA%E9%87%8D%E7%BD%AE%E6%AF%94%E8%BE%83/"/>
-    <id>http://www.ashjian.xyz/Git%E6%93%8D%E4%BD%9C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%A3%80%E5%87%BA%E9%87%8D%E7%BD%AE%E6%AF%94%E8%BE%83/</id>
-    <published>2021-07-12T15:14:43.935Z</published>
-    <updated>2021-07-12T12:18:37.010Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
-    
-    
-      <category term="Git操作" scheme="http://www.ashjian.xyz/tags/Git%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python之slots、反向方法、生成器交互</title>
-    <link href="http://www.ashjian.xyz/Python%E4%B9%8Bslots%E3%80%81%E5%8F%8D%E5%90%91%E6%96%B9%E6%B3%95%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8%E4%BA%A4%E4%BA%92/"/>
-    <id>http://www.ashjian.xyz/Python%E4%B9%8Bslots%E3%80%81%E5%8F%8D%E5%90%91%E6%96%B9%E6%B3%95%E3%80%81%E7%94%9F%E6%88%90%E5%99%A8%E4%BA%A4%E4%BA%92/</id>
-    <published>2021-07-12T05:49:28.958Z</published>
-    <updated>2021-07-12T05:47:42.052Z</updated>
+    <title>Python 多线程 线程安全、daemon简介 (四)</title>
+    <link href="http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E3%80%81daemon%E7%AE%80%E4%BB%8B%20(%E5%9B%9B)/"/>
+    <id>http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E3%80%81daemon%E7%AE%80%E4%BB%8B%20(%E5%9B%9B)/</id>
+    <published>2021-07-21T03:26:49.182Z</published>
+    <updated>2021-07-20T15:05:57.569Z</updated>
     
     <summary type="html">
     
@@ -265,16 +157,39 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python补充" scheme="http://www.ashjian.xyz/tags/python%E8%A1%A5%E5%85%85/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python异常处理</title>
-    <link href="http://www.ashjian.xyz/Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    <id>http://www.ashjian.xyz/Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</id>
-    <published>2021-07-12T05:49:28.956Z</published>
-    <updated>2021-07-06T09:15:17.350Z</updated>
+    <title>Python 多线程 使用线程 (二)</title>
+    <link href="http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%20(%E4%BA%8C)/"/>
+    <id>http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%20(%E4%BA%8C)/</id>
+    <published>2021-07-21T03:26:49.179Z</published>
+    <updated>2021-07-20T14:02:48.093Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python 多线程 进程与线程相关概念 (一)</title>
+    <link href="http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%20(%E4%B8%80)/"/>
+    <id>http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%20(%E4%B8%80)/</id>
+    <published>2021-07-21T03:26:49.178Z</published>
+    <updated>2021-07-20T14:13:23.928Z</updated>
     
     <summary type="html">
     
@@ -292,16 +207,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python异常处理" scheme="http://www.ashjian.xyz/tags/python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python模块化</title>
-    <link href="http://www.ashjian.xyz/Python%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://www.ashjian.xyz/Python%E6%A8%A1%E5%9D%97%E5%8C%96/</id>
-    <published>2021-07-12T05:49:28.954Z</published>
-    <updated>2021-07-12T14:04:52.586Z</updated>
+    <title>Python 多线程 start()和run()方法的区别(三)</title>
+    <link href="http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20start()%E5%92%8Crun()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB(%E4%B8%89)/"/>
+    <id>http://www.ashjian.xyz/Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%20start()%E5%92%8Crun()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB(%E4%B8%89)/</id>
+    <published>2021-07-21T03:26:49.177Z</published>
+    <updated>2021-07-20T14:13:08.546Z</updated>
     
     <summary type="html">
     
@@ -319,16 +234,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python模块化" scheme="http://www.ashjian.xyz/tags/python%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python分发</title>
-    <link href="http://www.ashjian.xyz/Python%E5%88%86%E5%8F%91/"/>
-    <id>http://www.ashjian.xyz/Python%E5%88%86%E5%8F%91/</id>
-    <published>2021-07-12T05:49:28.918Z</published>
-    <updated>2021-06-01T07:43:41.624Z</updated>
+    <title>[转载] Python协程从零开始到放弃</title>
+    <link href="http://www.ashjian.xyz/[%E8%BD%AC%E8%BD%BD]%20Python%E5%8D%8F%E7%A8%8B%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83/"/>
+    <id>http://www.ashjian.xyz/[%E8%BD%AC%E8%BD%BD]%20Python%E5%8D%8F%E7%A8%8B%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83/</id>
+    <published>2021-07-21T03:26:49.175Z</published>
+    <updated>2021-07-21T03:24:30.264Z</updated>
     
     <summary type="html">
     
@@ -346,16 +261,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python分发" scheme="http://www.ashjian.xyz/tags/python%E5%88%86%E5%8F%91/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python插件化开发</title>
-    <link href="http://www.ashjian.xyz/Python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/"/>
-    <id>http://www.ashjian.xyz/Python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/</id>
-    <published>2021-07-12T05:49:28.917Z</published>
-    <updated>2021-07-12T05:47:47.106Z</updated>
+    <title>[Python 多线程] 详解daemon属性值None,False,True的区别 (五)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20%E8%AF%A6%E8%A7%A3daemon%E5%B1%9E%E6%80%A7%E5%80%BCNone,False,True%E7%9A%84%E5%8C%BA%E5%88%AB%20(%E4%BA%94)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20%E8%AF%A6%E8%A7%A3daemon%E5%B1%9E%E6%80%A7%E5%80%BCNone,False,True%E7%9A%84%E5%8C%BA%E5%88%AB%20(%E4%BA%94)/</id>
+    <published>2021-07-21T03:26:49.174Z</published>
+    <updated>2021-07-20T15:11:33.564Z</updated>
     
     <summary type="html">
     
@@ -373,66 +288,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python插件化开发" scheme="http://www.ashjian.xyz/tags/python%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>一键搭载Git私服Gogs</title>
-    <link href="http://www.ashjian.xyz/%E4%B8%80%E9%94%AE%E6%90%AD%E8%BD%BDGit%E7%A7%81%E6%9C%8DGogs/"/>
-    <id>http://www.ashjian.xyz/%E4%B8%80%E9%94%AE%E6%90%AD%E8%BD%BDGit%E7%A7%81%E6%9C%8DGogs/</id>
-    <published>2021-07-12T05:49:28.915Z</published>
-    <updated>2021-07-12T05:37:37.718Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.ashjian.xyz/categories/Git/"/>
-    
-    
-      <category term="git" scheme="http://www.ashjian.xyz/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python中函数和方法的区别</title>
-    <link href="http://www.ashjian.xyz/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://www.ashjian.xyz/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
-    <published>2021-07-05T15:50:36.058Z</published>
-    <updated>2021-06-28T08:11:35.501Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python魔术方法上下文管理</title>
-    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86/"/>
-    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86/</id>
-    <published>2021-07-05T15:50:36.037Z</published>
-    <updated>2021-06-29T08:29:32.447Z</updated>
+    <title>[Python 多线程] Timer定时器延迟执行、Event事件 (七)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Timer%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BB%B6%E8%BF%9F%E6%89%A7%E8%A1%8C%E3%80%81Event%E4%BA%8B%E4%BB%B6%20(%E4%B8%83)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Timer%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BB%B6%E8%BF%9F%E6%89%A7%E8%A1%8C%E3%80%81Event%E4%BA%8B%E4%BB%B6%20(%E4%B8%83)/</id>
+    <published>2021-07-21T03:26:49.173Z</published>
+    <updated>2021-07-20T15:18:20.152Z</updated>
     
     <summary type="html">
     
@@ -450,16 +315,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python魔术方法反射</title>
-    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E5%8F%8D%E5%B0%84/"/>
-    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E5%8F%8D%E5%B0%84/</id>
-    <published>2021-07-05T15:50:35.989Z</published>
-    <updated>2021-07-05T15:39:53.110Z</updated>
+    <title>[Python 多线程] threading.local类 (六)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20threading.local%E7%B1%BB%20(%E5%85%AD)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20threading.local%E7%B1%BB%20(%E5%85%AD)/</id>
+    <published>2021-07-21T03:26:49.173Z</published>
+    <updated>2021-07-20T15:13:54.983Z</updated>
     
     <summary type="html">
     
@@ -477,16 +342,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python魔术方法</title>
-    <link href="http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
-    <id>http://www.ashjian.xyz/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</id>
-    <published>2021-07-05T15:50:35.938Z</published>
-    <updated>2021-07-05T15:50:01.619Z</updated>
+    <title>[Python 多线程] Semaphore、BounedeSemaphore (十二)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Semaphore%E3%80%81BounedeSemaphore%20(%E5%8D%81%E4%BA%8C)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Semaphore%E3%80%81BounedeSemaphore%20(%E5%8D%81%E4%BA%8C)/</id>
+    <published>2021-07-21T03:26:49.171Z</published>
+    <updated>2021-07-20T15:38:39.952Z</updated>
     
     <summary type="html">
     
@@ -504,16 +369,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python魔术方法" scheme="http://www.ashjian.xyz/tags/python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python描述器练习</title>
-    <link href="http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8%E7%BB%83%E4%B9%A0/"/>
-    <id>http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8%E7%BB%83%E4%B9%A0/</id>
-    <published>2021-07-05T15:50:35.936Z</published>
-    <updated>2021-07-05T15:48:50.979Z</updated>
+    <title>[Python 多线程] RLock可重入锁 (九)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20RLock%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81%20(%E4%B9%9D)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20RLock%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81%20(%E4%B9%9D)/</id>
+    <published>2021-07-21T03:26:49.169Z</published>
+    <updated>2021-07-20T15:25:31.047Z</updated>
     
     <summary type="html">
     
@@ -531,16 +396,16 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python练习" scheme="http://www.ashjian.xyz/tags/python%E7%BB%83%E4%B9%A0/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Python描述器</title>
-    <link href="http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8/"/>
-    <id>http://www.ashjian.xyz/Python%E6%8F%8F%E8%BF%B0%E5%99%A8/</id>
-    <published>2021-07-05T15:50:35.935Z</published>
-    <updated>2021-07-05T15:40:32.665Z</updated>
+    <title>[Python 多线程] multiprocessing、多进程、工作进程池 (十四)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20multiprocessing%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%B7%A5%E4%BD%9C%E8%BF%9B%E7%A8%8B%E6%B1%A0%20(%E5%8D%81%E5%9B%9B)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20multiprocessing%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%B7%A5%E4%BD%9C%E8%BF%9B%E7%A8%8B%E6%B1%A0%20(%E5%8D%81%E5%9B%9B)/</id>
+    <published>2021-07-21T03:26:49.168Z</published>
+    <updated>2021-07-20T15:42:27.070Z</updated>
     
     <summary type="html">
     
@@ -558,7 +423,142 @@
       <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
     
     
-      <category term="python描述器" scheme="http://www.ashjian.xyz/tags/python%E6%8F%8F%E8%BF%B0%E5%99%A8/"/>
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Python 多线程] Lock、阻塞锁、非阻塞锁 (八)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Lock%E3%80%81%E9%98%BB%E5%A1%9E%E9%94%81%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9E%E9%94%81%20(%E5%85%AB)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Lock%E3%80%81%E9%98%BB%E5%A1%9E%E9%94%81%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9E%E9%94%81%20(%E5%85%AB)/</id>
+    <published>2021-07-21T03:26:49.166Z</published>
+    <updated>2021-07-20T15:22:15.034Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Python 多线程] GIL全局解释器锁 (十三)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20GIL%E5%85%A8%E5%B1%80%E8%A7%A3%E9%87%8A%E5%99%A8%E9%94%81%20(%E5%8D%81%E4%B8%89)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20GIL%E5%85%A8%E5%B1%80%E8%A7%A3%E9%87%8A%E5%99%A8%E9%94%81%20(%E5%8D%81%E4%B8%89)/</id>
+    <published>2021-07-21T03:26:49.165Z</published>
+    <updated>2021-07-20T15:40:00.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Python 多线程] Condition (十)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Condition%20(%E5%8D%81)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Condition%20(%E5%8D%81)/</id>
+    <published>2021-07-21T03:26:49.164Z</published>
+    <updated>2021-07-20T15:28:53.863Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Python 多线程] Concurrent (十五)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Concurrent%20(%E5%8D%81%E4%BA%94)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Concurrent%20(%E5%8D%81%E4%BA%94)/</id>
+    <published>2021-07-21T03:26:49.162Z</published>
+    <updated>2021-07-20T15:45:37.533Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Python 多线程] Barrier (十一)</title>
+    <link href="http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Barrier%20(%E5%8D%81%E4%B8%80)/"/>
+    <id>http://www.ashjian.xyz/[Python%20%E5%A4%9A%E7%BA%BF%E7%A8%8B]%20Barrier%20(%E5%8D%81%E4%B8%80)/</id>
+    <published>2021-07-21T03:26:49.161Z</published>
+    <updated>2021-07-20T15:35:28.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.ashjian.xyz/categories/python/"/>
+    
+    
+      <category term="python多线程" scheme="http://www.ashjian.xyz/tags/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
